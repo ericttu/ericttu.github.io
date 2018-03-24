@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TyroTalk</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://tyrotalk.com/"/>
+  <updated>2018-03-24T01:35:47.285Z</updated>
+  <id>https://tyrotalk.com/</id>
+  
+  <author>
+    <name>TuTeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 reuqests 爬取豆瓣数据书籍 URL</title>
+    <link href="https://tyrotalk.com/2017/11/15/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
+    <id>https://tyrotalk.com/2017/11/15/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
+    <published>2017-11-15T05:23:01.000Z</published>
+    <updated>2018-03-24T01:35:47.285Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 requests 库爬取豆瓣读书中所有书籍的 URL，并将其存储到 Mysql 中。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="requests" scheme="https://tyrotalk.com/tags/requests/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习算法：决策树</title>
+    <link href="https://tyrotalk.com/2017/11/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91.html/"/>
+    <id>https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/</id>
+    <published>2017-11-02T12:38:11.000Z</published>
+    <updated>2017-11-09T13:03:35.507Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;机器学习中，决策树是一个预测模型。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习算法：k-近邻算法</title>
+    <link href="https://tyrotalk.com/2017/10/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%9Ak-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95.html/"/>
+    <id>https://tyrotalk.com/2017/10/25/机器学习算法：k-近邻算法.html/</id>
+    <published>2017-10-25T02:35:39.000Z</published>
+    <updated>2017-10-25T06:23:13.485Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;k-近邻算法采用测量不同特征值之间的距离方法进行分类。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql 简介及 Python 连接数据库</title>
+    <link href="https://tyrotalk.com/2017/09/19/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tyrotalk.com/2017/09/19/Mysql-简介及-Python-连接数据库.html/</id>
+    <published>2017-09-19T01:36:34.000Z</published>
+    <updated>2018-03-24T01:33:55.262Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL 是一种 DBMS，即它是一种数据库软件。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：无向图</title>
+    <link href="https://tyrotalk.com/2017/09/03/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%97%A0%E5%90%91%E5%9B%BE.html/"/>
+    <id>https://tyrotalk.com/2017/09/03/算法：无向图.html/</id>
+    <published>2017-09-03T03:23:53.000Z</published>
+    <updated>2018-03-24T07:58:28.880Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;图是由一组顶点和一组能够将两个顶点相连的边组成的。边有方向的图称为有向图，没有方向的图称为无向图。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：二分搜索树</title>
+    <link href="https://tyrotalk.com/2017/08/28/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%95%B0.html/"/>
+    <id>https://tyrotalk.com/2017/08/28/算法：二分搜索数.html/</id>
+    <published>2017-08-28T02:49:06.000Z</published>
+    <updated>2018-03-24T07:59:17.235Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;二分查找法和二分搜索树。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：堆排序</title>
+    <link href="https://tyrotalk.com/2017/08/17/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%A0%86%E6%8E%92%E5%BA%8F.html/"/>
+    <id>https://tyrotalk.com/2017/08/17/算法：堆排序.html/</id>
+    <published>2017-08-17T01:40:59.000Z</published>
+    <updated>2018-03-24T01:39:15.780Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;堆排序（Heapsort）&lt;/a&gt;：利用堆这种数据结构的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 数据结构：单链表</title>
+    <link href="https://tyrotalk.com/2017/08/15/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8.html/"/>
+    <id>https://tyrotalk.com/2017/08/15/Python-数据结构：单链表.html/</id>
+    <published>2017-08-15T01:37:41.000Z</published>
+    <updated>2018-03-24T08:12:37.769Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;单链表是链表的一种，其链接方向是单向的，对链表的访问要通过从头部开始，依序往下读取。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：高级排序算法</title>
+    <link href="https://tyrotalk.com/2017/08/12/%E7%AE%97%E6%B3%95%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
+    <id>https://tyrotalk.com/2017/08/12/算法：高级排序算法.html/</id>
+    <published>2017-08-12T02:53:22.000Z</published>
+    <updated>2018-03-24T01:39:50.250Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇包括归并排序和快速排序，它们都是采用了分治法的 O(NlogN) 算法。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法：简单排序算法</title>
+    <link href="https://tyrotalk.com/2017/08/01/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
+    <id>https://tyrotalk.com/2017/08/01/算法：简单排序算法.html/</id>
+    <published>2017-08-01T11:54:45.000Z</published>
+    <updated>2018-03-24T01:39:42.382Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单排序算法有三种：选择排序、插入排序和冒泡排序。都属于 O(n^2) 级别的算法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础：函数</title>
+    <link href="https://tyrotalk.com/2017/07/08/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%87%BD%E6%95%B0.html/"/>
+    <id>https://tyrotalk.com/2017/07/08/Python-基础：函数.html/</id>
+    <published>2017-07-08T13:41:49.000Z</published>
+    <updated>2018-03-24T01:28:39.559Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;函数是带名字的代码块，用于完成具体的工作。要执行函数定义的特定任务，可调用该函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础：字典</title>
+    <link href="https://tyrotalk.com/2017/07/01/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%AD%97%E5%85%B8.html/"/>
+    <id>https://tyrotalk.com/2017/07/01/Python-基础：字典.html/</id>
+    <published>2017-07-01T02:00:03.000Z</published>
+    <updated>2018-03-24T01:28:07.917Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 Python 中，字典是一系列&lt;strong&gt;键 — 值（key - value）&lt;/strong&gt;对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础：元组和切片</title>
+    <link href="https://tyrotalk.com/2017/06/27/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%85%83%E7%BB%84%E5%92%8C%E5%88%87%E7%89%87.html/"/>
+    <id>https://tyrotalk.com/2017/06/27/Python-基础：元组和切片.html/</id>
+    <published>2017-06-27T01:37:46.000Z</published>
+    <updated>2018-03-24T01:27:43.178Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;元组——另一种有序、不可变的列表。&lt;br&gt;切片——处理列表的部分元素。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础：列表</title>
+    <link href="https://tyrotalk.com/2017/06/23/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%88%97%E8%A1%A8.html/"/>
+    <id>https://tyrotalk.com/2017/06/23/Python-基础：列表.html/</id>
+    <published>2017-06-23T09:04:30.000Z</published>
+    <updated>2018-03-24T01:27:25.489Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;列表由一系列按特定顺序排列的元素组成。在Python中，用方括号&lt;code&gt;[]&lt;/code&gt;来表示列表，并用逗号来分隔其中的元素。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 语法格式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;list&amp;gt; = [&amp;lt;Expression&amp;gt;, &amp;lt;Expression&amp;gt;, ...]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础：基本运算符</title>
+    <link href="https://tyrotalk.com/2017/06/17/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6.html/"/>
+    <id>https://tyrotalk.com/2017/06/17/Python-基础：基本运算符.html/</id>
+    <published>2017-06-17T09:25:36.000Z</published>
+    <updated>2018-03-24T01:27:11.902Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;运算符的功能是完成某件事，由如&lt;code&gt;+&lt;/code&gt;，&lt;code&gt;-&lt;/code&gt;，&lt;code&gt;**&lt;/code&gt;这样的符号或者其他特定的关键字表示。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础: 字符串</title>
+    <link href="https://tyrotalk.com/2017/06/13/Python-%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2.html/"/>
+    <id>https://tyrotalk.com/2017/06/13/Python-基础：字符串.html/</id>
+    <published>2017-06-13T08:41:29.000Z</published>
+    <updated>2018-03-24T01:26:53.076Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;字符串是 Python 中最常用的数据类型。可以使用引号(‘或”)来创建字符串。&lt;br&gt;Python 中字符串是不可变的，一旦声明，不能改变。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python 基础" scheme="https://tyrotalk.com/categories/Python-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>隐式和显式Intent</title>
+    <link href="https://tyrotalk.com/2017/06/05/%E9%9A%90%E5%BC%8F%E5%92%8C%E6%98%BE%E5%BC%8FIntent.html/"/>
+    <id>https://tyrotalk.com/2017/06/05/隐式和显式Intent.html/</id>
+    <published>2017-06-05T02:03:56.000Z</published>
+    <updated>2018-03-24T01:26:25.739Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Intent 是一个消息传递对象，您可以使用它从其他应用组件请求操作。Intent 可以通过多种方式促进组件之间的通信。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google Study Jams 面向对象中的小东西</title>
+    <link href="https://tyrotalk.com/2017/05/19/Google-Study-Jams-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%B0%8F%E4%B8%9C%E8%A5%BF.html/"/>
+    <id>https://tyrotalk.com/2017/05/19/Google-Study-Jams-面向对象中的小东西.html/</id>
+    <published>2017-05-19T11:25:42.000Z</published>
+    <updated>2017-07-05T01:27:51.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;添加复选框&quot;&gt;&lt;a href=&quot;#添加复选框&quot; class=&quot;headerlink&quot; title=&quot;添加复选框&quot;&gt;&lt;/a&gt;添加复选框&lt;/h1&gt;&lt;p&gt;添加布局文件:&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;CheckBox&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@+id/_checkbox&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建新的Activity</title>
+    <link href="https://tyrotalk.com/2017/05/15/%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84Activity.html/"/>
+    <id>https://tyrotalk.com/2017/05/15/创建新的Activity.html/</id>
+    <published>2017-05-15T00:52:21.000Z</published>
+    <updated>2017-05-15T14:11:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;p&gt;定义 &lt;em&gt;activity_main.xml&lt;/em&gt; 、&lt;em&gt;activity_one.cml&lt;/em&gt; 和与之对应的 &lt;em&gt;MainActivity.class&lt;/em&gt; 、&lt;em&gt;OneActivity.class&lt;/em&gt; 文件。&lt;br&gt;   &lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/创建新的Activity/定义.png&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Studio 导入项目慢解决方法</title>
+    <link href="https://tyrotalk.com/2017/05/04/Android-Studio-%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html/"/>
+    <id>https://tyrotalk.com/2017/05/04/Android-Studio-导入项目慢解决方法.html/</id>
+    <published>2017-05-04T14:32:10.000Z</published>
+    <updated>2017-05-12T03:13:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多时候我们在 Android Studio 中导入项目时会很慢，一直处在 &lt;strong&gt;Building ‘#project’ Gradle project info&lt;/strong&gt; 的状态。&lt;br&gt;&lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/Android-Studio-导入项目慢解决方法/info.png&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tyrotalk.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
+    
+      <category term="Android Studio" scheme="https://tyrotalk.com/tags/Android-Studio/"/>
+    
+  </entry>
+  
+</feed>
