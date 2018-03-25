@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-03-24T01:35:47.285Z</updated>
+  <updated>2018-03-25T01:44:15.223Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tyrotalk.com/2017/11/15/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
     <id>https://tyrotalk.com/2017/11/15/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
     <published>2017-11-15T05:23:01.000Z</published>
-    <updated>2018-03-24T01:35:47.285Z</updated>
+    <updated>2018-03-25T01:44:15.223Z</updated>
     
     <summary type="html">
     
@@ -83,6 +83,28 @@
       <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BeautifulSoup 使用</title>
+    <link href="https://tyrotalk.com/2017/10/02/BeautifulSoup-%E4%BD%BF%E7%94%A8.html/"/>
+    <id>https://tyrotalk.com/2017/10/02/BeautifulSoup-使用.html/</id>
+    <published>2017-10-02T01:32:19.000Z</published>
+    <updated>2018-03-25T05:45:11.042Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Beautiful Soup是一个Python包，功能包括解析HTML、XML文档、修复含有未闭合标签等错误的文档，通过定位 HTML 标签来格式化和组织复杂的网络信息。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python 库" scheme="https://tyrotalk.com/categories/python-%E5%BA%93/"/>
+    
+    
+      <category term="BeautifulSoup" scheme="https://tyrotalk.com/tags/BeautifulSoup/"/>
+    
+      <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
     
   </entry>
   
@@ -427,28 +449,6 @@
     
     
       <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android Studio 导入项目慢解决方法</title>
-    <link href="https://tyrotalk.com/2017/05/04/Android-Studio-%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/05/04/Android-Studio-导入项目慢解决方法.html/</id>
-    <published>2017-05-04T14:32:10.000Z</published>
-    <updated>2017-05-12T03:13:53.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;很多时候我们在 Android Studio 中导入项目时会很慢，一直处在 &lt;strong&gt;Building ‘#project’ Gradle project info&lt;/strong&gt; 的状态。&lt;br&gt;&lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/Android-Studio-导入项目慢解决方法/info.png&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tyrotalk.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-      <category term="Android Studio" scheme="https://tyrotalk.com/tags/Android-Studio/"/>
     
   </entry>
   
