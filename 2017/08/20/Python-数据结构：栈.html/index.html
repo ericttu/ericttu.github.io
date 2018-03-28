@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Python,算法,机器学习," />
+  <meta name="keywords" content="Python,数据结构," />
 
 
 
@@ -82,18 +82,20 @@
 
 
 
-<meta name="description" content="机器学习中，决策树是一个预测模型。">
-<meta name="keywords" content="Python,算法,机器学习">
+<meta name="description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
+<meta name="keywords" content="Python,数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习算法：决策树">
-<meta property="og:url" content="https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/index.html">
+<meta property="og:title" content="Python-数据结构：栈">
+<meta property="og:url" content="https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="机器学习中，决策树是一个预测模型。">
+<meta property="og:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-09T13:03:35.507Z">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
+<meta property="og:updated_time" content="2018-03-28T05:57:22.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习算法：决策树">
-<meta name="twitter:description" content="机器学习中，决策树是一个预测模型。">
+<meta name="twitter:title" content="Python-数据结构：栈">
+<meta name="twitter:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/"/>
 
 
 
 
 
-  <title>机器学习算法：决策树 | TyroTalk</title>
+  <title>Python-数据结构：栈 | TyroTalk</title>
   
 
 
@@ -299,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -316,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习算法：决策树</h1>
+          <h1 class="post-title" itemprop="name headline">Python-数据结构：栈</h1>
         
 
         <div class="post-meta">
@@ -328,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-02T20:38:11+08:00">
-                2017-11-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-20T10:02:54+08:00">
+                2017-08-20
               </time>
             
 
@@ -351,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -369,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/02/机器学习算法：决策树.html/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/20/Python-数据结构：栈.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/02/机器学习算法：决策树.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/20/Python-数据结构：栈.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,42 +401,92 @@
       
 
       
-        <p>机器学习中，决策树是一个预测模型。<br><a id="more"></a></p>
-<blockquote>
-<p>本文决策树算法使用 <a href="https://zh.wikipedia.org/wiki/ID3%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">ID3 算法</a>。</p>
-</blockquote>
-<h1 id="决策树简介"><a href="#决策树简介" class="headerlink" title="决策树简介"></a>决策树简介</h1><p>决策树代表的是对象属性与对象值之间的一种映射关系。树中每个节点表示某个对象，每个分叉路径代表某个可能的属性值，而每个叶节点则对应从根节点到该叶节点所经历的路径所表示的对象的值。<br>决策树的一个重要任务是为了数据中所蕴含的知识信息，因此决策树可以使用不熟悉的数据集合，并从中提取出一系列规则。</p>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
-<li>优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据。</li>
-<li>缺点：可能会产生过度匹配问题。</li>
-<li>适用数据类型：数值型和标称型。</li>
-</ul>
-<h2 id="决策树的一般流程"><a href="#决策树的一般流程" class="headerlink" title="决策树的一般流程"></a>决策树的一般流程</h2><ol>
-<li>收集数据：可以使用任何方法。</li>
-<li>准备数据：树构造算法只适用于标称型数据，因此数值型数据必须离散化。</li>
-<li>分析数据：可以使用任何方法，构造树完成之后，我们应该检查图形是否符合预期。</li>
-<li>训练算法：构造树的数据结构。</li>
-<li>测试算法：使用经验树计算错误率。</li>
-<li>使用算法：此步骤可以适用于任何监督学习算法，而使用决策树可以更好地理解数据的内在含义。</li>
-</ol>
-<h1 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h1><p>在决策树之前，需要知道什么是信息增益。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在划分数据集之前之后信息发生的变化称为信息增益。其度量方式称为香农熵或者简称为熵。</p>
-<h2 id="计算熵"><a href="#计算熵" class="headerlink" title="计算熵"></a>计算熵</h2><p>熵定义为信息的期望值。</p>
-<ol>
-<li>如果待分类的事务可能划分在多个分类之中，则符号 xi 的信息定义为：<br><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>$$l(x_{i})=-log_{2}p(x_{i})$$ 其中 $$p(x_{i})$$ 是选择该分类的概率。</li>
-<li>计算所有类别所有可能包含的信息的期望值：<br>$$H=-\sum_{i=1}^np(x_{i})log_{2}p(x_{i})$$<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_shannon_ent</span><span class="params">(data_set)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    计算给定数据集的香农熵</span></span><br><span class="line"><span class="string">    :param data_set: 给定数据集</span></span><br><span class="line"><span class="string">    :return shannon_ent: 香农熵</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 数据集中实例的总数</span></span><br><span class="line">    num_entries = len(data_set)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 为所有可能分类创建字典</span></span><br><span class="line">    label_counts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> feat_vec <span class="keyword">in</span> data_set:</span><br><span class="line">        current_label = feat_vec[<span class="number">-1</span>]</span><br><span class="line">        label_counts[current_label] = label_counts.get(current_label, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 求香农熵</span></span><br><span class="line">    shannon_ent = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> label_counts:</span><br><span class="line">        prob = label_counts[key] / num_entries</span><br><span class="line">        shannon_ent -= prob * log(prob, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> shannon_ent</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="实现决策树算法"><a href="#实现决策树算法" class="headerlink" title="实现决策树算法"></a>实现决策树算法</h1><h2 id="划分数据集"><a href="#划分数据集" class="headerlink" title="划分数据集"></a>划分数据集</h2><p>决策树算法除了需要测量信息熵，还需要划分数据集，度量划分数据集的熵，以便判断当前是否正确地划分了数据集。我们将对每个特征划分数据集的结果计算一次信息熵，然后判断按照哪个特征划分数据集是最好的划分方式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_data_set</span><span class="params">(data_set, axis, value)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    按照给定特征划分数据集</span></span><br><span class="line"><span class="string">    :param data_set: 带划分的数据集</span></span><br><span class="line"><span class="string">    :param axis: 划分数据集的特征</span></span><br><span class="line"><span class="string">    :param value: 需要返回的特征的值</span></span><br><span class="line"><span class="string">    :return: 符合特征的数据</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 建立新的 list 对象</span></span><br><span class="line">    ret_data_set = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将符合特征的数据抽取出来</span></span><br><span class="line">    <span class="keyword">for</span> feat_vec <span class="keyword">in</span> data_set:</span><br><span class="line">        <span class="keyword">if</span> feat_vec[axis] == value:</span><br><span class="line">            reduced_feat_vec = feat_vec[: axis]</span><br><span class="line">            reduced_feat_vec.extend(feat_vec[axis + <span class="number">1</span>:])</span><br><span class="line">            ret_data_set.append(reduced_feat_vec)</span><br><span class="line">    <span class="keyword">return</span> ret_data_set</span><br></pre></td></tr></table></figure>
-<h2 id="选择最好的数据集划分方式"><a href="#选择最好的数据集划分方式" class="headerlink" title="选择最好的数据集划分方式"></a>选择最好的数据集划分方式</h2><p>接下来遍历整个数据集，循环计算香农熵和 splitDataSet() 函数，找到最好的特征划分方式。熵计算将会告诉我们如何划分数据集是最好的数据组织方式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">choose_best_feature_to_split</span><span class="params">(data_set)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    选择最好的数据集划分方式</span></span><br><span class="line"><span class="string">    :param data_set: 带划分的数据集</span></span><br><span class="line"><span class="string">    :return best_feature: 最好用于划分数据集的特征</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    num_features = len(data_set[<span class="number">0</span>]) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 原始香农熵</span></span><br><span class="line">    base_entropy = calc_shannon_ent(data_set)</span><br><span class="line">    best_info_gain = <span class="number">0</span></span><br><span class="line">    best_feature = <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历数据集中所有特征</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num_features):</span><br><span class="line">        <span class="comment"># 将数据集中所有第 i 个特征值或可能存在的值写入新 list 中</span></span><br><span class="line">        <span class="comment"># 创建唯一分类标签列表</span></span><br><span class="line">        feat_list = [example[i] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</span><br><span class="line">        unique_vals = set(feat_list)</span><br><span class="line">        new_entropy = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 对每个唯一属性值划分一次数据集</span></span><br><span class="line">        <span class="comment"># 计算每种划分方式的信息熵</span></span><br><span class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> unique_vals:</span><br><span class="line">            sub_data_set = split_data_set(data_set, i, value)</span><br><span class="line">            prob = len(sub_data_set) / len(data_set)</span><br><span class="line">            new_entropy += prob * calc_shannon_ent(sub_data_set)</span><br><span class="line">        info_gain = base_entropy - new_entropy</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算最好的信息增益</span></span><br><span class="line">        <span class="keyword">if</span> info_gain &gt; best_info_gain:</span><br><span class="line">            best_info_gain = info_gain</span><br><span class="line">            best_feature = i</span><br><span class="line">    <span class="keyword">return</span> best_feature</span><br></pre></td></tr></table></figure>
-<h2 id="构建决策树"><a href="#构建决策树" class="headerlink" title="构建决策树"></a>构建决策树</h2><p>使用递归来构建决策树，每次递归都找出一个最好的数据集划分方式作为一个节点，再向下划分数据集。当程序遍历完所有划分数据集的属性，或者每个分支下的所有实例都具有相同的分类，递归结束。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">majority_cnt</span><span class="params">(class_list)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    找出出现最多次数的类别</span></span><br><span class="line"><span class="string">    :param class_list:</span></span><br><span class="line"><span class="string">    :return sorted_class_count[0][0]: 出现最多次数的类别</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    class_count = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> vote <span class="keyword">in</span> class_list:</span><br><span class="line">        class_count[vote] = class_count.get(vote, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(<span class="number">1</span>), reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sorted_class_count[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_tree</span><span class="params">(data_set, labels)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    创建树</span></span><br><span class="line"><span class="string">    :param data_set: 数据集</span></span><br><span class="line"><span class="string">    :param labels: 标签列表</span></span><br><span class="line"><span class="string">    :return my_tree: 决策树</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 包含数据集的所有类标签</span></span><br><span class="line">    class_list = [example[<span class="number">-1</span>] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类别完全相同则停止继续划分</span></span><br><span class="line">    <span class="keyword">if</span> class_list.count(class_list[<span class="number">0</span>]) == len(class_list):</span><br><span class="line">        <span class="keyword">return</span> class_list[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历完所有特征时返回出现次数最多的类别</span></span><br><span class="line">    <span class="keyword">if</span> len(data_set[<span class="number">0</span>]) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> majority_cnt(class_list)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 当前数据集中的最好特征</span></span><br><span class="line">    best_feat = choose_best_feature_to_split(data_set)</span><br><span class="line"></span><br><span class="line">    best_feat_label = labels[best_feat]</span><br><span class="line">    my_tree = &#123;best_feat_label: &#123;&#125;&#125;</span><br><span class="line">    <span class="keyword">del</span>(labels[best_feat])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 得到列表包含的所有属性值</span></span><br><span class="line">    feat_values = [example[best_feat] <span class="keyword">for</span> example <span class="keyword">in</span> data_set]</span><br><span class="line">    unique_vals = set(feat_values)</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> unique_vals:</span><br><span class="line">        sub_labels = labels[:]</span><br><span class="line">        my_tree[best_feat_label][value] = \</span><br><span class="line">            create_tree(split_data_set(data_set, best_feat, value), sub_labels)</span><br><span class="line">    <span class="keyword">return</span> my_tree</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
-<li><a href="http://www.ituring.com.cn/book/1021" target="_blank" rel="noopener">机器学习实战</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%86%B3%E7%AD%96%E6%A0%91" target="_blank" rel="noopener">决策树|维基百科</a></li>
+        <p>栈是线性的集合，遵从后进先出（LIFO）的协议。</p>
+<a id="more"></a>
+<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
+<p>栈中进和出的一端称为顶（top），放入栈顶和删除栈顶的操作分别为压入（push）和弹出（pop）。</p>
+<h1 id="栈的主要方法"><a href="#栈的主要方法" class="headerlink" title="栈的主要方法"></a>栈的主要方法</h1><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>__len__(s)</td>
+<td>返回栈中项的数目</td>
+</tr>
+<tr>
+<td>__str__(s)</td>
+<td>返回栈的字符串表示</td>
+</tr>
+<tr>
+<td>__iter__()</td>
+<td>从底部到顶部依次访问栈中的每一项</td>
+</tr>
+<tr>
+<td>__add__(s)</td>
+<td>将两个栈合并</td>
+</tr>
+<tr>
+<td>__eq__(s)</td>
+<td>如何两个栈对应位置的项相等，两个栈相等</td>
+</tr>
+<tr>
+<td>is_empty()</td>
+<td>栈为空返回 False，否则返回 True</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>将栈清空</td>
+</tr>
+<tr>
+<td>peak()</td>
+<td>返回栈顶</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>删除栈顶并返回该元素</td>
+</tr>
+<tr>
+<td>push(item)</td>
+<td>将元素压入栈顶</td>
+</tr>
+</tbody>
+</table>
+<h1 id="栈的单链表实现"><a href="#栈的单链表实现" class="headerlink" title="栈的单链表实现"></a>栈的单链表实现</h1><p>借助于单链表结构，可以实现一个简单的栈结构。</p>
+<p>节点类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data, later=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.later = later  <span class="comment"># 指向下一个节点</span></span><br></pre></td></tr></table></figure>
+<p>定义栈类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.head = <span class="keyword">None</span></span><br><span class="line">        self.size = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>在 __init__() 中定义一个 size 用于表示当前栈中项的个数。</p>
+<h2 id="len-s"><a href="#len-s" class="headerlink" title="__len__(s)"></a>__len__(s)</h2><p>栈类已经实现了一个实例变量 size ，只需返回这个实例变量即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size</span><br></pre></td></tr></table></figure>
+<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回栈的字符串表示，将栈中个项的值封装成一个列表形式返回，栈顶项在前。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'['</span> + <span class="string">', '</span>.join(map(str, self)) + <span class="string">']'</span></span><br></pre></td></tr></table></figure>
+<h2 id="iter"><a href="#iter" class="headerlink" title="__iter__()"></a>__iter__()</h2><p>从顶部到底部，依次访问各项，返回各项的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">    probe = self.head</span><br><span class="line">    <span class="keyword">while</span> probe <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">yield</span> probe.data</span><br><span class="line">        probe = probe.later</span><br></pre></td></tr></table></figure>
+<h1 id="add-s"><a href="#add-s" class="headerlink" title="__add__(s)"></a>__add__(s)</h1><p>两个栈相加，依次对栈 s 进行 <code>pop()</code> 的项再 <code>push()</code>到另一个项中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> other:</span><br><span class="line">        self.push(item)</span><br><span class="line">    <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
+<h2 id="eq-s"><a href="#eq-s" class="headerlink" title="__eq__(s)"></a>__eq__(s)</h2><p>与 <code>==</code> 相同，比较两个栈中项是否相等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self <span class="keyword">is</span> other:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">if</span> type(self) != type(other) <span class="keyword">or</span> len(self) != len(other):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    other_iter = iter(other)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> self:</span><br><span class="line">        <span class="keyword">if</span> item != next(other_iter):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="is-empty"><a href="#is-empty" class="headerlink" title="is_empty()"></a>is_empty()</h2><p>判断栈是否为空。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h2><p>将栈全部清空</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""将栈清空"""</span></span><br><span class="line">    self.head = <span class="keyword">None</span></span><br><span class="line">    self.size = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="peak"><a href="#peak" class="headerlink" title="peak()"></a>peak()</h2><p>返回栈顶项但不删除。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">peak</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""返回栈顶"""</span></span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        <span class="keyword">raise</span> KeyError(<span class="string">"当前栈为空！"</span>)</span><br><span class="line">    <span class="keyword">return</span> self.head.data</span><br></pre></td></tr></table></figure>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2><p>返回栈顶项并删除。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""删除栈顶并返回该元素"""</span></span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        <span class="keyword">raise</span> KeyError(<span class="string">"当前栈为空！"</span>)</span><br><span class="line">    remove_item = self.head.data</span><br><span class="line">    self.head = self.head.later</span><br><span class="line">    self.size -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> remove_item</span><br></pre></td></tr></table></figure>
+<h2 id="push-item"><a href="#push-item" class="headerlink" title="push(item)"></a>push(item)</h2><p>将一个新的项压入到栈顶。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    <span class="string">"""将元素压入栈顶"""</span></span><br><span class="line">    self.head = Node(item, self.head)</span><br><span class="line">    self.size += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="实例化栈"><a href="#实例化栈" class="headerlink" title="实例化栈"></a>实例化栈</h1><p>定义好一个栈类后，将其实例化有两种方式：无参和传递一个列表参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linked_stack1 = LinkedStack()</span><br><span class="line">linked_stack = LinkedStack([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<h1 id="栈的三种应用"><a href="#栈的三种应用" class="headerlink" title="栈的三种应用"></a>栈的三种应用</h1><ol>
+<li>计算算术表达式；</li>
+<li>实现回溯算法；</li>
+<li>内存管理。</li>
 </ol>
 
       
@@ -485,7 +537,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/" title="机器学习算法：决策树">https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/</a>
+    <a href="https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/" title="Python-数据结构：栈">https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -502,9 +554,7 @@
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
         </div>
       
@@ -517,8 +567,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/25/机器学习算法：k-近邻算法.html/" rel="next" title="机器学习算法：k-近邻算法">
-                <i class="fa fa-chevron-left"></i> 机器学习算法：k-近邻算法
+              <a href="/2017/08/15/Python-数据结构：单链表.html/" rel="next" title="Python 数据结构：单链表">
+                <i class="fa fa-chevron-left"></i> Python 数据结构：单链表
               </a>
             
           </div>
@@ -527,8 +577,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/15/使用-reuqests-爬取豆瓣数据书籍-URL.html/" rel="prev" title="使用 reuqests 爬取豆瓣数据书籍 URL">
-                使用 reuqests 爬取豆瓣数据书籍 URL <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/24/算法：堆排序.html/" rel="prev" title="算法：堆排序">
+                算法：堆排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -716,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树简介"><span class="nav-number">1.</span> <span class="nav-text">决策树简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">1.1.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树的一般流程"><span class="nav-number">1.2.</span> <span class="nav-text">决策树的一般流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息增益"><span class="nav-number">2.</span> <span class="nav-text">信息增益</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算熵"><span class="nav-number">2.2.</span> <span class="nav-text">计算熵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">2.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现决策树算法"><span class="nav-number">3.</span> <span class="nav-text">实现决策树算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#划分数据集"><span class="nav-number">3.1.</span> <span class="nav-text">划分数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择最好的数据集划分方式"><span class="nav-number">3.2.</span> <span class="nav-text">选择最好的数据集划分方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建决策树"><span class="nav-number">3.3.</span> <span class="nav-text">构建决策树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的主要方法"><span class="nav-number">1.</span> <span class="nav-text">栈的主要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的单链表实现"><span class="nav-number">2.</span> <span class="nav-text">栈的单链表实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#len-s"><span class="nav-number">2.1.</span> <span class="nav-text">__len__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-s"><span class="nav-number">2.2.</span> <span class="nav-text">__str__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iter"><span class="nav-number">2.3.</span> <span class="nav-text">__iter__()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#add-s"><span class="nav-number">3.</span> <span class="nav-text">__add__(s)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eq-s"><span class="nav-number">3.1.</span> <span class="nav-text">__eq__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-empty"><span class="nav-number">3.2.</span> <span class="nav-text">is_empty()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clear"><span class="nav-number">3.3.</span> <span class="nav-text">clear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peak"><span class="nav-number">3.4.</span> <span class="nav-text">peak()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">3.5.</span> <span class="nav-text">pop()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-item"><span class="nav-number">3.6.</span> <span class="nav-text">push(item)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例化栈"><span class="nav-number">4.</span> <span class="nav-text">实例化栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的三种应用"><span class="nav-number">5.</span> <span class="nav-text">栈的三种应用</span></a></li></ol></div>
             
 
           </div>
@@ -873,9 +923,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/';
-          this.page.identifier = '2017/11/02/机器学习算法：决策树.html/';
-          this.page.title = '机器学习算法：决策树';
+          this.page.url = 'https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/';
+          this.page.identifier = '2017/08/20/Python-数据结构：栈.html/';
+          this.page.title = 'Python-数据结构：栈';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';

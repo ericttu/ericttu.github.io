@@ -180,10 +180,10 @@
   
   <entry>
     <title>算法：堆排序</title>
-    <link href="https://tyrotalk.com/2017/08/17/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%A0%86%E6%8E%92%E5%BA%8F.html/"/>
-    <id>https://tyrotalk.com/2017/08/17/算法：堆排序.html/</id>
-    <published>2017-08-17T01:40:59.000Z</published>
-    <updated>2018-03-24T01:39:15.780Z</updated>
+    <link href="https://tyrotalk.com/2017/08/24/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%A0%86%E6%8E%92%E5%BA%8F.html/"/>
+    <id>https://tyrotalk.com/2017/08/24/算法：堆排序.html/</id>
+    <published>2017-08-24T01:40:59.000Z</published>
+    <updated>2018-03-28T02:09:27.409Z</updated>
     
     <summary type="html">
     
@@ -199,6 +199,28 @@
       <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-数据结构：栈</title>
+    <link href="https://tyrotalk.com/2017/08/20/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88.html/"/>
+    <id>https://tyrotalk.com/2017/08/20/Python-数据结构：栈.html/</id>
+    <published>2017-08-20T02:02:54.000Z</published>
+    <updated>2018-03-28T05:57:22.511Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;栈是线性的集合，遵从后进先出（LIFO）的协议。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -422,26 +444,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;添加复选框&quot;&gt;&lt;a href=&quot;#添加复选框&quot; class=&quot;headerlink&quot; title=&quot;添加复选框&quot;&gt;&lt;/a&gt;添加复选框&lt;/h1&gt;&lt;p&gt;添加布局文件:&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;CheckBox&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@+id/_checkbox&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创建新的Activity</title>
-    <link href="https://tyrotalk.com/2017/05/15/%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84Activity.html/"/>
-    <id>https://tyrotalk.com/2017/05/15/创建新的Activity.html/</id>
-    <published>2017-05-15T00:52:21.000Z</published>
-    <updated>2017-05-15T14:11:27.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;p&gt;定义 &lt;em&gt;activity_main.xml&lt;/em&gt; 、&lt;em&gt;activity_one.cml&lt;/em&gt; 和与之对应的 &lt;em&gt;MainActivity.class&lt;/em&gt; 、&lt;em&gt;OneActivity.class&lt;/em&gt; 文件。&lt;br&gt;   &lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/创建新的Activity/定义.png&quot;&gt;&lt;/p&gt;
     
     </summary>
     
