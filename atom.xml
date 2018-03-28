@@ -43,15 +43,11 @@
     <link href="https://tyrotalk.com/2017/11/08/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
     <id>https://tyrotalk.com/2017/11/08/初识-Requests-库.html/</id>
     <published>2017-11-08T07:06:21.000Z</published>
-    <updated>2018-03-28T07:10:34.734Z</updated>
+    <updated>2018-03-28T09:21:48.520Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Requests 库 是一个处理复杂 HTTP 请求、cookie、header 等内容的 Python 第三方库。&lt;/p&gt;
-
-      
+      &lt;p&gt;Requests 库是一个处理复杂 HTTP 请求、cookie、header 等内容的 Python 第三方库。&lt;/p&gt;
     
     </summary>
     
