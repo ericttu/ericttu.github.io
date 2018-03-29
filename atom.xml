@@ -43,7 +43,7 @@
     <link href="https://tyrotalk.com/2017/11/08/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
     <id>https://tyrotalk.com/2017/11/08/初识-Requests-库.html/</id>
     <published>2017-11-08T07:06:21.000Z</published>
-    <updated>2018-03-28T09:21:48.520Z</updated>
+    <updated>2018-03-29T07:22:13.878Z</updated>
     
     <summary type="html">
     
@@ -56,9 +56,9 @@
     
       <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
     
-      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
+    
+      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
