@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Python,数据结构,队列," />
 
 
 
@@ -82,18 +82,20 @@
 
 
 
-<meta name="description" content="在 Python 中，字典是一系列键 — 值（key - value）对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。">
-<meta name="keywords" content="Python">
+<meta name="description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
+<meta name="keywords" content="Python,数据结构,队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 基础：字典">
-<meta property="og:url" content="https://tyrotalk.com/2017/07/01/Python-基础：字典.html/index.html">
+<meta property="og:title" content="Python 数据结构：队列">
+<meta property="og:url" content="https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="在 Python 中，字典是一系列键 — 值（key - value）对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。">
+<meta property="og:description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-24T01:28:07.917Z">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
+<meta property="og:updated_time" content="2018-03-31T00:51:32.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 基础：字典">
-<meta name="twitter:description" content="在 Python 中，字典是一系列键 — 值（key - value）对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。">
+<meta name="twitter:title" content="Python 数据结构：队列">
+<meta name="twitter:description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/07/01/Python-基础：字典.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/"/>
 
 
 
 
 
-  <title>Python 基础：字典 | TyroTalk</title>
+  <title>Python 数据结构：队列 | TyroTalk</title>
   
 
 
@@ -299,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/07/01/Python-基础：字典.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -316,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 基础：字典</h1>
+          <h1 class="post-title" itemprop="name headline">Python 数据结构：队列</h1>
         
 
         <div class="post-meta">
@@ -328,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-01T10:00:03+08:00">
-                2017-07-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-31T08:46:52+08:00">
+                2018-03-31
               </time>
             
 
@@ -351,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 基础</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -369,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/01/Python-基础：字典.html/#comments" itemprop="discussionUrl">
+                <a href="/2018/03/31/Python-数据结构：队列.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/01/Python-基础：字典.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/31/Python-数据结构：队列.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,63 +401,9 @@
       
 
       
-        <p>在 Python 中，字典是一系列<strong>键 — 值（key - value）</strong>对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。</p>
+        <p>队列是线性的集合，遵从先进先出（FIFO）的协议。</p>
 <a id="more"></a>
-<blockquote>
-<p><strong>全文采用 Python3 版本</strong></p>
-</blockquote>
-<h1 id="字典的特点"><a href="#字典的特点" class="headerlink" title="字典的特点"></a>字典的特点</h1><ol>
-<li>查找速度快；</li>
-<li>存储的 <strong>key - value</strong> 对是没有顺序的；</li>
-<li>作为 <strong>key</strong> 的元素必须不可变。</li>
-</ol>
-<h1 id="更改字典的键-—-值对"><a href="#更改字典的键-—-值对" class="headerlink" title="更改字典的键 — 值对"></a>更改字典的<strong>键 — 值</strong>对</h1><ol>
-<li><p>添加<strong>键 — 值</strong>对<br> 添加<strong>键 — 值</strong>对，可依次指定字典名、用方括号括起的键和相关联的值。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>language[<span class="string">'three'</span>] = <span class="string">'JavaScript'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改字典的值<br> 修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>language[<span class="string">'three'</span>] = <span class="string">'C++'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'C++'</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除<strong>键 — 值</strong>对<br> 可使用 <code>del</code> 语句彻底删除<strong>键 — 值</strong>对</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> language[<span class="string">'three'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h1><ol>
-<li><p>遍历所有<strong>键 — 值</strong>对<br> 可使用 <code>for</code> 循环遍历字典。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> key, value <span class="keyword">in</span> language.items():</span><br><span class="line">        print(key + <span class="string">": "</span> + value)</span><br><span class="line">one: Python</span><br><span class="line">two: Java</span><br><span class="line">three: JavaScript</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>items()</code> 方法返回一个键—值对列表。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt;&gt;&gt; key_value = []</span><br><span class="line">&gt; &gt;&gt;&gt; <span class="keyword">for</span> d <span class="keyword">in</span> language:</span><br><span class="line">&gt;         key_value.append(d)</span><br><span class="line">&gt; &gt;&gt;&gt; print(key_value)</span><br><span class="line">&gt; [(<span class="string">'one'</span>, <span class="string">'Python'</span>), (<span class="string">'two'</span>, <span class="string">'Java'</span>), (<span class="string">'three'</span>, <span class="string">'JavaScript'</span>)]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>遍历字典中的键或值<br> 可使用 <code>key()</code> 方法遍历字典中的键。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> dict_key <span class="keyword">in</span> language.key():</span><br><span class="line">        print(dict_key)</span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>.key()</code> 可省略</p>
-</blockquote>
-<p> 可使用 <code>values()</code> 方法遍历字典中的值</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> dict_value <span class="keyword">in</span> language.values():</span><br><span class="line">        print(dict_value)</span><br><span class="line">Python</span><br><span class="line">Java</span><br><span class="line">JavaScript</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按顺序遍历遍历字典中的键或值<br> 要以特定的顺序返回元素，可在for循环中使用 <code>sorted()</code> 函数进行排序。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'JavaScript'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> dict_key <span class="keyword">in</span> sorted(language.key()):</span><br><span class="line">        print(dict_key)</span><br><span class="line">one</span><br><span class="line">three</span><br><span class="line">two</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> dict_value <span class="keyword">in</span> sorted(language.values()):</span><br><span class="line">        print(dict_value)</span><br><span class="line">Java</span><br><span class="line">JavaScript</span><br><span class="line">Python</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>set（集合）<br> 集合类似于列表，但每个元素都必须是独一无二的。可用来去除重复项。</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'Python'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(language)</span><br><span class="line">&#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: <span class="string">'Java'</span>, <span class="string">'three'</span>: <span class="string">'Python'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> dict_value <span class="keyword">in</span> set(language.values()):</span><br><span class="line">        print(dict_value)</span><br><span class="line">Java</span><br><span class="line">Python</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h1><p>将一系列字典存储在列表中，或将列表作为值存储在字典中，称为嵌套。</p>
-<ol>
-<li><p>列表中存储字典</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language_1 = &#123;<span class="string">'name'</span>: <span class="string">'Ted'</span>, <span class="string">'favourite_language'</span>: <span class="string">'Python'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>language_2 = &#123;<span class="string">'name'</span>: <span class="string">'Tom'</span>, <span class="string">'favourite_language'</span>: <span class="string">'Java'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = [language_1, language_2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字典中存储列表</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>, <span class="string">'two'</span>: [<span class="string">'Java'</span>, <span class="string">'JavaScript'</span>]&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字典中存储字典</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>language = &#123;</span><br><span class="line">        language_1: &#123;<span class="string">'one'</span>: <span class="string">'Python'</span>&#125;,</span><br><span class="line">        language_2: &#123;<span class="string">'two'</span>: <span class="string">'Java'</span>&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
       
     </div>
     
@@ -504,7 +452,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/07/01/Python-基础：字典.html/" title="Python 基础：字典">https://tyrotalk.com/2017/07/01/Python-基础：字典.html/</a>
+    <a href="https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/" title="Python 数据结构：队列">https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -521,6 +469,10 @@
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+            <a href="/tags/队列/" rel="tag"><i class="fa fa-tag"></i> 队列</a>
+          
         </div>
       
 
@@ -532,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/27/Python-基础：元组和切片.html/" rel="next" title="Python 基础：元组和切片">
-                <i class="fa fa-chevron-left"></i> Python 基础：元组和切片
+              <a href="/2017/11/15/使用-reuqests-爬取豆瓣数据书籍-URL.html/" rel="next" title="使用 reuqests 爬取豆瓣数据书籍 URL">
+                <i class="fa fa-chevron-left"></i> 使用 reuqests 爬取豆瓣数据书籍 URL
               </a>
             
           </div>
@@ -541,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/08/Python-基础：函数.html/" rel="prev" title="Python 基础：函数">
-                Python 基础：函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,17 +560,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -721,22 +660,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字典的特点"><span class="nav-number">1.</span> <span class="nav-text">字典的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改字典的键-—-值对"><span class="nav-number">2.</span> <span class="nav-text">更改字典的键 — 值对</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历字典"><span class="nav-number">3.</span> <span class="nav-text">遍历字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套"><span class="nav-number">4.</span> <span class="nav-text">嵌套</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -888,9 +811,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/07/01/Python-基础：字典.html/';
-          this.page.identifier = '2017/07/01/Python-基础：字典.html/';
-          this.page.title = 'Python 基础：字典';
+          this.page.url = 'https://tyrotalk.com/2018/03/31/Python-数据结构：队列.html/';
+          this.page.identifier = '2018/03/31/Python-数据结构：队列.html/';
+          this.page.title = 'Python 数据结构：队列';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';
