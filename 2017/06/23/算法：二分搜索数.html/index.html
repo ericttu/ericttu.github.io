@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Osot-0un7MRM2p2kZp8LoqqHCGXTyJnBsaUQyvcPMAA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Python,算法,Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TyroTalk" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="二分查找法和二分搜索树。">
+<meta name="keywords" content="Python,算法,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法：二分搜索树">
+<meta property="og:url" content="https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/index.html">
+<meta property="og:site_name" content="TyroTalk">
+<meta property="og:description" content="二分查找法和二分搜索树。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/算法（四）：二分搜索树/Binary_search.png">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/算法（四）：二分搜索树/binary_search_tree.png">
+<meta property="og:updated_time" content="2018-04-01T02:26:22.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法：二分搜索树">
+<meta name="twitter:description" content="二分查找法和二分搜索树。">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/算法（四）：二分搜索树/Binary_search.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/"/>
+
+
+
+
+
+  <title>算法：二分搜索树 | TyroTalk</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98076220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TyroTalk</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TuTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TyroTalk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法：二分搜索树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T10:49:06+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/23/算法：二分搜索数.html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/23/算法：二分搜索数.html/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>二分查找法和二分搜索树。</p>
+<a id="more"></a>
+<h1 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h1><p>二分查找法在有序序列中查找某一特定元素。查找过程从序列的中间元素开始，如果中间元素正好是要查找的元素，则查找过程结束；如果某一特定元素大于中间元素，则在序列大于中间元素的那一半中查找；如果某一特定元素小于中间元素，则在序列小于中间元素的那一半中查找。而且跟开始一样从中间元素开始比较。时间复杂度为 O(logn)。<br><img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/算法（四）：二分搜索树/Binary_search.png"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>在有序序列 lst 中，查找 target，如果找到 target，返回相应的索引 index，否则返回 -1。</p>
+<p>###Python 实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(lst, target)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    非递归方法</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    l, r = <span class="number">0</span>, len(lst) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">        <span class="comment"># 防止整形溢出，不使用 mid = (l + r) // 2</span></span><br><span class="line">        mid = l + (r - l) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> lst[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">if</span> lst[mid] &gt; target:</span><br><span class="line">            r = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find2</span><span class="params">(lst, target, l, r)</span>:</span></span><br><span class="line">    <span class="string">"""递归方法"""</span></span><br><span class="line">    <span class="keyword">if</span> l &gt; r:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    mid = l + (r - l) // <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> lst[mid] == target:</span><br><span class="line">        <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">elif</span> lst[mid] &gt; target:</span><br><span class="line">        <span class="keyword">return</span> find2(lst, target, l, mid - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> find2(lst, target, mid + <span class="number">1</span>, r)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Java-实现"><a href="#Java-实现" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非递归方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(Comparable[] arr, Comparable target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> r = arr.length;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="comment">// 防止整形溢出，不使用 int mid = (l + r) / 2</span></span><br><span class="line">        <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid].compareTo(target) == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid].compareTo(target) &gt; <span class="number">0</span>)</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 递归方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">find2</span><span class="params">(Comparable[] arr, Comparable target, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt; r) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (arr[mid].compareTo(target) == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid].compareTo(target) &gt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> find2(arr, target, l, mid - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> find2(arr, target, mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="二分搜索树"><a href="#二分搜索树" class="headerlink" title="二分搜索树"></a>二分搜索树</h1><p>二分搜索树是一颗二叉树，其中每一个结点都含有一个键以及相关联的的值，且每个结点的键都大于其左子树中任意结点的键、小于其右子树中任意结点的键。<br><img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/算法（四）：二分搜索树/binary_search_tree.png"></p>
+<h2 id="定义二分搜索树的基本数据结构"><a href="#定义二分搜索树的基本数据结构" class="headerlink" title="定义二分搜索树的基本数据结构"></a>定义二分搜索树的基本数据结构</h2><p>本文中定义的二分搜索树包含一下内容：</p>
+<ol>
+<li>结点表示；</li>
+<li>查找；</li>
+<li>遍历</li>
+<li>插入；</li>
+<li>最大键和最小键；</li>
+<li>删除。</li>
+</ol>
+<h2 id="结点表示"><a href="#结点表示" class="headerlink" title="结点表示"></a>结点表示</h2><p>用 <code>BST</code> 类表示二分搜索树算法，在 <code>BST</code> 中定义一个 <code>Node</code> 类表示二分搜索树上一个结点。每个节点都包含一个键、一个值、一条左链接、一条右链接和一个结点计数器。其中结点计数器 N 表示以该结点为根的子树的结点总数。</p>
+<h3 id="Python-实现"><a href="#Python-实现" class="headerlink" title="Python 实现"></a>Python 实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">        <span class="string">"""二分搜索树上一个结点"""</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key=None, val=None, n=None)</span>:</span></span><br><span class="line">            self.key = key</span><br><span class="line">            self.val = val</span><br><span class="line">            self.left = <span class="keyword">None</span></span><br><span class="line">            self.right = <span class="keyword">None</span></span><br><span class="line">            self.N = n  <span class="comment"># 该结点为根结点的子树中结点的个数（含该结点）</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""根结点"""</span></span><br><span class="line">        self.__root = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<h3 id="Java-实现-1"><a href="#Java-实现-1" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BST</span>&lt;<span class="title">Key</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Key</span>&gt;, <span class="title">Value</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">// 二分搜索树的根结点</span></span><br><span class="line">    <span class="keyword">private</span> Node root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Key key; <span class="comment">// 键</span></span><br><span class="line">        <span class="keyword">private</span> Value val; <span class="comment">// 值</span></span><br><span class="line">        <span class="keyword">private</span> Node left, right; <span class="comment">// 指向子结点的链接</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> N; <span class="comment">// 该结点为根结点的子树中结点的个数（含该结点）</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Node</span><span class="params">(Key key, Value val, <span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.key = key;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.N = N;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>在二分搜索树中查找一个键，如果二分搜索树中含有该键的结点，就返回该键所对应的值，否则返回空。可用递归实现。</p>
+<h3 id="Python-实现-1"><a href="#Python-实现-1" class="headerlink" title="Python 实现"></a>Python 实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, key)</span>:</span></span><br><span class="line">    <span class="string">"""在二分搜索树中搜索键 key 所对应的值。如果这个值不存在, 则返回 None"""</span></span><br><span class="line">    <span class="keyword">return</span> self.__search(self.__root, key)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__search</span><span class="params">(self, node, key)</span>:</span></span><br><span class="line">    <span class="string">"""在以 node 为根结点的子树中查找并返回 key 所对应的值如果找不到返回 None"""</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">if</span> node.key == key:</span><br><span class="line">        <span class="keyword">return</span> node.val</span><br><span class="line">    <span class="keyword">elif</span> node.key &lt; key:</span><br><span class="line">        <span class="keyword">return</span> self.__search(node.right, key)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> self.__search(node.left, key)</span><br></pre></td></tr></table></figure>
+<h3 id="Java-实现-2"><a href="#Java-实现-2" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在二分搜索树中搜索键 key 所对应的值。如果这个值不存在, 则返回 null</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Value <span class="title">search</span><span class="params">(Key key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> search(root, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在以 node 为根结点的子树中查找并返回 key 所对应的值</span></span><br><span class="line"><span class="comment">// 如果找不到返回 null</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Value <span class="title">search</span><span class="params">(Node node, Key key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> cmp = node.key.compareTo(key);</span><br><span class="line">    <span class="keyword">if</span> (cmp == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> node.val;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> search(node.right, key);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> search(node.left, key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>遍历二分搜索树时使用深度优先遍历和广度优先遍历。</p>
+<h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>首先以一个未被访问过的结点作为起始结点，沿一条边向下遍历到末端，然后向上返回一个结点，再沿着另一条进行同样的遍历，直到所有的顶点都被访问过为止。</p>
+<p>深度优先遍历又包括前中后序遍历：</p>
+<ol>
+<li>前序遍历；先访问结点本身，再遍历左结点，最后遍历右结点。</li>
+<li>中序遍历；先遍历左结点，再访问结点本身，最后遍历右结点。</li>
+<li>后序遍历；先遍历左结点，再遍历右结点，最后访问结点本身。</li>
+</ol>
+<h4 id="Python-实现-2"><a href="#Python-实现-2" class="headerlink" title="Python 实现"></a>Python 实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__pre_order</span><span class="params">(self, node)</span>:</span></span><br><span class="line">	<span class="string">"""</span></span><br><span class="line"><span class="string">	对以 node 为根的二分搜索树进行基于递归的前序遍历</span></span><br><span class="line"><span class="string">	"""</span></span><br><span class="line">    <span class="keyword">if</span> node:</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.__pre_order(node.left)</span><br><span class="line">        self.__pre_order(node.right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__in_order</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    对以 node 为根的二分搜索树进行基于递归的中序遍历</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node:</span><br><span class="line">        self.__in_order(node.left)</span><br><span class="line">        print(node.val)</span><br><span class="line">        self.__in_order(node.right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__post_order</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    对以 node 为根的二分搜索树进行基于递归的后序遍历</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node:</span><br><span class="line">        self.__post_order(node.left)</span><br><span class="line">        self.__post_order(node.right)</span><br><span class="line">        print(node.val)</span><br></pre></td></tr></table></figure>
+<h4 id="Java-实现-3"><a href="#Java-实现-3" class="headerlink" title="Java 实现"></a>Java 实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对以 node 为根的二分搜索树进行基于递归的前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</span><br><span class="line">        System.out.println(node.key);</span><br><span class="line">        preOrder(node.left);</span><br><span class="line">        preOrder(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对以 node 为根的二分搜索树进行基于递归的中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</span><br><span class="line">        inOrder(node.left);</span><br><span class="line">        System.out.println(node.key);</span><br><span class="line">        inOrder(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对以 node 为根的二分搜索树进行基于递归的后序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</span><br><span class="line">        postOrder(node.left);</span><br><span class="line">        postOrder(node.right);</span><br><span class="line">        System.out.println(node.key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><p>从根节点开始，沿着树的宽度遍历树的结点。期间所有结点都会被加进一个先进先出的队列中。Python 使用 <code>queue</code>，Java 使用 <code>LinkedList</code>。</p>
+<h4 id="Python-实现-3"><a href="#Python-实现-3" class="headerlink" title="Python 实现"></a>Python 实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">level_order</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""广度优先遍历"""</span></span><br><span class="line">    q = queue.Queue()</span><br><span class="line">    q.put(self.__root)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">        node = q.get()</span><br><span class="line">        print(node.key)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">        	q.put(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            q.put(node.right)</span><br></pre></td></tr></table></figure>
+<h4 id="Java-实现-4"><a href="#Java-实现-4" class="headerlink" title="Java 实现"></a>Java 实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 广度优先遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 使用 LinkedList 作为辅助队列</span></span><br><span class="line">    LinkedList&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    q.add(root);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        Node node = q.remove();</span><br><span class="line">        System.out.println(node.key);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)</span><br><span class="line">            q.add(node.left);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)</span><br><span class="line">            q.add(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>二分搜索树的插入和查找类似：如果树是空的，就返回一个含有该键值对的新结点；如果被查找的键小于根结点的键，就继续在左子树中插入该键，否则在右子树中插入该键。并通过递归来实现二分搜索树的插入。</p>
+<h3 id="Python-实现-4"><a href="#Python-实现-4" class="headerlink" title="Python 实现"></a>Python 实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, key, val)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    向二分搜索树中插入一个新的(key, Value)数据对</span></span><br><span class="line"><span class="string">    查找 key，找到则更新它的值，否则创建一个新的结点</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    self.__root = self.__insert(self.__root, key, val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__insert</span><span class="params">(self, node, key, val)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    如果 key 存在于 node 为根结点的子树中就更新它的值</span></span><br><span class="line"><span class="string">    不存在就将 key-value 键值对作为新结点插入到子树中</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> BST.Node(key, val, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> node.key == key:</span><br><span class="line">        node.val = val</span><br><span class="line">    <span class="keyword">if</span> node.key &lt; key:</span><br><span class="line">        node.right = self.__insert(node.right, key, val)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        node.left = self.__insert(node.left, key, val)</span><br><span class="line">    node.N = self.__size(node.left) + self.__size(node.right) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
+<h3 id="Java-实现-5"><a href="#Java-实现-5" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向二分搜索树中插入一个新的(key, Value)数据对</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Key key, Value val)</span> </span>&#123;</span><br><span class="line">    root = insert(root, key, val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果 key 存在于 node 为根结点的子树中就更新它的值</span></span><br><span class="line"><span class="comment">// 不存在就将 key-value 键值对作为新结点插入到子树中</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">insert</span><span class="params">(Node node, Key key, Value val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Node(key, val, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> cmp = node.key.compareTo(key);</span><br><span class="line">    <span class="keyword">if</span> (cmp == <span class="number">0</span>)</span><br><span class="line">        node.val = val;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>)</span><br><span class="line">        node.right = insert(node.right, key, val);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        node.left = insert(node.left, key, val);</span><br><span class="line">    node.N = size(node.left) + size(node.right) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最大键和最小键"><a href="#最大键和最小键" class="headerlink" title="最大键和最小键"></a>最大键和最小键</h2><p>如果根结点的左子树为空，那么二分搜索树的最小键就是根结点，否则最小键就是左子树中的最小键。<br>如果根结点的右子树为空，那么二分搜索树的最大键就是根结点，否则最大键就是右子树中的最大键。</p>
+<h3 id="Python-实现-5"><a href="#Python-实现-5" class="headerlink" title="Python 实现"></a>Python 实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_min</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""返回二分搜索树的最小的键值"""</span></span><br><span class="line">    min_node = self.__get_min(self.__root)</span><br><span class="line">    <span class="keyword">return</span> min_node.key</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_max</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""返回二分搜索树的最大的键值"""</span></span><br><span class="line">    max_node = self.__get_max(self.__root)</span><br><span class="line">    <span class="keyword">return</span> max_node.key</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__get_min</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""返回以 node 为根的二分搜索树的最小键值所在的结点"""</span></span><br><span class="line">    <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="keyword">return</span> self.__get_min(node.left)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__get_max</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""返回以 node 为根的二分搜索树的最大键值所在的结点"""</span></span><br><span class="line">    <span class="keyword">if</span> node.right <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="keyword">return</span> self.__get_max(node.right)</span><br></pre></td></tr></table></figure>
+<h3 id="Java-实现-6"><a href="#Java-实现-6" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回二分搜索树的最小的键值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Key <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Node minNode = getMin(root);</span><br><span class="line">    <span class="keyword">return</span> minNode.key;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回二分搜索树的最大的键值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Key <span class="title">getMax</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Node maxNode = getMax(root);</span><br><span class="line">    <span class="keyword">return</span> maxNode.key;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回以 node 为根的二分搜索树的最小键值所在的结点</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">getMin</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    <span class="keyword">return</span> getMin(node.left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回以 node 为根的二分搜索树的最大键值所在的结点</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">getMax</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node.right == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    <span class="keyword">return</span> getMax(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="删除最大键和最小键"><a href="#删除最大键和最小键" class="headerlink" title="删除最大键和最小键"></a>删除最大键和最小键</h3><p>通过递归不断深入根结点的左子树中直到遇到空，然后将该结点的链接指向该结点的右子树并删除右子树，最后更新父结点的结点计数器 N。如此便删除了最小键，删除最大键类似。</p>
+<h4 id="Python-实现-6"><a href="#Python-实现-6" class="headerlink" title="Python 实现"></a>Python 实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_min</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""删除二分搜索树中最小值所在结点"""</span></span><br><span class="line">    <span class="keyword">if</span> self.__root <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        self.__root = self.__remove_min(self.__root)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_max</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""删除二分搜索树中最小值所在结点"""</span></span><br><span class="line">    <span class="keyword">if</span> self.__root <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        self.__root = self.__remove_max(self.__root)</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__remove_min</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    删除以 node 为根的二分搜索树中的最小结点</span></span><br><span class="line"><span class="string">    返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        node_right = node.right</span><br><span class="line">        node.right = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> node_right</span><br><span class="line">    node.left = self.__remove_min(node.left)</span><br><span class="line">    self.__shift_n(node)</span><br><span class="line">    <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__remove_max</span><span class="params">(self, node)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    删除以 node 为根的二分搜索树中的最大结点</span></span><br><span class="line"><span class="string">    返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node.right <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        node_left = node.left</span><br><span class="line">        node.left = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> node_left</span><br><span class="line">    node.right = self.__remove_max(node.right)</span><br><span class="line">    self.__shift_n(node)</span><br><span class="line">    <span class="keyword">return</span> node</span><br><span class="line">    </span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__shift_n</span><span class="params">(node)</span>:</span></span><br><span class="line">    <span class="string">"""使各结点以本结点为根结点的子树中结点的个数正确"""</span></span><br><span class="line">    <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> node.right <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        node.N = <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> node.left <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        node.N = node.right.N + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> node.right <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        node.N = node.left.N + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        node.N = node.right.N + node.left.N + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="Java-实现-7"><a href="#Java-实现-7" class="headerlink" title="Java 实现"></a>Java 实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除二分搜索树中最小值所在结点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        root = removeMin(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除二分搜索树中最大值所在结点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeMax</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        root = removeMax(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除以 node 为根的二分搜索树中的最小结点</span></span><br><span class="line"><span class="comment">// 返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMin</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">        Node nodeRight = node.right;</span><br><span class="line">        node.right = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span> nodeRight;</span><br><span class="line">    &#125;</span><br><span class="line">    node.left = removeMin(node.left);</span><br><span class="line">    shiftN(node);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除以 node 为根的二分搜索树中的最大结点</span></span><br><span class="line"><span class="comment">// 返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMax</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        Node nodeLeft = node.left;</span><br><span class="line">        node.left = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span> nodeLeft;</span><br><span class="line">    &#125;</span><br><span class="line">    node.right = removeMax(node.right);</span><br><span class="line">    shiftN(node);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使各结点以本结点为根结点的子树中结点的个数正确</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">shiftN</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span> &amp;&amp; node.right == <span class="keyword">null</span>)</span><br><span class="line">        node.N = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (node.left == <span class="keyword">null</span>)</span><br><span class="line">        node.N = node.right.N + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (node.right == <span class="keyword">null</span>)</span><br><span class="line">        node.N = node.left.N + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> node.N = node.left.N + node.right.N + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除某一结点"><a href="#删除某一结点" class="headerlink" title="删除某一结点"></a>删除某一结点</h3><p>可通过删除最小键和最大键类似的方式删除只有一个子结点的结点，但当要删除的结点有两个子结点时就变的很麻烦。此时可通过右子树中的最小结点来填补删除结点的位置。</p>
+<ol>
+<li>将指向即将被删除的结点 node 的链接保存为 t；</li>
+<li>将 node 指向 t 的右子树中的最小结点；</li>
+<li>将 node 的右链接指向 t 的右子树删除最小结点后的右子树；</li>
+<li>将 node 的左链接指向 t 的左子树。</li>
+</ol>
+<h4 id="Python-实现-7"><a href="#Python-实现-7" class="headerlink" title="Python 实现"></a>Python 实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, key)</span>:</span></span><br><span class="line">    <span class="string">"""从二分搜索树中删除键值为 key 的结点"""</span></span><br><span class="line">    self.__remove(self.__root, key)</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__remove</span><span class="params">(self, node, key)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    删除以 node 为根的二分搜索树中键值为 key 的结点, 递归算法</span></span><br><span class="line"><span class="string">    返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> node.key &lt; key:</span><br><span class="line">        node.right = self.__remove(node.right, key)</span><br><span class="line">        self.__shift_n(node)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="keyword">elif</span> node.key &gt; key:</span><br><span class="line">        node.left = self.__remove(node.left, key)</span><br><span class="line">        self.__shift_n(node)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">None</span>:  <span class="comment">#待删除结点左子树为空</span></span><br><span class="line">            node_right = node.right</span><br><span class="line">            node.right = <span class="keyword">None</span></span><br><span class="line">            <span class="keyword">return</span> node_right</span><br><span class="line">        <span class="keyword">elif</span> node.right <span class="keyword">is</span> <span class="keyword">None</span>:  <span class="comment">#待删除结点右子树为空的情况</span></span><br><span class="line">            node_left = node.left</span><br><span class="line">            node.left = <span class="keyword">None</span></span><br><span class="line">            <span class="keyword">return</span> node_left</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="string">"""</span></span><br><span class="line"><span class="string">            待删除结点左右子树均不为空</span></span><br><span class="line"><span class="string">            找到比待删除结点大的最小结点, 即待删除结点右子树的最小结点</span></span><br><span class="line"><span class="string">            用这个结点顶替待删除结点的位置</span></span><br><span class="line"><span class="string">            """</span></span><br><span class="line">            t = node</span><br><span class="line">            node = self.__get_min(t.right)</span><br><span class="line">            node.right = self.__remove_min(t.right)</span><br><span class="line">            node.left = t.left</span><br><span class="line">            self.__shift_n(node)</span><br><span class="line">            <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
+<h4 id="Java-实现-8"><a href="#Java-实现-8" class="headerlink" title="Java 实现"></a>Java 实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从二分搜索树中删除键值为 key 的结点</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(Key key)</span> </span>&#123;</span><br><span class="line">    root = remove(root, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除以 node 为根的二分搜索树中键值为 key 的结点, 递归算法</span></span><br><span class="line"><span class="comment">// 返回删除结点后新的二分搜索树的根</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">remove</span><span class="params">(Node node, Key key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cmp = node.key.compareTo(key);</span><br><span class="line">    <span class="keyword">if</span> (cmp &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        node.left = remove(node.left, key);</span><br><span class="line">        shiftN(node);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        node.right = remove(node.right, key);</span><br><span class="line">        shiftN(node);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) &#123; <span class="comment">//待删除结点左子树为空</span></span><br><span class="line">            Node nodeRight = node.right;</span><br><span class="line">            node.right = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">return</span> nodeRight;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.right == <span class="keyword">null</span>) &#123; <span class="comment">//待删除结点右子树为空的情况</span></span><br><span class="line">            Node nodeLeft = node.left;</span><br><span class="line">            node.left = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">return</span> nodeLeft;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 待删除结点左右子树均不为空</span></span><br><span class="line">            <span class="comment">// 找到比待删除结点大的最小结点, 即待删除结点右子树的最小结点</span></span><br><span class="line">            <span class="comment">// 用这个结点顶替待删除结点的位置</span></span><br><span class="line">            Node t = node;</span><br><span class="line">            node = getMin(t.right);</span><br><span class="line">            node.right = removeMin(t.right);</span><br><span class="line">            node.left = t.left;</span><br><span class="line">            shiftN(node);</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h1><ol>
+<li><p>二分查找法</p>
+<p> <a href="https://github.com/tyrotalk/Algorithms-in-Action/blob/master/04-Binary-Search-Tree/Code-Python/binary_search.py" target="_blank" rel="noopener">Python 源码</a><br> <a href="https://github.com/tyrotalk/Algorithms-in-Action/blob/master/04-Binary-Search-Tree/Code-Java/BinarySearch.java" target="_blank" rel="noopener">Java 源码</a></p>
+</li>
+<li><p>二分搜索树</p>
+<p> <a href="https://github.com/tyrotalk/Algorithms-in-Action/blob/master/04-Binary-Search-Tree/Code-Python/BST.py" target="_blank" rel="noopener">Python 源码</a><br> <a href="https://github.com/tyrotalk/Algorithms-in-Action/blob/master/04-Binary-Search-Tree/Code-Java/BST.java" target="_blank" rel="noopener">Java 源码</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    TuTeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/" title="算法：二分搜索树">https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/17/算法：堆排序.html/" rel="next" title="算法：堆排序">
+                <i class="fa fa-chevron-left"></i> 算法：堆排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/30/算法：无向图.html/" rel="prev" title="算法：无向图">
+                算法：无向图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/action.png"
+                alt="TuTeng" />
+            
+              <p class="site-author-name" itemprop="name">TuTeng</p>
+              <p class="site-description motion-element" itemprop="description">while(true){study}</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tyrotalk" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tyrotalk.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/tyrotalk" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/tyrotalk" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找法"><span class="nav-number">1.</span> <span class="nav-text">二分查找法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.1.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-实现"><span class="nav-number">1.1.1.</span> <span class="nav-text">Java 实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分搜索树"><span class="nav-number">2.</span> <span class="nav-text">二分搜索树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义二分搜索树的基本数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">定义二分搜索树的基本数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结点表示"><span class="nav-number">2.2.</span> <span class="nav-text">结点表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-实现"><span class="nav-number">2.2.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-实现-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找"><span class="nav-number">2.3.</span> <span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-实现-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-实现-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">2.4.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度优先遍历"><span class="nav-number">2.4.1.</span> <span class="nav-text">深度优先遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-实现-2"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-实现-3"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历"><span class="nav-number">2.4.2.</span> <span class="nav-text">广度优先遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-实现-3"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-实现-4"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入"><span class="nav-number">2.5.</span> <span class="nav-text">插入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-实现-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-实现-5"><span class="nav-number">2.5.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大键和最小键"><span class="nav-number">2.6.</span> <span class="nav-text">最大键和最小键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-实现-5"><span class="nav-number">2.6.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-实现-6"><span class="nav-number">2.6.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">2.7.</span> <span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除最大键和最小键"><span class="nav-number">2.7.1.</span> <span class="nav-text">删除最大键和最小键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-实现-6"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-实现-7"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除某一结点"><span class="nav-number">2.7.2.</span> <span class="nav-text">删除某一结点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-实现-7"><span class="nav-number">2.7.2.1.</span> <span class="nav-text">Python 实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-实现-8"><span class="nav-number">2.7.2.2.</span> <span class="nav-text">Java 实现</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码地址"><span class="nav-number">3.</span> <span class="nav-text">源码地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="author" itemprop="copyrightHolder">TuTeng</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/';
+          this.page.identifier = '2017/06/23/算法：二分搜索数.html/';
+          this.page.title = '算法：二分搜索树';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
