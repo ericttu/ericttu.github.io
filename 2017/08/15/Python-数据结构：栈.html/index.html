@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Python,数据结构,队列," />
+  <meta name="keywords" content="Python,数据结构,栈," />
 
 
 
@@ -82,20 +82,20 @@
 
 
 
-<meta name="description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
-<meta name="keywords" content="Python,数据结构,队列">
+<meta name="description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
+<meta name="keywords" content="Python,数据结构,栈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 数据结构：队列">
-<meta property="og:url" content="https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/index.html">
+<meta property="og:title" content="Python 数据结构：栈">
+<meta property="og:url" content="https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
+<meta property="og:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
-<meta property="og:updated_time" content="2018-04-01T02:31:18.010Z">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
+<meta property="og:updated_time" content="2018-04-01T02:42:58.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 数据结构：队列">
-<meta name="twitter:description" content="队列是线性的集合，遵从先进先出（FIFO）的协议。">
-<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
+<meta name="twitter:title" content="Python 数据结构：栈">
+<meta name="twitter:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/"/>
 
 
 
 
 
-  <title>Python 数据结构：队列 | TyroTalk</title>
+  <title>Python 数据结构：栈 | TyroTalk</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -318,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 数据结构：队列</h1>
+          <h1 class="post-title" itemprop="name headline">Python 数据结构：栈</h1>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T08:46:52+08:00">
-                2017-08-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T10:02:54+08:00">
+                2017-08-15
               </time>
             
 
@@ -371,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/26/Python-数据结构：队列.html/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/15/Python-数据结构：栈.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/26/Python-数据结构：队列.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/15/Python-数据结构：栈.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,11 +401,11 @@
       
 
       
-        <p>队列是线性的集合，遵从先进先出（FIFO）的协议。</p>
+        <p>栈是线性的集合，遵从后进先出（LIFO）的协议。</p>
 <a id="more"></a>
-<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：队列/queue.png">
-<p>队列操作与栈操作类似，区别在于队列的新数据在后端添加；队列通常用链表或者数组来实现。</p>
-<h1 id="队列的主要方法"><a href="#队列的主要方法" class="headerlink" title="队列的主要方法"></a>队列的主要方法</h1><table>
+<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
+<p>栈中进和出的一端称为顶（top），放入栈顶和删除栈顶的操作分别为压入（push）和弹出（pop）。</p>
+<h1 id="栈的主要方法"><a href="#栈的主要方法" class="headerlink" title="栈的主要方法"></a>栈的主要方法</h1><table>
 <thead>
 <tr>
 <th>方法</th>
@@ -415,77 +415,78 @@
 <tbody>
 <tr>
 <td>__len__(s)</td>
-<td>返回队列中项的数目</td>
+<td>返回栈中项的数目</td>
 </tr>
 <tr>
 <td>__str__(s)</td>
-<td>返回队列的字符串表示</td>
+<td>返回栈的字符串表示</td>
 </tr>
 <tr>
 <td>__iter__()</td>
-<td>从前到后依次访问队列中的每一项</td>
+<td>从底部到顶部依次访问栈中的每一项</td>
 </tr>
 <tr>
 <td>__add__(s)</td>
-<td>将两个队列合并</td>
+<td>将两个栈合并</td>
 </tr>
 <tr>
 <td>__eq__(s)</td>
-<td>如何两个队列对应位置的项相等，两个队列相等</td>
+<td>如何两个栈对应位置的项相等，两个栈相等</td>
 </tr>
 <tr>
 <td>is_empty()</td>
-<td>队列为空返回 False，否则返回 True</td>
+<td>栈为空返回 False，否则返回 True</td>
 </tr>
 <tr>
 <td>clear()</td>
-<td>将队列清空</td>
+<td>将栈清空</td>
 </tr>
 <tr>
 <td>peak()</td>
-<td>返回队列开始项</td>
+<td>返回栈顶</td>
 </tr>
 <tr>
 <td>pop()</td>
-<td>删除队列开始顶并返回该元素</td>
+<td>删除栈顶并返回该元素</td>
 </tr>
 <tr>
-<td>add(item)</td>
-<td>将元素添加队列末尾</td>
+<td>push(item)</td>
+<td>将元素压入栈顶</td>
 </tr>
 </tbody>
 </table>
-<h1 id="队列的单链表实现"><a href="#队列的单链表实现" class="headerlink" title="队列的单链表实现"></a>队列的单链表实现</h1><p>借助于单链表结构，可以实现一个简单的队列。</p>
+<h1 id="栈的单链表实现"><a href="#栈的单链表实现" class="headerlink" title="栈的单链表实现"></a>栈的单链表实现</h1><p>借助于单链表结构，可以实现一个简单的栈结构。</p>
 <p>节点类：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data, later=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.later = later  <span class="comment"># 指向下一个节点</span></span><br></pre></td></tr></table></figure>
-<p>定义队列类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SinglyLinkedQueue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, source_collection=None)</span>:</span></span><br><span class="line">        self.head = self.last = <span class="keyword">None</span></span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> source_collection:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> source_collection:</span><br><span class="line">                self.add(item)</span><br></pre></td></tr></table></figure>
-<p>在 __init__() 中定义一个 size 用于表示当前队列中项的个数。与栈的单链表实现不同的是，这里还定义了一个实例变量 last，用于指向队列的末尾项，在 <code>add(item)</code> 方法中很有用。</p>
-<h2 id="len-s"><a href="#len-s" class="headerlink" title="__len__(s)"></a>__len__(s)</h2><p>队列类已经实现了一个实例变量 size ，只需返回这个实例变量即可。</p>
+<p>定义栈类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SinglyLinkedStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, source_collection=None)</span>:</span></span><br><span class="line">        self.head = <span class="keyword">None</span></span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> source_collection:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> source_collection:</span><br><span class="line">                self.push(item)</span><br></pre></td></tr></table></figure>
+<p>在 __init__() 中定义一个 size 用于表示当前栈中项的个数。</p>
+<h2 id="len-s"><a href="#len-s" class="headerlink" title="__len__(s)"></a>__len__(s)</h2><p>栈类已经实现了一个实例变量 size ，只需返回这个实例变量即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size</span><br></pre></td></tr></table></figure>
-<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回队列的字符串表示，将队列中个项的值封装成一个列表形式返回，队列开始项在前。</p>
+<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回栈的字符串表示，将栈中个项的值封装成一个列表形式返回，栈顶项在前。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'['</span> + <span class="string">', '</span>.join(map(str, self)) + <span class="string">']'</span></span><br></pre></td></tr></table></figure>
-<h2 id="iter"><a href="#iter" class="headerlink" title="__iter__()"></a>__iter__()</h2><p>从头到尾，依次访问各项，返回各项的值。</p>
+<h2 id="iter"><a href="#iter" class="headerlink" title="__iter__()"></a>__iter__()</h2><p>从顶部到底部，依次访问各项，返回各项的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">    probe = self.head</span><br><span class="line">    <span class="keyword">while</span> probe <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">yield</span> probe.data</span><br><span class="line">        probe = probe.later</span><br></pre></td></tr></table></figure>
-<h2 id="add-s"><a href="#add-s" class="headerlink" title="__add__(s)"></a>__add__(s)</h2><p>两个队列相加，依次将队列 s 的开头添加到另一个队列的末尾。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> other:</span><br><span class="line">        self.add(item)</span><br><span class="line">    <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
-<h2 id="eq-s"><a href="#eq-s" class="headerlink" title="__eq__(s)"></a>__eq__(s)</h2><p>与 <code>==</code> 相同，比较两个队列中项是否相等。</p>
+<h2 id="add-s"><a href="#add-s" class="headerlink" title="__add__(s)"></a>__add__(s)</h2><p>两个栈相加，依次对栈 s 进行 <code>pop()</code> 的项再 <code>push()</code>到另一个栈中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> other:</span><br><span class="line">        self.push(item)</span><br><span class="line">    <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
+<h2 id="eq-s"><a href="#eq-s" class="headerlink" title="__eq__(s)"></a>__eq__(s)</h2><p>与 <code>==</code> 相同，比较两个栈中项是否相等。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self <span class="keyword">is</span> other:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">if</span> type(self) != type(other) <span class="keyword">or</span> len(self) != len(other):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    other_iter = iter(other)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> self:</span><br><span class="line">        <span class="keyword">if</span> item != next(other_iter):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<h2 id="is-empty"><a href="#is-empty" class="headerlink" title="is_empty()"></a>is_empty()</h2><p>判断队列是否为空。</p>
+<h2 id="is-empty"><a href="#is-empty" class="headerlink" title="is_empty()"></a>is_empty()</h2><p>判断栈是否为空。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size == <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h2 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h2><p>将队列全部清空</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.head = self.last = <span class="keyword">None</span></span><br><span class="line">    self.size = <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h2 id="peak"><a href="#peak" class="headerlink" title="peak()"></a>peak()</h2><p>返回队列开始项但不删除。</p>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h2><p>将栈全部清空</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.head = <span class="keyword">None</span></span><br><span class="line">    self.size = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="peak"><a href="#peak" class="headerlink" title="peak()"></a>peak()</h2><p>返回栈顶项但不删除。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">peak</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        <span class="keyword">raise</span> KeyError(<span class="string">"当前栈为空！"</span>)</span><br><span class="line">    <span class="keyword">return</span> self.head.data</span><br></pre></td></tr></table></figure>
-<h2 id="add-item"><a href="#add-item" class="headerlink" title="add(item)"></a>add(item)</h2><p>将一个新的项添加到队列末尾。这里为队列末尾添加了一个外部指针，用于对队列结构的快速访问。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    new_node = Node(item)</span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        self.head = new_node</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.last.later = new_node</span><br><span class="line">    self.last = new_node</span><br><span class="line">    self.size += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2><p>返回队列开始项并删除。当队列只有唯一项并被删除后，队列末尾的外部指针 <code>last</code> 与头部指针 <code>head</code> 都指向 None。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        <span class="keyword">raise</span> KeyError(<span class="string">"当前栈为空！"</span>)</span><br><span class="line">    remove_item = self.head.data</span><br><span class="line">    self.head = self.head.later</span><br><span class="line">    <span class="keyword">if</span> self.head <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        self.last = <span class="keyword">None</span></span><br><span class="line">    self.size -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> remove_item</span><br></pre></td></tr></table></figure>
-<h1 id="实例化队列"><a href="#实例化队列" class="headerlink" title="实例化队列"></a>实例化队列</h1><p>定义好一个队列类后，将其实例化有两种方式：无参和传递一个列表参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">singly_linked_queue = SinglyLinkedQueue()</span><br><span class="line">singly_linked_queue1 = SinglyLinkedQueue([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
-<h1 id="队列的两种应用"><a href="#队列的两种应用" class="headerlink" title="队列的两种应用"></a>队列的两种应用</h1><ol>
-<li>计算机模拟现实世界的行为；</li>
-<li>轮询 CPU 调度。</li>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h2><p>返回栈顶项并删除。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self.is_empty():</span><br><span class="line">        <span class="keyword">raise</span> KeyError(<span class="string">"当前栈为空！"</span>)</span><br><span class="line">    remove_item = self.head.data</span><br><span class="line">    self.head = self.head.later</span><br><span class="line">    self.size -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> remove_item</span><br></pre></td></tr></table></figure>
+<h2 id="push-item"><a href="#push-item" class="headerlink" title="push(item)"></a>push(item)</h2><p>将一个新的项压入到栈顶。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    self.head = Node(item, self.head)</span><br><span class="line">    self.size += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="实例化栈"><a href="#实例化栈" class="headerlink" title="实例化栈"></a>实例化栈</h1><p>定义好一个栈类后，将其实例化有两种方式：无参和传递一个列表参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">singly_linked_stack = SinglyLinkedStack()</span><br><span class="line">singly_linked_stack1 = SinglyLinkedStack([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<h1 id="栈的三种应用"><a href="#栈的三种应用" class="headerlink" title="栈的三种应用"></a>栈的三种应用</h1><ol>
+<li>计算算术表达式；</li>
+<li>实现回溯算法；</li>
+<li>内存管理。</li>
 </ol>
 
       
@@ -536,7 +537,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/" title="Python 数据结构：队列">https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/</a>
+    <a href="https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/" title="Python 数据结构：栈">https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -555,7 +556,7 @@
           
             <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
-            <a href="/tags/队列/" rel="tag"><i class="fa fa-tag"></i> 队列</a>
+            <a href="/tags/栈/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
           
         </div>
       
@@ -568,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/20/Python-数据结构：栈.html/" rel="next" title="Python 数据结构：栈">
-                <i class="fa fa-chevron-left"></i> Python 数据结构：栈
+              <a href="/2017/08/09/Python-数据结构：单链表.html/" rel="next" title="Python 数据结构：单链表">
+                <i class="fa fa-chevron-left"></i> Python 数据结构：单链表
               </a>
             
           </div>
@@ -578,8 +579,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/机器学习算法：k-近邻算法.html/" rel="prev" title="机器学习算法：k-近邻算法">
-                机器学习算法：k-近邻算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/20/Python-数据结构：队列.html/" rel="prev" title="Python 数据结构：队列">
+                Python 数据结构：队列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -767,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的主要方法"><span class="nav-number">1.</span> <span class="nav-text">队列的主要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的单链表实现"><span class="nav-number">2.</span> <span class="nav-text">队列的单链表实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#len-s"><span class="nav-number">2.1.</span> <span class="nav-text">__len__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-s"><span class="nav-number">2.2.</span> <span class="nav-text">__str__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iter"><span class="nav-number">2.3.</span> <span class="nav-text">__iter__()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-s"><span class="nav-number">2.4.</span> <span class="nav-text">__add__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eq-s"><span class="nav-number">2.5.</span> <span class="nav-text">__eq__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-empty"><span class="nav-number">2.6.</span> <span class="nav-text">is_empty()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clear"><span class="nav-number">2.7.</span> <span class="nav-text">clear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peak"><span class="nav-number">2.8.</span> <span class="nav-text">peak()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-item"><span class="nav-number">2.9.</span> <span class="nav-text">add(item)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">2.10.</span> <span class="nav-text">pop()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例化队列"><span class="nav-number">3.</span> <span class="nav-text">实例化队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的两种应用"><span class="nav-number">4.</span> <span class="nav-text">队列的两种应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的主要方法"><span class="nav-number">1.</span> <span class="nav-text">栈的主要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的单链表实现"><span class="nav-number">2.</span> <span class="nav-text">栈的单链表实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#len-s"><span class="nav-number">2.1.</span> <span class="nav-text">__len__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-s"><span class="nav-number">2.2.</span> <span class="nav-text">__str__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iter"><span class="nav-number">2.3.</span> <span class="nav-text">__iter__()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-s"><span class="nav-number">2.4.</span> <span class="nav-text">__add__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eq-s"><span class="nav-number">2.5.</span> <span class="nav-text">__eq__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-empty"><span class="nav-number">2.6.</span> <span class="nav-text">is_empty()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clear"><span class="nav-number">2.7.</span> <span class="nav-text">clear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peak"><span class="nav-number">2.8.</span> <span class="nav-text">peak()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">2.9.</span> <span class="nav-text">pop()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-item"><span class="nav-number">2.10.</span> <span class="nav-text">push(item)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例化栈"><span class="nav-number">3.</span> <span class="nav-text">实例化栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的三种应用"><span class="nav-number">4.</span> <span class="nav-text">栈的三种应用</span></a></li></ol></div>
             
 
           </div>
@@ -924,9 +925,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/08/26/Python-数据结构：队列.html/';
-          this.page.identifier = '2017/08/26/Python-数据结构：队列.html/';
-          this.page.title = 'Python 数据结构：队列';
+          this.page.url = 'https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/';
+          this.page.identifier = '2017/08/15/Python-数据结构：栈.html/';
+          this.page.title = 'Python 数据结构：栈';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';
