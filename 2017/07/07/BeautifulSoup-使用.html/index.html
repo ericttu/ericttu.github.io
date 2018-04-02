@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="Beautiful Soup是一个Python包，功能包括解析HTML、XML文档、修复含有未闭合标签等错误的文档，通过定位 HTML 标签来格式化和组织复杂的网络信息。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-01T02:28:05.426Z">
+<meta property="og:updated_time" content="2018-04-02T00:37:08.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BeautifulSoup 使用">
 <meta name="twitter:description" content="Beautiful Soup是一个Python包，功能包括解析HTML、XML文档、修复含有未闭合标签等错误的文档，通过定位 HTML 标签来格式化和组织复杂的网络信息。">
@@ -452,6 +452,27 @@
 <h1 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h1><p>BeautifulSoup 允许在 find_all() 中使用函数作为参数，但这样的函数必须以标签作为参数并且返回布尔值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> soup.find_all(<span class="keyword">lambda</span> tag: len(tag.attrs) == <span class="number">2</span>):</span><br><span class="line">    print(t)</span><br></pre></td></tr></table></figure>
 <p>上面代码返回所有属性数量为2的标签。</p>
+<h1 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h1><ol>
+<li><p>通过标签名查找：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.select(&apos;img&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 class 查找：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.select(<span class="string">'.gift'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过标 id 查找：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.select(<span class="string">'#footer'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找子标签：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.select(&apos;body &gt; div &gt; h1&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找后代标签，查找 body 标签中的所有 h1 标签：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">soup.select(<span class="string">'body h1'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过标签属性值查找：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 标签 div、属性 id、id 的属性值为 content</span></span><br><span class="line">soup.select(<span class="string">'div[id="content"]'</span>)</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
 
       
     </div>
@@ -730,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建-BeautifulSoup-对象"><span class="nav-number">1.</span> <span class="nav-text">创建 BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见-BeautifulSoup-对象"><span class="nav-number">2.</span> <span class="nav-text">常见 BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#find-和-find-all"><span class="nav-number">3.</span> <span class="nav-text">find() 和 find_all()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导航树"><span class="nav-number">4.</span> <span class="nav-text">导航树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#子标签和后代标签"><span class="nav-number">4.1.</span> <span class="nav-text">子标签和后代标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟标签"><span class="nav-number">4.2.</span> <span class="nav-text">兄弟标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父标签"><span class="nav-number">4.3.</span> <span class="nav-text">父标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#get-text-和-attrs"><span class="nav-number">5.</span> <span class="nav-text">get_text() 和 attrs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用正则"><span class="nav-number">6.</span> <span class="nav-text">使用正则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda-表达式"><span class="nav-number">7.</span> <span class="nav-text">Lambda 表达式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建-BeautifulSoup-对象"><span class="nav-number">1.</span> <span class="nav-text">创建 BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见-BeautifulSoup-对象"><span class="nav-number">2.</span> <span class="nav-text">常见 BeautifulSoup 对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#find-和-find-all"><span class="nav-number">3.</span> <span class="nav-text">find() 和 find_all()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导航树"><span class="nav-number">4.</span> <span class="nav-text">导航树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#子标签和后代标签"><span class="nav-number">4.1.</span> <span class="nav-text">子标签和后代标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟标签"><span class="nav-number">4.2.</span> <span class="nav-text">兄弟标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父标签"><span class="nav-number">4.3.</span> <span class="nav-text">父标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#get-text-和-attrs"><span class="nav-number">5.</span> <span class="nav-text">get_text() 和 attrs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用正则"><span class="nav-number">6.</span> <span class="nav-text">使用正则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda-表达式"><span class="nav-number">7.</span> <span class="nav-text">Lambda 表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-选择器"><span class="nav-number">8.</span> <span class="nav-text">CSS 选择器</span></a></li></ol></div>
             
 
           </div>
