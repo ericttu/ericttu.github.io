@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2017-11-09T13:03:35.507Z</updated>
+  <updated>2018-04-08T09:10:06.989Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django 配置 Mysql 数据库</title>
+    <link href="https://tyrotalk.com/2017/11/16/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tyrotalk.com/2017/11/16/Django-配置-Mysql-数据库.html/</id>
+    <published>2017-11-16T08:48:41.000Z</published>
+    <updated>2018-04-08T09:10:06.989Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Django 内置 SQLite 作为默认数据库，可以更改为其它数据库，如：postgresql、mysql、oracle。这里使用 mysql。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+    
+    
+      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+    
+      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习算法：决策树</title>
@@ -34,9 +56,9 @@
     
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -58,9 +80,9 @@
     
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -196,9 +218,9 @@
       <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
       <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
   </entry>
   
@@ -207,7 +229,7 @@
     <link href="https://tyrotalk.com/2017/07/16/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
     <id>https://tyrotalk.com/2017/07/16/初识-Requests-库.html/</id>
     <published>2017-07-16T07:06:21.000Z</published>
-    <updated>2018-04-01T02:29:00.651Z</updated>
+    <updated>2018-04-01T09:13:08.417Z</updated>
     
     <summary type="html">
     
@@ -220,9 +242,9 @@
     
       <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
     
-      <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
-    
       <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
     
   </entry>
   
@@ -447,28 +469,6 @@
     
     
       <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android Studio 导入项目慢解决方法</title>
-    <link href="https://tyrotalk.com/2017/05/01/Android-Studio-%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/05/01/Android-Studio-导入项目慢解决方法.html/</id>
-    <published>2017-05-01T14:32:10.000Z</published>
-    <updated>2018-04-01T02:16:04.982Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;很多时候我们在 Android Studio 中导入项目时会很慢，一直处在 &lt;strong&gt;Building ‘#project’ Gradle project info&lt;/strong&gt; 的状态。&lt;br&gt;&lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/Android-Studio-导入项目慢解决方法/info.png&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tyrotalk.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-      <category term="Android Studio" scheme="https://tyrotalk.com/tags/Android-Studio/"/>
     
   </entry>
   
