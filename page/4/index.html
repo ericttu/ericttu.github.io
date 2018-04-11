@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -82,18 +82,16 @@
 
 
 
-<meta name="description" content="运算符的功能是完成某件事，由如+，-，**这样的符号或者其他特定的关键字表示。">
-<meta name="keywords" content="Python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python 基础：基本运算符">
-<meta property="og:url" content="https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/index.html">
+<meta name="description" content="while(true){study}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TyroTalk">
+<meta property="og:url" content="https://tyrotalk.com/page/4/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="运算符的功能是完成某件事，由如+，-，**这样的符号或者其他特定的关键字表示。">
+<meta property="og:description" content="while(true){study}">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-01T02:18:00.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 基础：基本运算符">
-<meta name="twitter:description" content="运算符的功能是完成某件事，由如+，-，**这样的符号或者其他特定的关键字表示。">
+<meta name="twitter:title" content="TyroTalk">
+<meta name="twitter:description" content="while(true){study}">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/page/4/"/>
 
 
 
 
 
-  <title>Python 基础：基本运算符 | TyroTalk</title>
+  <title>TyroTalk</title>
   
 
 
@@ -157,7 +155,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,9 +283,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -299,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/03/13/Python-基础：字符串.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -316,7 +315,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 基础：基本运算符</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/13/Python-基础：字符串.html/" itemprop="url">Python 基础: 字符串</a></h1>
         
 
         <div class="post-meta">
@@ -328,8 +329,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-17T17:25:36+08:00">
-                2017-03-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-13T16:41:29+08:00">
+                2017-03-13
               </time>
             
 
@@ -369,9 +370,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/17/Python-基础：基本运算符.html/#comments" itemprop="discussionUrl">
+                <a href="/2017/03/13/Python-基础：字符串.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/17/Python-基础：基本运算符.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/03/13/Python-基础：字符串.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,160 +400,16 @@
       
 
       
-        <p>运算符的功能是完成某件事，由如<code>+</code>，<code>-</code>，<code>**</code>这样的符号或者其他特定的关键字表示。<br><a id="more"></a></p>
-<blockquote>
-<p><strong>全文采用 Python3 版本</strong></p>
-</blockquote>
-<h1 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h1><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+</td>
-<td>加</td>
-</tr>
-<tr>
-<td>-</td>
-<td>减</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除</td>
-</tr>
-<tr>
-<td>%</td>
-<td>取余</td>
-</tr>
-<tr>
-<td>**</td>
-<td>幂</td>
-</tr>
-<tr>
-<td>//</td>
-<td>取整除，返回商的整除部分</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>+<span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span><span class="number">-1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>*<span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">3</span></span><br><span class="line"><span class="number">1.3333333333333333</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span>%<span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span>**<span class="number">3</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span>//<span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Python2.x 版本中，整数除以整数仍然得到整数。要得到小数，需其中一个数改为浮点数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span>/<span class="number">3.0</span></span><br><span class="line"><span class="number">1.3333333333333333</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h1 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h1><p>比较运算符返回布尔值。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>等于</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>不等于</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>大于等于</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>小于等于</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a,b = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a != b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &gt; b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &lt; b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &gt;= b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &lt;= b</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Python2.x 版本中还有一个不等于比较运算符：<code>&lt;&gt;</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a,b = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &lt;&gt;b </span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h1><p>逻辑运算符返回布尔值。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>逻辑表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>x and y</td>
-<td>与：如果 x 为 False，返回 False，否则返回 y 的计算值</td>
-</tr>
-<tr>
-<td>or</td>
-<td>x or y</td>
-<td>或：如果 x 为 True，返回 True，否则返回 y 的计算值</td>
-</tr>
-<tr>
-<td>not</td>
-<td>not x</td>
-<td>非：如果 x 为 False，返回 True</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a,b = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">and</span> b</span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">or</span> b</span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> a</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-<h1 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h1><p>成员运算符返回布尔值。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in</td>
-<td>如果在指定的序列中找到值返回 True，否则返回 False</td>
-</tr>
-<tr>
-<td>not in</td>
-<td>如果在指定的序列中没有找到值返回 True，否则返回 False</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">in</span> list</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">not</span> <span class="keyword">in</span> list</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-<h1 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h1><p>身份运算符用于比较两个对象的存储单元，返回布尔值。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>判断两个标识符是不是引用自一个对象，是返回 True</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>判断两个标识符是不是引用自不同对象，是返回True</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> <span class="keyword">not</span> b</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-
+        
+          <p>字符串是 Python 中最常用的数据类型。可以使用引号(‘或”)来创建字符串。<br>Python 中字符串是不可变的，一旦声明，不能改变。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/13/Python-基础：字符串.html/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -562,92 +419,19 @@
     
 
     
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
 
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
-        <p>WeChat Pay</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
-        <p>Alipay</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:</strong>
-    TuTeng
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/" title="Python 基础：基本运算符">https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
-  </li>
-</ul>
-
-      </div>
     
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/03/13/Python-基础：字符串.html/" rel="next" title="Python 基础: 字符串">
-                <i class="fa fa-chevron-left"></i> Python 基础: 字符串
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/25/Python-基础：列表.html/" rel="prev" title="Python 基础：列表">
-                Python 基础：列表 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -657,17 +441,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
-</div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
-      
-    </div>
-  </div>
 
 
           </div>
@@ -675,20 +456,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -709,17 +476,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -818,22 +576,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算数运算符"><span class="nav-number">1.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较运算符"><span class="nav-number">2.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#成员运算符"><span class="nav-number">4.</span> <span class="nav-text">成员运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#身份运算符"><span class="nav-number">5.</span> <span class="nav-text">身份运算符</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -961,10 +703,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -982,18 +720,6 @@
       <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
     
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/03/17/Python-基础：基本运算符.html/';
-          this.page.identifier = '2017/03/17/Python-基础：基本运算符.html/';
-          this.page.title = 'Python 基础：基本运算符';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://TyroTalk.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
     
 
   

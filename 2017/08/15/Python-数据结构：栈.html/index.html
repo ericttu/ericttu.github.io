@@ -91,7 +91,7 @@
 <meta property="og:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：栈/stack.png">
-<meta property="og:updated_time" content="2018-04-01T02:42:58.909Z">
+<meta property="og:updated_time" content="2018-04-11T01:11:50.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 数据结构：栈">
 <meta name="twitter:description" content="栈是线性的集合，遵从后进先出（LIFO）的协议。">
@@ -463,7 +463,7 @@
 <p>在 __init__() 中定义一个 size 用于表示当前栈中项的个数。</p>
 <h2 id="len-s"><a href="#len-s" class="headerlink" title="__len__(s)"></a>__len__(s)</h2><p>栈类已经实现了一个实例变量 size ，只需返回这个实例变量即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size</span><br></pre></td></tr></table></figure>
-<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回栈的字符串表示，将栈中个项的值封装成一个列表形式返回，栈顶项在前。</p>
+<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回栈的字符串表示，将栈中项的值封装成一个列表形式返回，栈顶项在前。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'['</span> + <span class="string">', '</span>.join(map(str, self)) + <span class="string">']'</span></span><br></pre></td></tr></table></figure>
 <h2 id="iter"><a href="#iter" class="headerlink" title="__iter__()"></a>__iter__()</h2><p>从顶部到底部，依次访问各项，返回各项的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">    probe = self.head</span><br><span class="line">    <span class="keyword">while</span> probe <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">yield</span> probe.data</span><br><span class="line">        probe = probe.later</span><br></pre></td></tr></table></figure>
@@ -569,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/Python-数据结构：单链表.html/" rel="next" title="Python 数据结构：单链表">
-                <i class="fa fa-chevron-left"></i> Python 数据结构：单链表
+              <a href="/2017/08/11/Python-数据结构：双链表.html/" rel="next" title="Python 数据结构：双链表">
+                <i class="fa fa-chevron-left"></i> Python 数据结构：双链表
               </a>
             
           </div>
@@ -678,7 +678,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
