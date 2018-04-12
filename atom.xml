@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-04-12T08:37:23.308Z</updated>
+  <updated>2018-04-12T10:09:08.512Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Django 注册和登陆功能实现</title>
-    <link href="https://tyrotalk.com/2017/11/27/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
-    <id>https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/</id>
-    <published>2017-11-27T06:05:51.000Z</published>
-    <updated>2018-04-12T08:37:23.308Z</updated>
+    <link href="https://tyrotalk.com/2017/12/30/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
+    <id>https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/</id>
+    <published>2017-12-30T06:05:51.000Z</published>
+    <updated>2018-04-12T10:09:08.512Z</updated>
     
     <summary type="html">
     
@@ -40,10 +40,10 @@
   
   <entry>
     <title>Django 配置 Mysql 数据库</title>
-    <link href="https://tyrotalk.com/2017/11/16/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-    <id>https://tyrotalk.com/2017/11/16/Django-配置-Mysql-数据库.html/</id>
-    <published>2017-11-16T08:48:41.000Z</published>
-    <updated>2018-04-12T06:09:44.217Z</updated>
+    <link href="https://tyrotalk.com/2017/12/18/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tyrotalk.com/2017/12/18/Django-配置-Mysql-数据库.html/</id>
+    <published>2017-12-18T08:48:41.000Z</published>
+    <updated>2018-04-12T10:09:00.240Z</updated>
     
     <summary type="html">
     

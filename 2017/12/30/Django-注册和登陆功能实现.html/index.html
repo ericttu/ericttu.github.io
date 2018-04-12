@@ -86,11 +86,11 @@
 <meta name="keywords" content="Django,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django 注册和登陆功能实现">
-<meta property="og:url" content="https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/index.html">
+<meta property="og:url" content="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-12T08:37:23.308Z">
+<meta property="og:updated_time" content="2018-04-12T10:09:08.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django 注册和登陆功能实现">
 <meta name="twitter:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/"/>
 
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-27T14:05:51+08:00">
-                2017-11-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T14:05:51+08:00">
+                2017-12-30
               </time>
             
 
@@ -369,9 +369,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/27/Django-注册和登陆功能实现.html/#comments" itemprop="discussionUrl">
+                <a href="/2017/12/30/Django-注册和登陆功能实现.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/27/Django-注册和登陆功能实现.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/12/30/Django-注册和登陆功能实现.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,7 +436,7 @@
 </ol>
 <h2 id="注册页面的-HTML-模版"><a href="#注册页面的-HTML-模版" class="headerlink" title="注册页面的 HTML 模版"></a>注册页面的 HTML 模版</h2>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">		Register</span><br><span class="line">	<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	&#123;% if registered %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">strong</span>&gt;</span>Thank you for registering!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'QA:index' %&#125;"</span>&gt;</span>Return to home...<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	&#123;% else %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"user_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span>&gt;</span></span><br><span class="line">        	&#123;% csrf_token %&#125;</span><br><span class="line">        	&#123;&#123; user_form.as_p &#125;&#125;</span><br><span class="line">        	<span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">        Register</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% if registered %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">strong</span>&gt;</span>Thank you for registering!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'QA:index' %&#125;"</span>&gt;</span>Return to home...<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"user_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            &#123;&#123; user_form.as_p &#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 <ol>
@@ -528,7 +528,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/" title="Django 注册和登陆功能实现">https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/</a>
+    <a href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/" title="Django 注册和登陆功能实现">https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -558,7 +558,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/16/Django-配置-Mysql-数据库.html/" rel="next" title="Django 配置 Mysql 数据库">
+              <a href="/2017/12/18/Django-配置-Mysql-数据库.html/" rel="next" title="Django 配置 Mysql 数据库">
                 <i class="fa fa-chevron-left"></i> Django 配置 Mysql 数据库
               </a>
             
@@ -910,8 +910,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/';
-          this.page.identifier = '2017/11/27/Django-注册和登陆功能实现.html/';
+          this.page.url = 'https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/';
+          this.page.identifier = '2017/12/30/Django-注册和登陆功能实现.html/';
           this.page.title = 'Django 注册和登陆功能实现';
         };
         var d = document, s = d.createElement('script');
