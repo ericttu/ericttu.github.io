@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-04-08T09:10:06.989Z</updated>
+  <updated>2018-04-12T08:37:23.308Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django 注册和登陆功能实现</title>
+    <link href="https://tyrotalk.com/2017/11/27/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
+    <id>https://tyrotalk.com/2017/11/27/Django-注册和登陆功能实现.html/</id>
+    <published>2017-11-27T06:05:51.000Z</published>
+    <updated>2018-04-12T08:37:23.308Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Django 提供了用户身份验证机制，可实现注册和登录功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+    
+    
+      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django 配置 Mysql 数据库</title>
     <link href="https://tyrotalk.com/2017/11/16/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
     <id>https://tyrotalk.com/2017/11/16/Django-配置-Mysql-数据库.html/</id>
     <published>2017-11-16T08:48:41.000Z</published>
-    <updated>2018-04-08T09:10:06.989Z</updated>
+    <updated>2018-04-12T06:09:44.217Z</updated>
     
     <summary type="html">
     
@@ -33,6 +55,8 @@
     
     
       <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
       <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
     
@@ -240,9 +264,9 @@
       <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
-    
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
     
   </entry>
   
@@ -264,9 +288,9 @@
     
       <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
     
-      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
+    
+      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -451,26 +475,6 @@
       <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
     
       <category term="Firebase" scheme="https://tyrotalk.com/tags/Firebase/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google Study Jams 面向对象中的小东西</title>
-    <link href="https://tyrotalk.com/2017/05/15/Google-Study-Jams-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%B0%8F%E4%B8%9C%E8%A5%BF.html/"/>
-    <id>https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/</id>
-    <published>2017-05-15T11:25:42.000Z</published>
-    <updated>2018-04-01T02:24:04.467Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;添加复选框&quot;&gt;&lt;a href=&quot;#添加复选框&quot; class=&quot;headerlink&quot; title=&quot;添加复选框&quot;&gt;&lt;/a&gt;添加复选框&lt;/h1&gt;&lt;p&gt;添加布局文件:&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;CheckBox&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@+id/_checkbox&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;attr&quot;&gt;android:text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
     
   </entry>
   
