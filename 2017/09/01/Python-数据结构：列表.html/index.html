@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Python,数据结构,列表," />
 
 
 
@@ -82,18 +82,20 @@
 
 
 
-<meta name="description" content="添加复选框添加布局文件:">
-<meta name="keywords" content="Android">
+<meta name="description" content="列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。">
+<meta name="keywords" content="Python,数据结构,列表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Study Jams 面向对象中的小东西">
-<meta property="og:url" content="https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/index.html">
+<meta property="og:title" content="Python 数据结构：列表">
+<meta property="og:url" content="https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="添加复选框添加布局文件:">
+<meta property="og:description" content="列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-01T02:24:04.467Z">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：列表/sentinel_node.png">
+<meta property="og:updated_time" content="2018-04-13T02:45:33.919Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Study Jams 面向对象中的小东西">
-<meta name="twitter:description" content="添加复选框添加布局文件:">
+<meta name="twitter:title" content="Python 数据结构：列表">
+<meta name="twitter:description" content="列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：列表/sentinel_node.png">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/"/>
 
 
 
 
 
-  <title>Google Study Jams 面向对象中的小东西 | TyroTalk</title>
+  <title>Python 数据结构：列表 | TyroTalk</title>
   
 
 
@@ -299,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -316,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Google Study Jams 面向对象中的小东西</h1>
+          <h1 class="post-title" itemprop="name headline">Python 数据结构：列表</h1>
         
 
         <div class="post-meta">
@@ -328,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-15T19:25:42+08:00">
-                2017-05-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T09:15:15+08:00">
+                2017-09-01
               </time>
             
 
@@ -351,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动开发/" itemprop="url" rel="index">
-                    <span itemprop="name">移动开发</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -369,9 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/01/Python-数据结构：列表.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/15/Google-Study-Jams-面向对象中的小东西.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/01/Python-数据结构：列表.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,21 +401,111 @@
       
 
       
-        <h1 id="添加复选框"><a href="#添加复选框" class="headerlink" title="添加复选框"></a>添加复选框</h1><p>添加布局文件:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">CheckBox</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/_checkbox"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"checkbox"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <p>列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。</p>
 <a id="more"></a>
-<p>判断 CheckBox 是否选中(Java 代码):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CheckBox mCheckBox = (CheckBox) findViewById(R.id._checkbox);</span><br><span class="line"><span class="keyword">boolean</span> hasCheckBox = mCheckBox.isChecked();</span><br></pre></td></tr></table></figure></p>
-<h1 id="添加画面滚动"><a href="#添加画面滚动" class="headerlink" title="添加画面滚动"></a>添加画面滚动</h1><p>更改布局文件，使用:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ScrollView</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line">&lt;/ScrollView&gt;</span><br></pre></td></tr></table></figure></p>
-<h1 id="添加-EditText-文本框"><a href="#添加-EditText-文本框" class="headerlink" title="添加 EditText 文本框"></a>添加 EditText 文本框</h1><p>添加布局文件:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/editText_view"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:hint</span>=<span class="string">"editText"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:inputType</span>=<span class="string">"textMultiLine"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>获取文本(java 代码):<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EditText mEditText = (EditText) findViewById(R.id.editText_view);</span><br><span class="line">String text = mEditText.getText().toString();</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用-Intent-发送电子邮件"><a href="#使用-Intent-发送电子邮件" class="headerlink" title="使用 Intent 发送电子邮件"></a>使用 Intent 发送电子邮件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SENDTO);</span><br><span class="line">intent.setData(Uri.parse(<span class="string">"mailto:"</span>)); <span class="comment">// only email apps should handle this</span></span><br><span class="line">intent.putExtra(Intent.EXTRA_TEXT, text); <span class="comment">// 邮件内容</span></span><br><span class="line">intent.putExtra(Intent.EXTRA_SUBJECT, subject); <span class="comment">// 邮件主题</span></span><br><span class="line"><span class="keyword">if</span> (intent.resolveActivity(getPackageManager()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="本地化"><a href="#本地化" class="headerlink" title="本地化"></a>本地化</h1><ol>
-<li>根据应用的语言使用环境显示不同的语言，可在 <em>string.xml</em> 中打开 <strong>Open editor</strong> 配置;</li>
-<li>当翻译的文本中有一部分不需要翻译时可以添加如 <code>&lt;xliff:g id=&quot;name&quot; example=&quot;Jack&quot;&gt;%%&lt;/xliff:g&gt;</code> 的文本。<blockquote>
-<p>id: 不需要翻译文本的 id<br>example: 示例<br>%s: 字符串类型</p>
-</blockquote>
+<h1 id="列表的主要方法"><a href="#列表的主要方法" class="headerlink" title="列表的主要方法"></a>列表的主要方法</h1><p>1. 基于内容的操作：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index(item)</td>
+<td>返回项 item 在列表中的索引</td>
+</tr>
+<tr>
+<td>add(item)</td>
+<td>在列表尾部添加项</td>
+</tr>
+<tr>
+<td>remove(item)</td>
+<td>从列表中删除项 item</td>
+</tr>
+</tbody>
+</table>
+<p>2. 基于索引的操作：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insert(i, item)</td>
+<td>在索引 i 处添加项 item</td>
+</tr>
+<tr>
+<td>pop(i=None)</td>
+<td>删除并返回索引 i 的项，如果没有参数 i，删除并返回最后一项</td>
+</tr>
+<tr>
+<td>L[i]</td>
+<td>返回索引 i 处的项</td>
+</tr>
+<tr>
+<td>L[i] = item</td>
+<td>用 item 替换索引 i 处的项</td>
+</tr>
+</tbody>
+</table>
+<p>   ​</p>
+<h1 id="列表的双链表实现"><a href="#列表的双链表实现" class="headerlink" title="列表的双链表实现"></a>列表的双链表实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoWayNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data=None, previous=None, later=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.previous = previous</span><br><span class="line">        self.later = later</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, source_collection=None)</span>:</span></span><br><span class="line">        self.head = TwoWayNode()  <span class="comment"># 哨兵节点</span></span><br><span class="line">        self.head.previous = self.head.later = self.head</span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> source_collection:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> source_collection:</span><br><span class="line">                self.add(item)</span><br></pre></td></tr></table></figure>
+<p>在列表类初始化的时候定义了一个哨兵节点，可以使双链表的结构得到简化。哨兵节点不包含在列表项中，其向前指向第一个数据节点，向后指向最后一个节点。</p>
+<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：列表/sentinel_node.png">
+<h2 id="len-s"><a href="#len-s" class="headerlink" title="len(s)"></a><strong>len</strong>(s)</h2><p>返回实例变量 size 表示列表大小。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size</span><br></pre></td></tr></table></figure>
+<h2 id="str-s"><a href="#str-s" class="headerlink" title="__str__(s)"></a>__str__(s)</h2><p>返回列表的字符串表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'['</span> + <span class="string">', '</span>.join(map(str, self)) + <span class="string">']'</span></span><br></pre></td></tr></table></figure>
+<h2 id="iter"><a href="#iter" class="headerlink" title="__iter__()"></a>__iter__()</h2><p>从头到尾，依次访问各项，返回各项的值。因为列表项不包含哨兵节点，所有第一个节点为 <code>self.head.later</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">    probe = self.head.later</span><br><span class="line">    <span class="keyword">while</span> probe != self.head:</span><br><span class="line">        <span class="keyword">yield</span> probe.data</span><br><span class="line">        probe = probe.later</span><br></pre></td></tr></table></figure>
+<h2 id="add-s"><a href="#add-s" class="headerlink" title="__add__(s)"></a>__add__(s)</h2><p>两个列表相加。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> other:</span><br><span class="line">        self.add(item)</span><br><span class="line">    <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
+<h2 id="eq-s"><a href="#eq-s" class="headerlink" title="__eq__(s)"></a>__eq__(s)</h2><p>与 <code>==</code> 相同，比较两个列表中项是否相等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self <span class="keyword">is</span> other:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">if</span> type(self) != type(other) <span class="keyword">or</span> len(self) != len(other):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    other_iter = iter(other)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> self:</span><br><span class="line">        <span class="keyword">if</span> item != next(other_iter):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="is-empty"><a href="#is-empty" class="headerlink" title="is_empty()"></a>is_empty()</h2><p>判断列表是否为空。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.size == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h2><p>将列表全部清空</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.head = TwoWayNode()</span><br><span class="line">    self.size = <span class="number">0</span></span><br><span class="line">    self.head.previous = self.head.later = self.head</span><br></pre></td></tr></table></figure>
+<h2 id="基于内容的操作"><a href="#基于内容的操作" class="headerlink" title="基于内容的操作"></a>基于内容的操作</h2><ol>
+<li><p>index(item): 返回项 item 在列表中的索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    po = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> self:</span><br><span class="line">        <span class="keyword">if</span> data == item:</span><br><span class="line">            <span class="keyword">return</span> po</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            po += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> po == len(self):</span><br><span class="line">        <span class="keyword">raise</span> ValueError(str(item) + <span class="string">"不在列表中！"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>add(item): 在列表尾部添加项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    self.insert(len(self), item)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>remove(item): 从列表中删除项 item。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, item)</span>:</span></span><br><span class="line">    po = self.index(item)</span><br><span class="line">    self.pop(po)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><p><a href="https://s3.cn-north-1.amazonaws.com.cn/static-documents/nd803/Common+Android+Views+Cheat+Sheet.pdf" target="_blank" rel="noopener">常见 Android 视图备忘单链接</a><br><a href="http://developer.android.youdaxue.com/guide/components/intents-common.html?utm_source=udacity&amp;utm_medium=course&amp;utm_campaign=android_basics" target="_blank" rel="noopener">常见 Intent 指南</a></p>
+<p><code>add(item)</code> 和 <code>remove(item)</code> 方法中都用到了基于索引的操作。</p>
+<h2 id="基于索引的操作"><a href="#基于索引的操作" class="headerlink" title="基于索引的操作"></a>基于索引的操作</h2><ol>
+<li><p>_get_node(i): 这是一个基于索引的操作的辅助方法，返回第 i 项的指针；其它基于索引的操作都需要用到。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_get_node</span><span class="params">(self, i)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> i == len(self):</span><br><span class="line">        <span class="keyword">return</span> self.head</span><br><span class="line">    <span class="keyword">elif</span> i == len(self) - <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> self.head.previous</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        probe = self.head.later</span><br><span class="line">        <span class="keyword">while</span> i &gt; <span class="number">0</span>:</span><br><span class="line">            probe = probe.later</span><br><span class="line">            i -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> probe</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>特别的，当 i 值等于列表大小时，返回指向哨兵节点的指针。</p>
+</blockquote>
+</li>
+<li><p>insert(i, item): 在索引 i 处添加项 item。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, i, item)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt; len(self):</span><br><span class="line">        <span class="keyword">raise</span> IndexError(<span class="string">"列表索引超出范围！"</span>)</span><br><span class="line">    node = self._get_node(i)</span><br><span class="line">    new_node = TwoWayNode(item, previous=node.previous, later=node)</span><br><span class="line">    node.previous.later = new_node</span><br><span class="line">    node.previous = new_node</span><br><span class="line">    self.size += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pop(i=None): 删除并返回索引 i 的项，如果没有参数 i，删除并返回最后一项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self, i=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> i <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        i = len(self) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= len(self):</span><br><span class="line">        <span class="keyword">raise</span> IndexError(<span class="string">"列表索引超出范围！"</span>)</span><br><span class="line">    node = self._get_node(i)</span><br><span class="line">    remove_item = node.data</span><br><span class="line">    node.previous.later = node.later</span><br><span class="line">    node.later.previous = node.previous</span><br><span class="line">    self.size -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> remove_item</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>L[i]: 返回索引 i 处的项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, i)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= len(self):</span><br><span class="line">        <span class="keyword">raise</span> IndexError(<span class="string">"列表索引超出范围！"</span>)</span><br><span class="line">    <span class="keyword">return</span> self._get_node(i).data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>L[i] = item: 用 item 替换索引 i 处的项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__setitem__</span><span class="params">(self, i, item)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;= len(self):</span><br><span class="line">        <span class="keyword">raise</span> IndexError(<span class="string">"列表索引超出范围！"</span>)</span><br><span class="line">    self._get_node(i).data = item</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>除了辅助函数，其它操作都需要考虑列表索引是否超出范围。</p>
+</blockquote>
 
       
     </div>
@@ -463,7 +555,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/" title="Google Study Jams 面向对象中的小东西">https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/</a>
+    <a href="https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/" title="Python 数据结构：列表">https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -478,7 +570,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+            <a href="/tags/列表/" rel="tag"><i class="fa fa-tag"></i> 列表</a>
           
         </div>
       
@@ -491,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/07/创建新的Activity.html/" rel="next" title="创建新的Activity">
-                <i class="fa fa-chevron-left"></i> 创建新的Activity
+              <a href="/2017/08/26/Python-数据结构：优先队列.html/" rel="next" title="Python 数据结构：优先队列">
+                <i class="fa fa-chevron-left"></i> Python 数据结构：优先队列
               </a>
             
           </div>
@@ -501,8 +597,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/20/初识Firebase.html/" rel="prev" title="初识Firebase">
-                初识Firebase <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/25/机器学习算法：k-近邻算法.html/" rel="prev" title="机器学习算法：k-近邻算法">
+                机器学习算法：k-近邻算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -690,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加复选框"><span class="nav-number">1.</span> <span class="nav-text">添加复选框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加画面滚动"><span class="nav-number">2.</span> <span class="nav-text">添加画面滚动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加-EditText-文本框"><span class="nav-number">3.</span> <span class="nav-text">添加 EditText 文本框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-Intent-发送电子邮件"><span class="nav-number">4.</span> <span class="nav-text">使用 Intent 发送电子邮件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地化"><span class="nav-number">5.</span> <span class="nav-text">本地化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-number">6.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#列表的主要方法"><span class="nav-number">1.</span> <span class="nav-text">列表的主要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表的双链表实现"><span class="nav-number">2.</span> <span class="nav-text">列表的双链表实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#len-s"><span class="nav-number">2.1.</span> <span class="nav-text">len(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-s"><span class="nav-number">2.2.</span> <span class="nav-text">__str__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iter"><span class="nav-number">2.3.</span> <span class="nav-text">__iter__()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-s"><span class="nav-number">2.4.</span> <span class="nav-text">__add__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eq-s"><span class="nav-number">2.5.</span> <span class="nav-text">__eq__(s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-empty"><span class="nav-number">2.6.</span> <span class="nav-text">is_empty()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clear"><span class="nav-number">2.7.</span> <span class="nav-text">clear()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的操作"><span class="nav-number">2.8.</span> <span class="nav-text">基于内容的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于索引的操作"><span class="nav-number">2.9.</span> <span class="nav-text">基于索引的操作</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -847,9 +943,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/';
-          this.page.identifier = '2017/05/15/Google-Study-Jams-面向对象中的小东西.html/';
-          this.page.title = 'Google Study Jams 面向对象中的小东西';
+          this.page.url = 'https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/';
+          this.page.identifier = '2017/09/01/Python-数据结构：列表.html/';
+          this.page.title = 'Python 数据结构：列表';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';
