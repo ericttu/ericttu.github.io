@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-04-12T10:09:08.512Z</updated>
+  <updated>2018-04-18T06:12:56.185Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django 内置模型字段类型</title>
+    <link href="https://tyrotalk.com/2018/01/07/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B.html/"/>
+    <id>https://tyrotalk.com/2018/01/07/Django-内置模型字段类型.html/</id>
+    <published>2018-01-07T11:42:35.000Z</published>
+    <updated>2018-04-18T06:12:56.185Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。&lt;/p&gt;
+&lt;p&gt;定义模型时，使用一个 Python 类（&lt;code&gt;django.db.models.Model&lt;/code&gt; 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 &lt;code&gt;CharField&lt;/code&gt; ）对应数据库列的类型（如 &lt;code&gt;varchar&lt;/code&gt;）。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+    
+    
+      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Django 注册和登陆功能实现</title>
@@ -56,18 +79,18 @@
     
       <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
     
-      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
-    
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
     
   </entry>
   
   <entry>
-    <title>机器学习算法：决策树</title>
+    <title>机器学习算法笔记：决策树</title>
     <link href="https://tyrotalk.com/2017/11/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91.html/"/>
     <id>https://tyrotalk.com/2017/11/02/机器学习算法：决策树.html/</id>
     <published>2017-11-02T12:38:11.000Z</published>
-    <updated>2017-11-09T13:03:35.507Z</updated>
+    <updated>2018-04-14T00:18:53.693Z</updated>
     
     <summary type="html">
     
@@ -80,18 +103,18 @@
     
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
-    <title>机器学习算法：k-近邻算法</title>
+    <title>机器学习算法笔记：k-近邻算法</title>
     <link href="https://tyrotalk.com/2017/10/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%EF%BC%9Ak-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95.html/"/>
     <id>https://tyrotalk.com/2017/10/25/机器学习算法：k-近邻算法.html/</id>
     <published>2017-10-25T02:35:39.000Z</published>
-    <updated>2017-10-25T06:23:13.485Z</updated>
+    <updated>2018-04-14T00:18:51.365Z</updated>
     
     <summary type="html">
     
@@ -104,9 +127,34 @@
     
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
     
+      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
       <category term="机器学习" scheme="https://tyrotalk.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+  </entry>
+  
+  <entry>
+    <title>Python 数据结构：树</title>
+    <link href="https://tyrotalk.com/2017/09/08/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91.html/"/>
+    <id>https://tyrotalk.com/2017/09/08/Python-数据结构：树.html/</id>
+    <published>2017-09-08T00:17:28.000Z</published>
+    <updated>2018-04-18T01:42:12.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;树是一种抽象数据类型，用来模拟具有树状结构性质的数据集合。&lt;/p&gt;
+&lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：树/tree.png&quot;&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树" scheme="https://tyrotalk.com/tags/%E6%A0%91/"/>
     
   </entry>
   
@@ -115,7 +163,7 @@
     <link href="https://tyrotalk.com/2017/09/01/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%88%97%E8%A1%A8.html/"/>
     <id>https://tyrotalk.com/2017/09/01/Python-数据结构：列表.html/</id>
     <published>2017-09-01T01:15:15.000Z</published>
-    <updated>2018-04-13T02:45:33.919Z</updated>
+    <updated>2018-04-18T01:37:49.165Z</updated>
     
     <summary type="html">
     
@@ -139,7 +187,7 @@
     <link href="https://tyrotalk.com/2017/08/26/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97.html/"/>
     <id>https://tyrotalk.com/2017/08/26/Python-数据结构：优先队列.html/</id>
     <published>2017-08-26T00:58:08.000Z</published>
-    <updated>2018-04-01T02:43:21.804Z</updated>
+    <updated>2018-04-18T01:37:55.488Z</updated>
     
     <summary type="html">
     
@@ -163,7 +211,7 @@
     <link href="https://tyrotalk.com/2017/08/20/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E9%98%9F%E5%88%97.html/"/>
     <id>https://tyrotalk.com/2017/08/20/Python-数据结构：队列.html/</id>
     <published>2017-08-20T00:46:52.000Z</published>
-    <updated>2018-04-01T02:43:12.438Z</updated>
+    <updated>2018-04-18T01:38:01.557Z</updated>
     
     <summary type="html">
     
@@ -183,11 +231,33 @@
   </entry>
   
   <entry>
+    <title>SQL 学习笔记</title>
+    <link href="https://tyrotalk.com/2017/08/15/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html/"/>
+    <id>https://tyrotalk.com/2017/08/15/SQL-学习笔记.html/</id>
+    <published>2017-08-15T05:18:58.000Z</published>
+    <updated>2018-04-14T09:30:47.848Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.ituring.com.cn/book/1880&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SQL基础教程（第2版）&lt;/a&gt;学习笔记。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="SQL" scheme="https://tyrotalk.com/tags/SQL/"/>
+    
+      <category term="数据库" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python 数据结构：栈</title>
     <link href="https://tyrotalk.com/2017/08/15/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88.html/"/>
     <id>https://tyrotalk.com/2017/08/15/Python-数据结构：栈.html/</id>
     <published>2017-08-15T02:02:54.000Z</published>
-    <updated>2018-04-11T01:11:50.052Z</updated>
+    <updated>2018-04-18T01:37:29.181Z</updated>
     
     <summary type="html">
     
@@ -288,9 +358,9 @@
       <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
-    
       <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="Mysql" scheme="https://tyrotalk.com/tags/Mysql/"/>
     
   </entry>
   
@@ -365,15 +435,15 @@
   </entry>
   
   <entry>
-    <title>算法：二分搜索树</title>
-    <link href="https://tyrotalk.com/2017/06/23/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E6%95%B0.html/"/>
-    <id>https://tyrotalk.com/2017/06/23/算法：二分搜索数.html/</id>
+    <title>算法：二分查找法</title>
+    <link href="https://tyrotalk.com/2017/06/23/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95.html/"/>
+    <id>https://tyrotalk.com/2017/06/23/算法：二分查找法.html/</id>
     <published>2017-06-23T02:49:06.000Z</published>
-    <updated>2018-04-01T02:26:22.168Z</updated>
+    <updated>2018-04-18T01:53:30.124Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;二分查找法和二分搜索树。&lt;/p&gt;
+      &lt;p&gt;二分查找法。&lt;/p&gt;
     
     </summary>
     
@@ -398,74 +468,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;堆排序（Heapsort）&lt;/a&gt;：利用堆这种数据结构的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：高级排序算法</title>
-    <link href="https://tyrotalk.com/2017/06/10/%E7%AE%97%E6%B3%95%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/06/10/算法：高级排序算法.html/</id>
-    <published>2017-06-10T02:53:22.000Z</published>
-    <updated>2018-04-01T02:25:24.518Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本篇包括归并排序和快速排序，它们都是采用了分治法的 O(NlogN) 算法。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>隐式和显式Intent</title>
-    <link href="https://tyrotalk.com/2017/06/04/%E9%9A%90%E5%BC%8F%E5%92%8C%E6%98%BE%E5%BC%8FIntent.html/"/>
-    <id>https://tyrotalk.com/2017/06/04/隐式和显式Intent.html/</id>
-    <published>2017-06-04T02:03:56.000Z</published>
-    <updated>2018-04-01T02:24:57.305Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Intent 是一个消息传递对象，您可以使用它从其他应用组件请求操作。Intent 可以通过多种方式促进组件之间的通信。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="移动开发" scheme="https://tyrotalk.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="Android" scheme="https://tyrotalk.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：简单排序算法</title>
-    <link href="https://tyrotalk.com/2017/05/26/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/05/26/算法：简单排序算法.html/</id>
-    <published>2017-05-26T11:54:45.000Z</published>
-    <updated>2018-04-01T02:23:06.328Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单排序算法有三种：选择排序、插入排序和冒泡排序。都属于 O(n^2) 级别的算法。&lt;/p&gt;
     
     </summary>
     

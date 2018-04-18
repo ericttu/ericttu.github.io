@@ -91,7 +91,7 @@
 <meta property="og:description" content="列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：列表/sentinel_node.png">
-<meta property="og:updated_time" content="2018-04-13T02:45:33.919Z">
+<meta property="og:updated_time" content="2018-04-18T01:37:49.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 数据结构：列表">
 <meta name="twitter:description" content="列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。">
@@ -453,7 +453,6 @@
 </tr>
 </tbody>
 </table>
-<p>   ​</p>
 <h1 id="列表的双链表实现"><a href="#列表的双链表实现" class="headerlink" title="列表的双链表实现"></a>列表的双链表实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoWayNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data=None, previous=None, later=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.previous = previous</span><br><span class="line">        self.later = later</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, source_collection=None)</span>:</span></span><br><span class="line">        self.head = TwoWayNode()  <span class="comment"># 哨兵节点</span></span><br><span class="line">        self.head.previous = self.head.later = self.head</span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> source_collection:</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> source_collection:</span><br><span class="line">                self.add(item)</span><br></pre></td></tr></table></figure>
 <p>在列表类初始化的时候定义了一个哨兵节点，可以使双链表的结构得到简化。哨兵节点不包含在列表项中，其向前指向第一个数据节点，向后指向最后一个节点。</p>
 <img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：列表/sentinel_node.png">
@@ -597,8 +596,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/机器学习算法：k-近邻算法.html/" rel="prev" title="机器学习算法：k-近邻算法">
-                机器学习算法：k-近邻算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/08/Python-数据结构：树.html/" rel="prev" title="Python 数据结构：树">
+                Python 数据结构：树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -696,7 +695,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -718,7 +717,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
