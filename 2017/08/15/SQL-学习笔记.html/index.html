@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="SQL基础教程（第2版）学习笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-14T09:30:47.848Z">
+<meta property="og:updated_time" content="2018-04-18T09:06:17.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL 学习笔记">
 <meta name="twitter:description" content="SQL基础教程（第2版）学习笔记。">
@@ -469,7 +469,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1><h3 id="创建及使用"><a href="#创建及使用" class="headerlink" title="创建及使用"></a>创建及使用</h3><ol>
+<h1 id="创建、使用数据库"><a href="#创建、使用数据库" class="headerlink" title="创建、使用数据库"></a>创建、使用数据库</h1><ol>
 <li><p>新建数据库：<code>CREATE DATABASE &lt;数据库名称&gt;;</code></p>
 </li>
 <li><p>使用数据库：<code>USE &lt;数据库名称&gt;;</code></p>
@@ -487,8 +487,8 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p><code>CREATE TABLE &lt;表名&gt;(--描述--);</code><br>例如创建一个名为「Product」的表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Product(</span><br><span class="line">	product_id CHAR(4) NOT NULL,</span><br><span class="line">	product_name VARCHAR(100) NOT NULL, </span><br><span class="line">	product_type VARCHAR(32) NOT NULL, </span><br><span class="line">	sale_price INTEGER, </span><br><span class="line">	purchase_price INTEGER, </span><br><span class="line">	regist_date DATE, </span><br><span class="line">	PRIMARY KEY(product_id)</span><br><span class="line">)DEFAULT CHARSET UTF8;</span><br></pre></td></tr></table></figure>
+<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><p>格式：<code>CREATE TABLE &lt;表名&gt;(--描述--);</code>。<br>例如创建一个名为「Product」的表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE Product(</span><br><span class="line">	product_id CHAR(4) NOT NULL,</span><br><span class="line">	product_name VARCHAR(100) NOT NULL, </span><br><span class="line">	product_type VARCHAR(32) NOT NULL, </span><br><span class="line">	sale_price INTEGER DEFAULT 0, </span><br><span class="line">	purchase_price INTEGER, </span><br><span class="line">	regist_date DATE, </span><br><span class="line">	PRIMARY KEY(product_id)</span><br><span class="line">)DEFAULT CHARSET UTF8;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>只能使用半角英文字母、数字、下划线(_)作为数据库、表和列的名称 。</p>
 </blockquote>
@@ -515,7 +515,7 @@
 <li><code>PRIMARY KEY</code> 约束：唯一标识数据库表中的每条记录。表中只能有一个主键且主键列不能包含 NULL 值。</li>
 </ul>
 <p>最后指定了表的编码格式为 <code>UTF8</code>：<code>DEFAULT CHARSET UTF8</code> 。</p>
-<h2 id="删除、更新表"><a href="#删除、更新表" class="headerlink" title="删除、更新表"></a>删除、更新表</h2><ol>
+<h1 id="删除、更新表"><a href="#删除、更新表" class="headerlink" title="删除、更新表"></a>删除、更新表</h1><ol>
 <li><p>删除表：<code>DROP TABLE &lt;表名&gt;;</code></p>
 </li>
 <li><p>添加表列：<code>ALTER TABLE &lt;表名&gt; ADD COLUMN &lt;列的定义&gt;;</code>，如向「Product」表中添加一列：<code>ALTER TABLE Product ADD COLUMN product_name_pinyin VARCHAR(100);</code>。</p>
@@ -538,7 +538,63 @@
 </ul>
 </li>
 </ol>
-<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2>
+<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><p>格式：<code>INSERT INTO &lt;表名&gt; (列1, 列2, 列3, ......) VALUES (值1, 值2, 值3, ......);</code>。</p>
+<ol>
+<li><p>插入单条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Product(product_id, product_name, product_type, sale_price, purchase_price, regist_date) <span class="keyword">VALUE</span>(<span class="string">'0001'</span>, <span class="string">'T恤衫'</span>, <span class="string">'衣服'</span>, <span class="number">1000</span>, <span class="number">500</span>, <span class="string">'2009-09-20'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入多条数据（除 Oracle 以外）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Product <span class="keyword">VALUES</span></span><br><span class="line">	(<span class="string">'0002'</span>, <span class="string">'打孔器'</span>, <span class="string">'办公用品'</span>, <span class="number">500</span>, <span class="number">320</span>, <span class="string">'2009-09-11'</span>),</span><br><span class="line">    (<span class="string">'0003'</span>, <span class="string">'运动T恤'</span>, <span class="string">'衣服'</span>, <span class="number">4000</span>, <span class="number">2800</span>, <span class="literal">NULL</span>),</span><br><span class="line">    (<span class="string">'0004'</span>, <span class="string">'菜刀'</span>, <span class="string">'厨房用具'</span>, <span class="number">3000</span>, <span class="number">2800</span>, <span class="string">'2009-09-20'</span>)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对表进行全列 <code>INSERT</code> 时，列清单可不写。</p>
+</blockquote>
+</li>
+<li><p>插入多条数据（ Oracle ）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> ALL <span class="keyword">INTO</span> Product <span class="keyword">VALUES</span>(<span class="string">'0002'</span>, <span class="string">'打孔器'</span>, <span class="string">'办公用品'</span>, <span class="number">500</span>, <span class="number">320</span>, <span class="string">'2009-09-11'</span>),</span><br><span class="line">    	   <span class="keyword">INTO</span> Product <span class="keyword">VALUES</span>(<span class="string">'0003'</span>, <span class="string">'运动T恤'</span>, <span class="string">'衣服'</span>, <span class="number">4000</span>, <span class="number">2800</span>, <span class="literal">NULL</span>),</span><br><span class="line">    	   <span class="keyword">INTO</span> Product <span class="keyword">VALUES</span>(<span class="string">'0004'</span>, <span class="string">'菜刀'</span>, <span class="string">'厨房用具'</span>, <span class="number">3000</span>, <span class="number">2800</span>, <span class="string">'2009-09-20'</span>)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入 <code>NULL</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Product <span class="keyword">VALUE</span>(<span class="string">'0005'</span>, <span class="string">'叉子'</span>, <span class="string">'厨房用具'</span>, <span class="number">500</span>, <span class="literal">NULL</span>, <span class="string">'2009-09-20'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入默认值：如果在创建表时使用了默认值（DEAFULT）约束，在插入数据时又想使此列保持为默认值，操作如下</p>
+<ol>
+<li><p>显示操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Product <span class="keyword">VALUE</span>(<span class="string">'0006'</span>, <span class="string">'插菜板'</span>, <span class="string">'厨房用具'</span>, DEAFULT, <span class="number">790</span>, <span class="string">'2009-04-28'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐示操作：指定列清单</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Product(product_id, product_name, product_type, purchase_price, regist_date) <span class="keyword">VALUE</span>(<span class="string">'0006'</span>, <span class="string">'插菜板'</span>, <span class="string">'厨房用具'</span>, <span class="number">790</span>, <span class="string">'2009-04-28'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>从其它表复制，定一个表 <code>ProductCopy</code>，从 <code>Product</code> 表中复制数据到 <code>ProductCopy</code> 中，使用 <code>INSERT ... SELECT</code> 语句。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ProductCopy(product_id, product_name, product_type, sale_price, purchase_price, regist_date)</span><br><span class="line"><span class="keyword">SELECT</span> product_id, product_name, product_type, sale_price, purchase_price, regist_date <span class="keyword">FROM</span> Product;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><p>格式：<code>SELECT &lt;列名&gt;，...... FROM &lt;表名&gt;;</code>。</p>
+<ol>
+<li><p>查询所有列：<code>SELECT * FROM &lt;表名&gt;;</code>。</p>
+</li>
+<li><p>为列设置别名：可以使用 <code>AS</code> 关键字为列设置别名。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_id <span class="keyword">AS</span> <span class="keyword">id</span>, product_name <span class="keyword">AS</span> <span class="keyword">name</span>, purchase_price <span class="keyword">AS</span> price <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">| id   | name       | price |</span><br><span class="line">+<span class="comment">------+------------+-------+</span></span><br><span class="line">| 0002 | 打孔器     |   320 |</span><br><span class="line">| 0003 | 运动T恤    |  2800 |</span><br><span class="line">| 0004 | 菜刀       |  2800 |</span><br><span class="line">| 0005 | 叉子       |  NULL |</span><br><span class="line">| 001  | T恤衫      |   500 |</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要设置中文别名，需要将中文用双引号扩起来。</p>
+</blockquote>
+</li>
+<li><p>书写常数：<code>SELECT</code> 可以书写常数。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">'商品'</span> <span class="keyword">AS</span> <span class="keyword">string</span>, <span class="number">38</span> <span class="keyword">AS</span> <span class="built_in">number</span>, <span class="string">'2009-02-24'</span> <span class="keyword">AS</span> <span class="built_in">date</span>, product_id, product_name <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">| string | number | date      | product_id | product_name |</span><br><span class="line">+<span class="comment">--------+--------+------------+------------+--------------+</span></span><br><span class="line">| 商品   |     38 | 2009-02-24 | 0002       | 打孔器       |</span><br><span class="line">| 商品   |     38 | 2009-02-24 | 0003       | 运动T恤      |</span><br><span class="line">| 商品   |     38 | 2009-02-24 | 0004       | 菜刀         |</span><br><span class="line">| 商品   |     38 | 2009-02-24 | 0005       | 叉子         |</span><br><span class="line">| 商品   |     38 | 2009-02-24 | 001        | T恤衫        |</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用字符串或者日期常数时，需要使用单引号括起来。</p>
+</blockquote>
+</li>
+<li><p>从结果中删除重复行：在 <code>SELECT</code> 中使用 <code>DISTINCT</code> 可以删除重复行。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_type <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">| product_type |</span><br><span class="line">+<span class="comment">--------------+</span></span><br><span class="line">| 办公用品      |</span><br><span class="line">| 衣服         |</span><br><span class="line">| 厨房用具      |</span><br><span class="line">| 厨房用具      |</span><br><span class="line">| 衣服         |</span><br></pre></td></tr></table></figure>
+<p>比较：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> product_type <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------------+</span></span><br><span class="line">| product_type |</span><br><span class="line">+<span class="comment">--------------+</span></span><br><span class="line">| 办公用品      |</span><br><span class="line">| 衣服         |</span><br><span class="line">| 厨房用具      |</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>DISTINCT</code> 只能放在列清单的第一个列名之前。</p>
+</blockquote>
+</li>
+</ol>
+
       
     </div>
     
@@ -816,7 +872,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库和数据库管理系统"><span class="nav-number">1.</span> <span class="nav-text">数据库和数据库管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-分类"><span class="nav-number">1.1.</span> <span class="nav-text">DBMS 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS-代表"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS 代表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库管理系统结构"><span class="nav-number">2.</span> <span class="nav-text">关系数据库管理系统结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库结构"><span class="nav-number">3.</span> <span class="nav-text">关系数据库结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-语句种类"><span class="nav-number">4.</span> <span class="nav-text">SQL 语句种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库操作"><span class="nav-number">5.</span> <span class="nav-text">数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建及使用"><span class="nav-number">5.0.1.</span> <span class="nav-text">创建及使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表"><span class="nav-number">5.0.2.</span> <span class="nav-text">创建表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除、更新表"><span class="nav-number">5.1.</span> <span class="nav-text">删除、更新表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入数据"><span class="nav-number">5.2.</span> <span class="nav-text">插入数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库和数据库管理系统"><span class="nav-number">1.</span> <span class="nav-text">数据库和数据库管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-分类"><span class="nav-number">1.1.</span> <span class="nav-text">DBMS 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS-代表"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS 代表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库管理系统结构"><span class="nav-number">2.</span> <span class="nav-text">关系数据库管理系统结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库结构"><span class="nav-number">3.</span> <span class="nav-text">关系数据库结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-语句种类"><span class="nav-number">4.</span> <span class="nav-text">SQL 语句种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建、使用数据库"><span class="nav-number">5.</span> <span class="nav-text">创建、使用数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建表"><span class="nav-number">6.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除、更新表"><span class="nav-number">7.</span> <span class="nav-text">删除、更新表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入数据"><span class="nav-number">8.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询数据"><span class="nav-number">9.</span> <span class="nav-text">查询数据</span></a></li></ol></div>
             
 
           </div>
