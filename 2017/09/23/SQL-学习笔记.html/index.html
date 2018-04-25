@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="SQL基础教程（第2版）学习笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-18T10:16:49.786Z">
+<meta property="og:updated_time" content="2018-04-22T03:00:00.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL 学习笔记">
 <meta name="twitter:description" content="SQL基础教程（第2版）学习笔记。">
@@ -469,6 +469,11 @@
 </ol>
 </li>
 </ol>
+<p>最后注释有两种：<code>--</code> 和 <code>/* */</code>。</p>
+<ol>
+<li>行注释书写在 <code>--</code> 之后，只能写在同一行；</li>
+<li>多行注释书写在 <code>/*</code> 和 <code>*/</code> 之间，可以跨多行。</li>
+</ol>
 <h1 id="创建、使用数据库"><a href="#创建、使用数据库" class="headerlink" title="创建、使用数据库"></a>创建、使用数据库</h1><ol>
 <li><p>新建数据库：<code>CREATE DATABASE &lt;数据库名称&gt;;</code></p>
 </li>
@@ -569,7 +574,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ProductCopy(product_id, product_name, product_type, sale_price, purchase_price, regist_date)</span><br><span class="line"><span class="keyword">SELECT</span> product_id, product_name, product_type, sale_price, purchase_price, regist_date <span class="keyword">FROM</span> Product;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><p>格式：<code>SELECT &lt;列名&gt;，...... FROM &lt;表名&gt;;</code>。</p>
+<h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><h2 id="SELECT-语句"><a href="#SELECT-语句" class="headerlink" title="SELECT 语句"></a>SELECT 语句</h2><p>格式：<code>SELECT &lt;列名&gt;，...... FROM &lt;表名&gt;;</code>。</p>
 <ol>
 <li><p>查询所有列：<code>SELECT * FROM &lt;表名&gt;;</code>。</p>
 </li>
@@ -594,6 +599,32 @@
 </blockquote>
 </li>
 </ol>
+<h2 id="WHERE-子句"><a href="#WHERE-子句" class="headerlink" title="WHERE 子句"></a>WHERE 子句</h2><p><code>SELECT</code> 语句通过<code>WHERE</code> 子句来指定查询数据的条件。</p>
+<p>格式：<code>SELECT &lt;列名&gt;, ...... FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;;</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name, product_type <span class="keyword">FROM</span> Product <span class="keyword">WHERE</span> product_type = <span class="string">'衣服'</span>;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------------+--------------+</span></span><br><span class="line">| product_name | product_type |</span><br><span class="line">+<span class="comment">--------------+--------------+</span></span><br><span class="line">| 运动T恤       | 衣服          |</span><br><span class="line">| T恤衫         | 衣服          |</span><br><span class="line">+<span class="comment">--------------+--------------+</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>WHERE</code> 子句必须紧跟在 <code>FROM</code> 子句之后。</p>
+</blockquote>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>SQL 语句中可以使用计算表达式。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name, sale_price, sale_price * <span class="number">2</span> <span class="keyword">AS</span> sale_price_x2 <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">+<span class="comment">--------------+------------+---------------+</span></span><br><span class="line">| product_name | sale_price | sale_price_x2 |</span><br><span class="line">+<span class="comment">--------------+------------+---------------+</span></span><br><span class="line">| 打孔器        |        500 |          1000 |</span><br><span class="line">| 运动T恤       |       4000 |          8000 |</span><br><span class="line">| 菜刀          |       3000 |          6000 |</span><br><span class="line">| 叉子          |        500 |          1000 |</span><br><span class="line">| T恤衫         |       1000 |          2000 |</span><br><span class="line">+<span class="comment">--------------+------------+---------------+</span></span><br></pre></td></tr></table></figure>
+<p>将 <code>sale_price</code> 的两倍放在了 <code>sale_price_x2</code> 列中。</p>
+<p>SQL 支持加减乘除，并且所有包含 <code>NULL</code> 的计算，结果都为 <code>NULL</code>。</p>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>在 <code>WHERE</code> 子句中通过使用比较运算符可以组合出各种各样的条件表达式。<code>=</code> 也是一种比较运算符。主要比较运算符如下：</p>
+<ol>
+<li><code>=</code> ：相等；</li>
+<li><code>&lt;&gt;</code> ：不相等；</li>
+<li><code>&gt;=</code> ：大于等于；</li>
+<li><code>&gt;</code> ：大于；</li>
+<li><code>&lt;=</code> ：小于等于；</li>
+<li><code>&lt;</code> ：小于。</li>
+</ol>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>字符串类型的数据原则上按照字典顺序进行排序，</li>
+<li>不能对 NULL 使用比较运算符（提供了 <code>IS NULL</code> 和 <code>IS NOT NULL</code>  运算符）。</li>
+</ol>
+</blockquote>
 
       
     </div>
@@ -872,7 +903,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库和数据库管理系统"><span class="nav-number">1.</span> <span class="nav-text">数据库和数据库管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-分类"><span class="nav-number">1.1.</span> <span class="nav-text">DBMS 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS-代表"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS 代表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库管理系统结构"><span class="nav-number">2.</span> <span class="nav-text">关系数据库管理系统结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库结构"><span class="nav-number">3.</span> <span class="nav-text">关系数据库结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-语句种类"><span class="nav-number">4.</span> <span class="nav-text">SQL 语句种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建、使用数据库"><span class="nav-number">5.</span> <span class="nav-text">创建、使用数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建表"><span class="nav-number">6.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除、更新表"><span class="nav-number">7.</span> <span class="nav-text">删除、更新表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入数据"><span class="nav-number">8.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询数据"><span class="nav-number">9.</span> <span class="nav-text">查询数据</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库和数据库管理系统"><span class="nav-number">1.</span> <span class="nav-text">数据库和数据库管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-分类"><span class="nav-number">1.1.</span> <span class="nav-text">DBMS 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDBMS-代表"><span class="nav-number">1.2.</span> <span class="nav-text">RDBMS 代表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库管理系统结构"><span class="nav-number">2.</span> <span class="nav-text">关系数据库管理系统结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库结构"><span class="nav-number">3.</span> <span class="nav-text">关系数据库结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-语句种类"><span class="nav-number">4.</span> <span class="nav-text">SQL 语句种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建、使用数据库"><span class="nav-number">5.</span> <span class="nav-text">创建、使用数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建表"><span class="nav-number">6.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除、更新表"><span class="nav-number">7.</span> <span class="nav-text">删除、更新表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入数据"><span class="nav-number">8.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询数据"><span class="nav-number">9.</span> <span class="nav-text">查询数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT-语句"><span class="nav-number">9.1.</span> <span class="nav-text">SELECT 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE-子句"><span class="nav-number">9.2.</span> <span class="nav-text">WHERE 子句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符"><span class="nav-number">9.3.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较运算符"><span class="nav-number">9.4.</span> <span class="nav-text">比较运算符</span></a></li></ol></li></ol></div>
             
 
           </div>
