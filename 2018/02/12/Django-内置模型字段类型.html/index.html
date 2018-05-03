@@ -82,18 +82,18 @@
 
 
 
-<meta name="description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+<meta name="description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
 <meta name="keywords" content="Django,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django 注册和登陆功能实现">
-<meta property="og:url" content="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/index.html">
+<meta property="og:title" content="Django 内置模型字段类型">
+<meta property="og:url" content="https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+<meta property="og:description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-12T10:09:08.512Z">
+<meta property="og:updated_time" content="2018-05-03T11:33:22.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django 注册和登陆功能实现">
-<meta name="twitter:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+<meta name="twitter:title" content="Django 内置模型字段类型">
+<meta name="twitter:description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/"/>
 
 
 
 
 
-  <title>Django 注册和登陆功能实现 | TyroTalk</title>
+  <title>Django 内置模型字段类型 | TyroTalk</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Django 注册和登陆功能实现</h1>
+          <h1 class="post-title" itemprop="name headline">Django 内置模型字段类型</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T14:05:51+08:00">
-                2017-12-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T19:42:35+08:00">
+                2018-02-12
               </time>
             
 
@@ -369,9 +369,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/30/Django-注册和登陆功能实现.html/#comments" itemprop="discussionUrl">
+                <a href="/2018/02/12/Django-内置模型字段类型.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/30/Django-注册和登陆功能实现.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/02/12/Django-内置模型字段类型.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,86 +399,189 @@
       
 
       
-        <p>Django 提供了用户身份验证机制，可实现注册和登录功能。</p>
+        <p>Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。</p>
+<p>定义模型时，使用一个 Python 类（<code>django.db.models.Model</code> 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 <code>CharField</code> ）对应数据库列的类型（如 <code>varchar</code>）。</p>
 <a id="more"></a>
-<h1 id="settings-py-文件设置"><a href="#settings-py-文件设置" class="headerlink" title="settings.py 文件设置"></a>settings.py 文件设置</h1><p>找到 <code>INSTALLED_APPS</code> 列表，确保含有下面两项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="模型字段类"><a href="#模型字段类" class="headerlink" title="模型字段类"></a>模型字段类</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'category_name'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        verbose_name_plural = <span class="string">'Categories'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=<span class="string">'category'</span>)</span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'node_name'</span>)</span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'slug_url'</span>)</span><br><span class="line">    created_time = models.DateTimeField(auto_now_add=<span class="keyword">True</span>, verbose_name=<span class="string">'created_time'</span>)</span><br><span class="line">    updated_time = models.DateTimeField(auto_now=<span class="keyword">True</span>, null=<span class="keyword">True</span>, blank=<span class="keyword">True</span>, verbose_name=<span class="string">'updated_time'</span>)</span><br><span class="line">    topic_nums = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'topic_nums'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<p>上面代码中定义了两个模型，在这两个模型中，使用了许多字段类型（如 <code>CharField</code>、 <code>DateTimeField</code> 等)，Django 内置了许多<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/fields/" target="_blank" rel="noopener">字段类型</a>，常见的字段类和说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoField</td>
+<td>一个 IntegerField，根据 ID 自动递增。</td>
+</tr>
+<tr>
+<td>IntegerField</td>
+<td>整数。在Django 支持的所有数据库中取值范围是 -2147483648 到 2147483647；当 <code>localize</code>（支持表单数据输入以及渲染输出的本地化的参数）设置为 <code>False</code> 时，默认的表单部件是 <code>NumberInput</code>，否则是 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>CharField</td>
+<td>用来存储各种长度的字符串， 默认表单部件 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>BooleanField</td>
+<td>真假值字段，默认为默认表单部件 <code>CheckboxInput</code>。</td>
+</tr>
+<tr>
+<td>DateField</td>
+<td>日期，在 Python 中使用 <code>datetime.date</code> 实例表示。</td>
+</tr>
+<tr>
+<td>DateTimeField</td>
+<td>日期和时间，在 Python 中使用 <code>datetime.datetime</code> 实例表示。</td>
+</tr>
+<tr>
+<td>EmailField</td>
+<td>一种 <code>CharField</code>，使用EmailValidator 验证邮箱格式，<code>max_length</code> 的默认值为 254。</td>
+</tr>
+<tr>
+<td>FileField</td>
+<td>文件上传字段。</td>
+</tr>
+<tr>
+<td>FilePathField</td>
+<td>一种 <code>CharField</code>，限定只能在文件系统中的特定目录里选择文件。</td>
+</tr>
+<tr>
+<td>FloatField</td>
+<td>浮点数，在 Python 中使用 <code>float</code> 实例表示。当 <code>localize</code> 设置为 <code>False</code> 时，默认的表单部件是 <code>NumberInput</code>，否则是 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>ImageField</td>
+<td>属性和方法继承自 FileField，对上传的对象进行了验证，增加了 height 和width 两个属性。需要 <code>Pillow</code> 库支持。</td>
+</tr>
+<tr>
+<td>GenericIPAddressField</td>
+<td>IPV4或IPV6地址，字符串格式（如 192.168.1.1或fe80::e41c:c9da:a324:cc50%12），默认表单部件 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>SlugField</td>
+<td>别名，Slug 字段只能包含字母，数字，下划线或者是连字符，通常用来作为短标签，放在URL中。可以使用这个字段用来保存节点的 URL，如果没有指定默认长度 <code>max_length</code>，长度默认为50。</td>
+</tr>
+<tr>
+<td>TextField</td>
+<td>大段文本字段，默认表单组件是 <code>Texterea</code>。</td>
+</tr>
+<tr>
+<td>URLField</td>
+<td>用于输入 URL 的 <code>CharField</code>。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用字段属性"><a href="#常用字段属性" class="headerlink" title="常用字段属性"></a>常用<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/fields/#field-options" target="_blank" rel="noopener">字段属性</a></h1><p>字段属性用于字段类型中对字段类型加以限制，如 <code>CharField(max_length=127)</code> 限制了字段类型的最大长度为 127。</p>
+<h2 id="常用通用字段属性"><a href="#常用通用字段属性" class="headerlink" title="常用通用字段属性"></a>常用通用字段属性</h2><p>此类字段属性参数是全部字段类型都可以用的，而且是可以选择的。</p>
+<ol>
+<li><p><code>null</code>：默认为 False，如果为True，Django 将在数据库中把空值存储为 <code>null</code>。</p>
+<blockquote>
+<p>基于字符串的字段，如 <code>CharField</code> 和 <code>TextField</code>，不应该使用null，因为空字符串值始终存储为空字符串，而不是 null。</p>
+</blockquote>
+</li>
+<li><p><code>blank</code>：默认为 False，如果为True，则表单验证时允许输入空值，否则为必填项。</p>
+</li>
+<li><p><code>default</code>：字段的默认值，可以是一个值或可调用对象，如果是一个可调用对象，每次这个模型类被创建时，它都会被调用。这个默认值不可以是一个可变对象（如：字典，列表等）。</p>
+</li>
+<li><p><code>editable</code>：默认为 True，如果为 False，字段不在管理后台或其他 <code>ModelForm</code> 中显示，验证模型时<br>也会跳过。</p>
+</li>
+<li><p><code>error_messages</code>：用于覆盖字段抛出异常时的默认消息。值为一个字典，通过键指定想覆盖的错误消息。错误消息键包括 <code>null</code>、<code>blank</code>、<code>invalid</code>、<code>invalid_choice</code>、<code>unique</code> 和 <code>unique_for_date</code>。</p>
+</li>
+<li><p><code>help_text</code>：在表单小组件旁显示的额外帮助文本。即便不在表单中显示，也能用作文档。</p>
+</li>
+<li><p><code>primary_key</code>：设为 True 时，指定字段为模型的主键。如果模型中没有一个字段设定 <code>primary_key=True</code>，Django 会自动添加一个 <code>AutoField</code> 用于存储主键，主键字段是只读的。</p>
+</li>
+<li><p><code>unique</code>：设为 True 时，在表中字段的值必须是唯一的。除了 <code>ManyToManyField</code>、<code>OneToOneField</code> 和 <code>FileField</code> 之外其他字段都可以使用这个设置。</p>
+</li>
+<li><p><code>verbose_name</code>：一个字段的可读性更高的名称，如果未设定，Django 将使用字段的属性名称（下划线转换成空格）自动生成一个。</p>
+</li>
+<li><p><code>validators</code>：用于验证字段的验证器列表。</p>
+</li>
+</ol>
+<h2 id="常用非通用字段属性"><a href="#常用非通用字段属性" class="headerlink" title="常用非通用字段属性"></a>常用非通用字段属性</h2><ol>
+<li><code>max_length</code>：字段的最大长度（字符个数），常用于 <code>CharField</code>、<code>EmailField</code>、<code>TextField</code>、<code>SlugField</code>、<code>URLField</code>。</li>
+<li><code>auto_now</code>：每次保存对象时自动设为当前日期，常用于 <code>DateField</code>、<code>DateTimeField</code>。</li>
+<li><code>auto_now_add</code>：创建对象时自动设为当前日期，常用于 <code>DateField</code>、<code>DateTimeField</code>。</li>
+</ol>
+<h1 id="模型字段关系"><a href="#模型字段关系" class="headerlink" title="模型字段关系"></a>模型字段关系</h1><p>关于模型之间的关系，Django 提供了三个字段类型：<code>ForeignKey</code>（多对一关系）、<code>OneToOneField</code>（一对一关系）、<code>ManyToManyField</code>（多对多关系）。都需要一个位置参数：与该模型关联的类。</p>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'category_name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=<span class="string">'category'</span>)</span><br></pre></td></tr></table></figure>
+<p>模型类 <code>Node</code> 中就使用了 <code>ForeignKey</code> ，使 <code>Node</code> 指向了 <code>Category</code>。</p>
 <blockquote>
 <ol>
-<li><code>django.contrib.auth</code> 用于访问 Django 提供的身份验证系统，</li>
-<li><code>jango.contrib.contenttypes</code> 使 <code>auth</code> 应用跟踪数据库中的模型。</li>
+<li>一个对象与自身有多对一关系，使用 models.ForeignKey(‘self’)。</li>
+<li>与尚未定义的模型建立关系，不能使用模型对象，应该使用模型的名称：<code>models.ForeignKey(&#39;Undefined&#39;)</code></li>
 </ol>
 </blockquote>
-<h1 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h1><p>Django 的 <code>auth</code> 应用并不存储明文密码，而是存储密码哈希值，默认使用 <a href="https://baike.baidu.com/item/PBKDF2" target="_blank" rel="noopener">PBKDF2</a> 算法将密码加密。</p>
-<h1 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h1><p>Django 默认有一套用户模型（<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/contrib/auth/#user-model" target="_blank" rel="noopener">django.contrib.auth.models.User</a>），这里就使用此模型构建网站的用户功能。</p>
-<blockquote>
-<p><code>django.contrib.auth.models.User</code> 的默认属性有：<code>username</code>、<code>first_name</code>、<code>last_name</code>、<code>email</code>、<code>password</code>、<code>is_staff</code>、<code>is_active</code>、<code>is_superuser</code>、<code>last_login</code>、<code>date_joined</code> 等。</p>
-</blockquote>
-<p>如果还需要对用户添加其它属性，可在应用的 <code>models.py</code> 文件中新定一个模型，再与 <code>User</code> 模型建立一对一关系（OneToOneField）。</p>
-<p>这里不再添加其它模型。</p>
-<h1 id="用户表单"><a href="#用户表单" class="headerlink" title="用户表单"></a>用户表单</h1><p>定义用户表单用于在 HTML 中相应的模型字段。在应用的 <code>forms.py</code> 文件中定义一个 <code>UserForm</code> 类。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line">    password = forms.CharField(label=<span class="string">'password'</span>, min_length=<span class="number">8</span>, max_length=<span class="number">30</span>, required=<span class="keyword">True</span>, widget=forms.PasswordInput())</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = User</span><br><span class="line">        fields = (<span class="string">'username'</span>, <span class="string">'email'</span>, <span class="string">'password'</span>)</span><br></pre></td></tr></table></figure>
-<p><code>UserForm</code> 类中重新定义 <code>password</code> 属性，使用 <code>PasswordInput()</code> 组件，使得用户在输入密码时不可见。同时还定义了密码最短 8 位，最长 30 位，且为必填项。</p>
-<p><code>Meta</code> 类中还定义了一些其它属性，包括关联模型为 <code>User</code>，表单中显示（<code>fields</code>）的字段为 <code>username</code>、<code>email</code> 和 <code>password</code>；还可以使用 <code>exclude</code> 指定要在表单排除的字段。</p>
-<h1 id="注册功能"><a href="#注册功能" class="headerlink" title="注册功能"></a>注册功能</h1><h2 id="注册视图"><a href="#注册视图" class="headerlink" title="注册视图"></a>注册视图</h2><p>在应用的 <code>views.py</code> 文件中定义一个 <code>register()</code> 视图来处理表单数据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> user.forms <span class="keyword">import</span> UserForm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 注册成功后改为 True</span></span><br><span class="line">    registered = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        user_form = UserForm(data=request.POST)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> user_form.is_valid():</span><br><span class="line">            user = user_form.save()</span><br><span class="line">            user.set_password(user.password)</span><br><span class="line">            user.save()</span><br><span class="line">            </span><br><span class="line">            registered = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:  <span class="comment"># 表单数据无效</span></span><br><span class="line">            print(user_form.errors)</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># 不是 POST请求</span></span><br><span class="line">        user_form = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'user/register.html'</span>, &#123;<span class="string">'user_form'</span>: user_form, <span class="string">'registered'</span>: registered&#125;)</span><br></pre></td></tr></table></figure>
 <ol>
-<li>局部布尔变量 registered 只有在注册成功后才改为 True，在 Html 模版中会用到。</li>
-<li>如果是 HTTP POST 请求，就处理表单数据：<ol>
-<li>通过 <code>UserForm(data=request.POST)</code> 来获取表单中的所有数据；</li>
-<li>如果表单数据可用，就通过 <code>save()</code> 方法将数据保存到数据库中，通过 <code>set_password</code> 方法计算密码哈希值并保存到数据库中；</li>
-<li>将布尔变量 registered 改为 True。</li>
-<li>如果表单数据无效，在终端中打印错误信息。</li>
+<li>Django 会在该字段名称添加 “_id” 后缀，作为数据库列的名称。<code>Node</code> 模型中 <code>category</code> 的字段名称实际为 <code>category_id</code>。</li>
+<li><p>三个字段类型可以接收一些参数，常用两个参数如下：</p>
+<ul>
+<li><code>related_name</code>：用于获取所关联对象的名称。<strong>当一个模型中有两个及以上属性同时引用另一个模型时，需要使用此参数，否则会出现重名问题。</strong>如果不想让 Django 创建逆向关系，把 <code>related_name</code> 设为 ‘+’，或者以 ‘+’ 结尾。</li>
+<li><p><code>on_delete</code>：外键引用的对象被删除时，设置包含外键的对象是否也被删除，<code>on_delete</code> 可取的值在 <code>django.db.models</code> 中定义:</p>
+<ol>
+<li><code>CASCADE</code>：层叠删除，默认值。</li>
+<li><code>PROTECT</code>：抛出 <code>ProtectedError</code>（<code>django.db.IntegrityError</code> 的子类），禁止删除被引用的对象。</li>
+<li><code>SET_NULL</code>：把外键设为 <code>null</code>，仅当 <code>null</code> 为 True 时才能这么做。</li>
+<li><p><code>SET_DEFAULT</code>：把外键设为默认值，必须为外键设定默认值。</p>
+<pre><code>果关联的表中没有关联的记录，访问反向关系时会抛出 `DoesNotExist` 异常。    
+</code></pre></li>
 </ol>
 </li>
-<li>如果不是 HTTP POST 请求，渲染空的表单数据。</li>
-<li>最后通过 <code>render</code> 渲染模版，将表单数据和布尔变量以字典形式传入 <code>render</code>。</li>
-</ol>
-<h2 id="注册页面的-HTML-模版"><a href="#注册页面的-HTML-模版" class="headerlink" title="注册页面的 HTML 模版"></a>注册页面的 HTML 模版</h2>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">        Register</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% if registered %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">strong</span>&gt;</span>Thank you for registering!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'QA:index' %&#125;"</span>&gt;</span>Return to home...<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"user_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            &#123;&#123; user_form.as_p &#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<ol>
-<li>通过布尔变量 registered 判断注册是否成功，以此使界面显示不同内容；</li>
-<li>Django 要求表单中必须有 CSRF（跨站请求伪造）令牌（<code>{% csrf_token %}</code>），用于增强提交表单后发送 HTTP POST 请求的安全性。</li>
-<li><code>as_p</code> 模板函数使得段落（HTML &lt;p> 标签）中显示各个表单元素，一行显示一个表单元素。</li>
-</ol>
-<blockquote>
-<p>最后要添加 URL 映射，并且在 HTML 模版中添加注册链接。</p>
-</blockquote>
-<h1 id="登录功能"><a href="#登录功能" class="headerlink" title="登录功能"></a>登录功能</h1><h2 id="登录视图"><a href="#登录视图" class="headerlink" title="登录视图"></a>登录视图</h2><p>在应用的 <code>views.py</code> 文件中定义一个 <code>user_login()</code> 视图来处理表单数据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> authenticate, login</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect, HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_login</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        username = request.POST.get(<span class="string">'username'</span>)</span><br><span class="line">        password = request.POST.get(<span class="string">'password'</span>)</span><br><span class="line"></span><br><span class="line">        user = authenticate(username=username, password=password)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> user:</span><br><span class="line">            <span class="keyword">if</span> user.is_active:</span><br><span class="line">                login(request, user)</span><br><span class="line">                <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> HttpResponse(<span class="string">'您的账户不可用！'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"非法登陆：&#123;0&#125;, &#123;1&#125;"</span>.format(username, password))</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">"用户名或密码无效！"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'user/login.html'</span>, &#123;&#125;)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>如果是 HTTP POST 请求，提取表单信息：<ol>
-<li>使用 <code>get()</code> 方法提取 username、password 值，当对应值不存在时，返回 None；</li>
-<li>使用 <code>authenticate()</code> 函数检查用户名和密码是否匹配数据库中已存在的某个用户账户。如果匹配成功，就返回一个 User 对象，否则返回 None；</li>
-<li>如果匹配成功，查看用户账户是否是激活状态（由 <code>User</code> 模型的 <code>is_active</code> 决定）；如果账户为激活状态，使用 Django 提供 <code>login()</code> 函数登录用户，然后使用 <code>HttpResponseRedirect</code> 类重定向回首页，其中 <code>reverse()</code> 含函数获取应用首页的 URL；如果账户不是激活状态，使用 <code>HttpResponse</code> 类传递错误信息给用户。</li>
-<li>如何匹配不成功，在终端打印错误信息并传递错误信息给用户。</li>
-</ol>
+</ul>
 </li>
-<li>如果不是 HTTP POST 请求，重新渲染登录模版。</li>
 </ol>
-<h2 id="登陆页面的-HTML-模版"><a href="#登陆页面的-HTML-模版" class="headerlink" title="登陆页面的 HTML 模版"></a>登陆页面的 HTML 模版</h2>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">        Login</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"login_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:login' %&#125;"</span>&gt;</span></span><br><span class="line">        &#123;% csrf_token %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"field"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>用户名<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">size</span>=<span class="string">"50"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"field"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">size</span>=<span class="string">"50"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>最后要添加 URL 映射，并且在 HTML 模版中添加登陆链接。</p>
-</blockquote>
-<h1 id="注销功能"><a href="#注销功能" class="headerlink" title="注销功能"></a>注销功能</h1><p>使用 Django 提供的 <code>logout()</code> 函数实现用户注销功能。</p>
-<p>在应用的 <code>views.py</code> 文件中定义一个 <code>user_logout()</code> 视图来处理注销功能。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> logout</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.decorators <span class="keyword">import</span> login_required</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_logout</span><span class="params">(request)</span>:</span></span><br><span class="line">    logout(request)</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure>
-<p>注销功能只有已登陆的用户才能使用，使用 <code>login_required()</code> 装饰器函数加以限制。</p>
-<blockquote>
-<p>最后要添加 URL 映射，并且在 HTML 模版中添加注销链接。</p>
-</blockquote>
-<h1 id="限制访问不同内容"><a href="#限制访问不同内容" class="headerlink" title="限制访问不同内容"></a>限制访问不同内容</h1><p>登陆/注册和注销链接根据当前是否有用户已登陆会有不同的显示，可以在 HTML 模版中 使用 <code>{% if user.authenticated %}</code> 模版标签来判断是否存在已登陆用户。</p>
-
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if user.is_authenticated %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:logout' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>注销<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">&#123;% else %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:login' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>登陆<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="模型元选项"><a href="#模型元选项" class="headerlink" title="模型元选项"></a><a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/options/" target="_blank" rel="noopener">模型元选项</a></h1><p>在上面的模型代码中，定义一个内部 Meta 类，用来对当前的模型类或模型字段进行设置约束。</p>
+<p>常用模型元数据选项如下：</p>
+<table>
+<thead>
+<tr>
+<th>模型元数据</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+<td>如果为 True，表示模型类是一个抽象基类。</td>
+</tr>
+<tr>
+<td>app_label</td>
+<td>如果定义模型的应用不在 INSTALLED_APPS 中，必须指定所属的应用。</td>
+</tr>
+<tr>
+<td>db_table</td>
+<td>模型所用的数据表的名称，默认情况下，Django 使用表名后加一个 s 作为数据表的名称。</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>对象的默认排序，获取对象列表时使用，前面带有可选的 ‘ - ‘ 表示倒叙，没有表示正序，使用 ‘ ? ‘ 表示随机排序。</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>创建对象时写入权限表的额外权限。</td>
+</tr>
+<tr>
+<td>default_permissions</td>
+<td>默认为（’add’, ‘change’, ‘delete’）。</td>
+</tr>
+<tr>
+<td>unique_together</td>
+<td>设定组合在一起时必须唯一的多个字段名称。 <code>unique_together = (&#39;字段1&#39;, &#39;字段2&#39;)</code> 是一个字段的元组，组合起来的时候代表里面的字段分别都是唯一的。</td>
+</tr>
+<tr>
+<td>verbose_name</td>
+<td>设定对象的单数名称。</td>
+</tr>
+<tr>
+<td>verbose_name_plural</td>
+<td>设定对象的复数名称。</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -528,7 +631,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/" title="Django 注册和登陆功能实现">https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/</a>
+    <a href="https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/" title="Django 内置模型字段类型">https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -558,8 +661,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/18/Django-配置-Mysql-数据库.html/" rel="next" title="Django 配置 Mysql 数据库">
-                <i class="fa fa-chevron-left"></i> Django 配置 Mysql 数据库
+              <a href="/2018/01/30/Django-注册和登陆功能实现.html/" rel="next" title="Django 注册和登陆功能实现">
+                <i class="fa fa-chevron-left"></i> Django 注册和登陆功能实现
               </a>
             
           </div>
@@ -567,10 +670,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/07/Django-内置模型字段类型.html/" rel="prev" title="Django 内置模型字段类型">
-                Django 内置模型字段类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -757,7 +856,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#settings-py-文件设置"><span class="nav-number">1.</span> <span class="nav-text">settings.py 文件设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#密码"><span class="nav-number">2.</span> <span class="nav-text">密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户模型"><span class="nav-number">3.</span> <span class="nav-text">用户模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户表单"><span class="nav-number">4.</span> <span class="nav-text">用户表单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册功能"><span class="nav-number">5.</span> <span class="nav-text">注册功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册视图"><span class="nav-number">5.1.</span> <span class="nav-text">注册视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册页面的-HTML-模版"><span class="nav-number">5.2.</span> <span class="nav-text">注册页面的 HTML 模版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录功能"><span class="nav-number">6.</span> <span class="nav-text">登录功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录视图"><span class="nav-number">6.1.</span> <span class="nav-text">登录视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登陆页面的-HTML-模版"><span class="nav-number">6.2.</span> <span class="nav-text">登陆页面的 HTML 模版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注销功能"><span class="nav-number">7.</span> <span class="nav-text">注销功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#限制访问不同内容"><span class="nav-number">8.</span> <span class="nav-text">限制访问不同内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型字段类"><span class="nav-number">1.</span> <span class="nav-text">模型字段类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用字段属性"><span class="nav-number">2.</span> <span class="nav-text">常用字段属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用通用字段属性"><span class="nav-number">2.1.</span> <span class="nav-text">常用通用字段属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用非通用字段属性"><span class="nav-number">2.2.</span> <span class="nav-text">常用非通用字段属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型字段关系"><span class="nav-number">3.</span> <span class="nav-text">模型字段关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型元选项"><span class="nav-number">4.</span> <span class="nav-text">模型元选项</span></a></li></ol></div>
             
 
           </div>
@@ -914,9 +1013,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2017/12/30/Django-注册和登陆功能实现.html/';
-          this.page.identifier = '2017/12/30/Django-注册和登陆功能实现.html/';
-          this.page.title = 'Django 注册和登陆功能实现';
+          this.page.url = 'https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/';
+          this.page.identifier = '2018/02/12/Django-内置模型字段类型.html/';
+          this.page.title = 'Django 内置模型字段类型';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';
