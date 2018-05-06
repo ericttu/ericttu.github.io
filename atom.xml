@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-05-03T11:33:22.822Z</updated>
+  <updated>2018-05-06T02:19:36.453Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Django 内置模型字段类型</title>
-    <link href="https://tyrotalk.com/2018/02/12/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B.html/"/>
-    <id>https://tyrotalk.com/2018/02/12/Django-内置模型字段类型.html/</id>
-    <published>2018-02-12T11:42:35.000Z</published>
-    <updated>2018-05-03T11:33:22.822Z</updated>
+    <link href="https://tyrotalk.com/2018/02/20/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B.html/"/>
+    <id>https://tyrotalk.com/2018/02/20/Django-内置模型字段类型.html/</id>
+    <published>2018-02-20T11:42:35.000Z</published>
+    <updated>2018-05-06T02:19:36.453Z</updated>
     
     <summary type="html">
     
@@ -41,10 +41,10 @@
   
   <entry>
     <title>Django 注册和登陆功能实现</title>
-    <link href="https://tyrotalk.com/2018/01/30/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
-    <id>https://tyrotalk.com/2018/01/30/Django-注册和登陆功能实现.html/</id>
-    <published>2018-01-30T06:05:51.000Z</published>
-    <updated>2018-05-03T11:32:52.795Z</updated>
+    <link href="https://tyrotalk.com/2018/02/05/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
+    <id>https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/</id>
+    <published>2018-02-05T06:05:51.000Z</published>
+    <updated>2018-05-06T02:19:52.341Z</updated>
     
     <summary type="html">
     
@@ -63,10 +63,10 @@
   
   <entry>
     <title>Django 配置 Mysql 数据库</title>
-    <link href="https://tyrotalk.com/2018/01/05/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-    <id>https://tyrotalk.com/2018/01/05/Django-配置-Mysql-数据库.html/</id>
-    <published>2018-01-05T08:48:41.000Z</published>
-    <updated>2018-05-03T11:32:33.669Z</updated>
+    <link href="https://tyrotalk.com/2018/01/26/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tyrotalk.com/2018/01/26/Django-配置-Mysql-数据库.html/</id>
+    <published>2018-01-26T08:48:41.000Z</published>
+    <updated>2018-05-06T02:20:11.764Z</updated>
     
     <summary type="html">
     
@@ -87,10 +87,10 @@
   
   <entry>
     <title>使用 reuqests 爬取豆瓣数据书籍 URL</title>
-    <link href="https://tyrotalk.com/2017/11/10/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
-    <id>https://tyrotalk.com/2017/11/10/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
-    <published>2017-11-10T05:23:01.000Z</published>
-    <updated>2018-05-03T11:42:06.274Z</updated>
+    <link href="https://tyrotalk.com/2017/11/20/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
+    <id>https://tyrotalk.com/2017/11/20/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
+    <published>2017-11-20T05:23:01.000Z</published>
+    <updated>2018-05-06T02:22:06.577Z</updated>
     
     <summary type="html">
     
@@ -104,6 +104,28 @@
       <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="requests" scheme="https://tyrotalk.com/tags/requests/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mongdb 简介及 Python 连接</title>
+    <link href="https://tyrotalk.com/2017/11/04/Mongdb-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5.html/"/>
+    <id>https://tyrotalk.com/2017/11/04/Mongdb-简介及-Python-连接.html/</id>
+    <published>2017-11-04T01:19:56.000Z</published>
+    <updated>2018-05-06T02:21:44.403Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="Mongodb" scheme="https://tyrotalk.com/tags/Mongodb/"/>
     
   </entry>
   
@@ -181,7 +203,7 @@
     <link href="https://tyrotalk.com/2017/09/16/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
     <id>https://tyrotalk.com/2017/09/16/初识-Requests-库.html/</id>
     <published>2017-09-16T07:06:21.000Z</published>
-    <updated>2018-04-18T09:30:11.963Z</updated>
+    <updated>2018-04-18T10:19:29.992Z</updated>
     
     <summary type="html">
     
@@ -229,7 +251,7 @@
     <link href="https://tyrotalk.com/2017/09/07/BeautifulSoup-%E4%BD%BF%E7%94%A8.html/"/>
     <id>https://tyrotalk.com/2017/09/07/BeautifulSoup-使用.html/</id>
     <published>2017-09-07T01:32:19.000Z</published>
-    <updated>2018-04-18T09:21:41.125Z</updated>
+    <updated>2018-04-18T10:19:12.445Z</updated>
     
     <summary type="html">
     
@@ -444,30 +466,6 @@
     <summary type="html">
     
       &lt;p&gt;本篇包括归并排序和快速排序，它们都是采用了分治法的 O(NlogN) 算法。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：简单排序算法</title>
-    <link href="https://tyrotalk.com/2017/07/02/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/07/02/算法：简单排序算法.html/</id>
-    <published>2017-07-02T11:54:45.000Z</published>
-    <updated>2018-04-18T09:17:50.329Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单排序算法有三种：选择排序、插入排序和冒泡排序。都属于 O(n^2) 级别的算法。&lt;/p&gt;
     
     </summary>
     

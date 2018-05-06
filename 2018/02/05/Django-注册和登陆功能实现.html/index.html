@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="Osot-0un7MRM2p2kZp8LoqqHCGXTyJnBsaUQyvcPMAA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Django,Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TyroTalk" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+<meta name="keywords" content="Django,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 注册和登陆功能实现">
+<meta property="og:url" content="https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/index.html">
+<meta property="og:site_name" content="TyroTalk">
+<meta property="og:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-06T02:19:52.341Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 注册和登陆功能实现">
+<meta name="twitter:description" content="Django 提供了用户身份验证机制，可实现注册和登录功能。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/"/>
+
+
+
+
+
+  <title>Django 注册和登陆功能实现 | TyroTalk</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98076220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TyroTalk</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TuTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TyroTalk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django 注册和登陆功能实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T14:05:51+08:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/05/Django-注册和登陆功能实现.html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/05/Django-注册和登陆功能实现.html/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Django 提供了用户身份验证机制，可实现注册和登录功能。</p>
+<a id="more"></a>
+<h1 id="settings-py-文件设置"><a href="#settings-py-文件设置" class="headerlink" title="settings.py 文件设置"></a>settings.py 文件设置</h1><p>找到 <code>INSTALLED_APPS</code> 列表，确保含有下面两项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li><code>django.contrib.auth</code> 用于访问 Django 提供的身份验证系统，</li>
+<li><code>jango.contrib.contenttypes</code> 使 <code>auth</code> 应用跟踪数据库中的模型。</li>
+</ol>
+</blockquote>
+<h1 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h1><p>Django 的 <code>auth</code> 应用并不存储明文密码，而是存储密码哈希值，默认使用 <a href="https://baike.baidu.com/item/PBKDF2" target="_blank" rel="noopener">PBKDF2</a> 算法将密码加密。</p>
+<h1 id="用户模型"><a href="#用户模型" class="headerlink" title="用户模型"></a>用户模型</h1><p>Django 默认有一套用户模型（<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/contrib/auth/#user-model" target="_blank" rel="noopener">django.contrib.auth.models.User</a>），这里就使用此模型构建网站的用户功能。</p>
+<blockquote>
+<p><code>django.contrib.auth.models.User</code> 的默认属性有：<code>username</code>、<code>first_name</code>、<code>last_name</code>、<code>email</code>、<code>password</code>、<code>is_staff</code>、<code>is_active</code>、<code>is_superuser</code>、<code>last_login</code>、<code>date_joined</code> 等。</p>
+</blockquote>
+<p>如果还需要对用户添加其它属性，可在应用的 <code>models.py</code> 文件中新定一个模型，再与 <code>User</code> 模型建立一对一关系（OneToOneField）。</p>
+<p>这里不再添加其它模型。</p>
+<h1 id="用户表单"><a href="#用户表单" class="headerlink" title="用户表单"></a>用户表单</h1><p>定义用户表单用于在 HTML 中相应的模型字段。在应用的 <code>forms.py</code> 文件中定义一个 <code>UserForm</code> 类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line">    password = forms.CharField(label=<span class="string">'password'</span>, min_length=<span class="number">8</span>, max_length=<span class="number">30</span>, required=<span class="keyword">True</span>, widget=forms.PasswordInput())</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = User</span><br><span class="line">        fields = (<span class="string">'username'</span>, <span class="string">'email'</span>, <span class="string">'password'</span>)</span><br></pre></td></tr></table></figure>
+<p><code>UserForm</code> 类中重新定义 <code>password</code> 属性，使用 <code>PasswordInput()</code> 组件，使得用户在输入密码时不可见。同时还定义了密码最短 8 位，最长 30 位，且为必填项。</p>
+<p><code>Meta</code> 类中还定义了一些其它属性，包括关联模型为 <code>User</code>，表单中显示（<code>fields</code>）的字段为 <code>username</code>、<code>email</code> 和 <code>password</code>；还可以使用 <code>exclude</code> 指定要在表单排除的字段。</p>
+<h1 id="注册功能"><a href="#注册功能" class="headerlink" title="注册功能"></a>注册功能</h1><h2 id="注册视图"><a href="#注册视图" class="headerlink" title="注册视图"></a>注册视图</h2><p>在应用的 <code>views.py</code> 文件中定义一个 <code>register()</code> 视图来处理表单数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> user.forms <span class="keyword">import</span> UserForm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 注册成功后改为 True</span></span><br><span class="line">    registered = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        user_form = UserForm(data=request.POST)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> user_form.is_valid():</span><br><span class="line">            user = user_form.save()</span><br><span class="line">            user.set_password(user.password)</span><br><span class="line">            user.save()</span><br><span class="line">            </span><br><span class="line">            registered = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:  <span class="comment"># 表单数据无效</span></span><br><span class="line">            print(user_form.errors)</span><br><span class="line">    <span class="keyword">else</span>:  <span class="comment"># 不是 POST请求</span></span><br><span class="line">        user_form = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'user/register.html'</span>, &#123;<span class="string">'user_form'</span>: user_form, <span class="string">'registered'</span>: registered&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>局部布尔变量 registered 只有在注册成功后才改为 True，在 Html 模版中会用到。</li>
+<li>如果是 HTTP POST 请求，就处理表单数据：<ol>
+<li>通过 <code>UserForm(data=request.POST)</code> 来获取表单中的所有数据；</li>
+<li>如果表单数据可用，就通过 <code>save()</code> 方法将数据保存到数据库中，通过 <code>set_password</code> 方法计算密码哈希值并保存到数据库中；</li>
+<li>将布尔变量 registered 改为 True。</li>
+<li>如果表单数据无效，在终端中打印错误信息。</li>
+</ol>
+</li>
+<li>如果不是 HTTP POST 请求，渲染空的表单数据。</li>
+<li>最后通过 <code>render</code> 渲染模版，将表单数据和布尔变量以字典形式传入 <code>render</code>。</li>
+</ol>
+<h2 id="注册页面的-HTML-模版"><a href="#注册页面的-HTML-模版" class="headerlink" title="注册页面的 HTML 模版"></a>注册页面的 HTML 模版</h2>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">        Register</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    &#123;% if registered %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">strong</span>&gt;</span>Thank you for registering!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'QA:index' %&#125;"</span>&gt;</span>Return to home...<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    	<span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"user_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            &#123;&#123; user_form.as_p &#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<ol>
+<li>通过布尔变量 registered 判断注册是否成功，以此使界面显示不同内容；</li>
+<li>Django 要求表单中必须有 CSRF（跨站请求伪造）令牌（<code>{% csrf_token %}</code>），用于增强提交表单后发送 HTTP POST 请求的安全性。</li>
+<li><code>as_p</code> 模板函数使得段落（HTML &lt;p> 标签）中显示各个表单元素，一行显示一个表单元素。</li>
+</ol>
+<blockquote>
+<p>最后要添加 URL 映射，并且在 HTML 模版中添加注册链接。</p>
+</blockquote>
+<h1 id="登录功能"><a href="#登录功能" class="headerlink" title="登录功能"></a>登录功能</h1><h2 id="登录视图"><a href="#登录视图" class="headerlink" title="登录视图"></a>登录视图</h2><p>在应用的 <code>views.py</code> 文件中定义一个 <code>user_login()</code> 视图来处理表单数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> authenticate, login</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect, HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_login</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        username = request.POST.get(<span class="string">'username'</span>)</span><br><span class="line">        password = request.POST.get(<span class="string">'password'</span>)</span><br><span class="line"></span><br><span class="line">        user = authenticate(username=username, password=password)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> user:</span><br><span class="line">            <span class="keyword">if</span> user.is_active:</span><br><span class="line">                login(request, user)</span><br><span class="line">                <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> HttpResponse(<span class="string">'您的账户不可用！'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"非法登陆：&#123;0&#125;, &#123;1&#125;"</span>.format(username, password))</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">"用户名或密码无效！"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'user/login.html'</span>, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果是 HTTP POST 请求，提取表单信息：<ol>
+<li>使用 <code>get()</code> 方法提取 username、password 值，当对应值不存在时，返回 None；</li>
+<li>使用 <code>authenticate()</code> 函数检查用户名和密码是否匹配数据库中已存在的某个用户账户。如果匹配成功，就返回一个 User 对象，否则返回 None；</li>
+<li>如果匹配成功，查看用户账户是否是激活状态（由 <code>User</code> 模型的 <code>is_active</code> 决定）；如果账户为激活状态，使用 Django 提供 <code>login()</code> 函数登录用户，然后使用 <code>HttpResponseRedirect</code> 类重定向回首页，其中 <code>reverse()</code> 含函数获取应用首页的 URL；如果账户不是激活状态，使用 <code>HttpResponse</code> 类传递错误信息给用户。</li>
+<li>如何匹配不成功，在终端打印错误信息并传递错误信息给用户。</li>
+</ol>
+</li>
+<li>如果不是 HTTP POST 请求，重新渲染登录模版。</li>
+</ol>
+<h2 id="登陆页面的-HTML-模版"><a href="#登陆页面的-HTML-模版" class="headerlink" title="登陆页面的 HTML 模版"></a>登陆页面的 HTML 模版</h2>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"ui header"</span>&gt;</span></span><br><span class="line">        Login</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"ui form segment"</span> <span class="attr">id</span>=<span class="string">"login_form"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'user:login' %&#125;"</span>&gt;</span></span><br><span class="line">        &#123;% csrf_token %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"field"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>用户名<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">size</span>=<span class="string">"50"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"field"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">size</span>=<span class="string">"50"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"ui button"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>最后要添加 URL 映射，并且在 HTML 模版中添加登陆链接。</p>
+</blockquote>
+<h1 id="注销功能"><a href="#注销功能" class="headerlink" title="注销功能"></a>注销功能</h1><p>使用 Django 提供的 <code>logout()</code> 函数实现用户注销功能。</p>
+<p>在应用的 <code>views.py</code> 文件中定义一个 <code>user_logout()</code> 视图来处理注销功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> logout</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.decorators <span class="keyword">import</span> login_required</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_logout</span><span class="params">(request)</span>:</span></span><br><span class="line">    logout(request)</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure>
+<p>注销功能只有已登陆的用户才能使用，使用 <code>login_required()</code> 装饰器函数加以限制。</p>
+<blockquote>
+<p>最后要添加 URL 映射，并且在 HTML 模版中添加注销链接。</p>
+</blockquote>
+<h1 id="限制访问不同内容"><a href="#限制访问不同内容" class="headerlink" title="限制访问不同内容"></a>限制访问不同内容</h1><p>登陆/注册和注销链接根据当前是否有用户已登陆会有不同的显示，可以在 HTML 模版中 使用 <code>{% if user.authenticated %}</code> 模版标签来判断是否存在已登陆用户。</p>
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if user.is_authenticated %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:logout' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>注销<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">&#123;% else %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:login' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>登陆<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'user:register' %&#125;"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    TuTeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/" title="Django 注册和登陆功能实现">https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/Django-配置-Mysql-数据库.html/" rel="next" title="Django 配置 Mysql 数据库">
+                <i class="fa fa-chevron-left"></i> Django 配置 Mysql 数据库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/20/Django-内置模型字段类型.html/" rel="prev" title="Django 内置模型字段类型">
+                Django 内置模型字段类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/action.png"
+                alt="TuTeng" />
+            
+              <p class="site-author-name" itemprop="name">TuTeng</p>
+              <p class="site-description motion-element" itemprop="description">while(true){study}</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tyrotalk" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tyrotalk.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/tyrotalk" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/tyrotalk" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#settings-py-文件设置"><span class="nav-number">1.</span> <span class="nav-text">settings.py 文件设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#密码"><span class="nav-number">2.</span> <span class="nav-text">密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户模型"><span class="nav-number">3.</span> <span class="nav-text">用户模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户表单"><span class="nav-number">4.</span> <span class="nav-text">用户表单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册功能"><span class="nav-number">5.</span> <span class="nav-text">注册功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册视图"><span class="nav-number">5.1.</span> <span class="nav-text">注册视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册页面的-HTML-模版"><span class="nav-number">5.2.</span> <span class="nav-text">注册页面的 HTML 模版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录功能"><span class="nav-number">6.</span> <span class="nav-text">登录功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录视图"><span class="nav-number">6.1.</span> <span class="nav-text">登录视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登陆页面的-HTML-模版"><span class="nav-number">6.2.</span> <span class="nav-text">登陆页面的 HTML 模版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注销功能"><span class="nav-number">7.</span> <span class="nav-text">注销功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#限制访问不同内容"><span class="nav-number">8.</span> <span class="nav-text">限制访问不同内容</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="author" itemprop="copyrightHolder">TuTeng</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/';
+          this.page.identifier = '2018/02/05/Django-注册和登陆功能实现.html/';
+          this.page.title = 'Django 注册和登陆功能实现';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
