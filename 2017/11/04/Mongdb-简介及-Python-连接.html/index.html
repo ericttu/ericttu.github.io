@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-06T02:21:44.403Z">
+<meta property="og:updated_time" content="2018-05-06T02:48:00.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongdb 简介及 Python 连接">
 <meta name="twitter:description" content="MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
@@ -411,24 +411,22 @@
 <p>如果要安装指定版本： <code>$ sudo yum install -y mongodb-org-3.6.3 mongodb-org-server-3.6.3 mongodb-org-shell-3.6.3 mongodb-org-mongos-3.6.3 mongodb-org-tools-3.6.3</code></p>
 </blockquote>
 </li>
-<li><p>在 /etc/yum.conf 中加入下面的配置防止意外升级： <code>exclude=mongodb-org,mongodb-org-server,mongodb-org-shell,mongodb-org-mongos,mongodb-org-tools</code></p>
-</li>
-</ol>
+<li><p>在 /etc/yum.conf 中加入下面的配置防止意外升级： <code>exclude=mongodb-org,mongodb-org-server,mongodb-org-shell,mongodb-org-mongos,mongodb-org-tools</code>。</p>
 <blockquote>
 <p>mongodb 默认将数据文件防止 /var/lib/mongo 中，日志文件存放在 /var/log/mongodb 中。</p>
 <p>可以修改配置文件 /etc/mongod.conf 更改配置信息。 </p>
 </blockquote>
-<ol>
-<li>Start MongoDB： <code>$ sudo service mongod start</code></li>
-</ol>
+</li>
+<li><p>Start MongoDB： <code>$ sudo service mongod start</code>。</p>
 <blockquote>
 <ul>
 <li>在 /var/log/mongodb/mongod.log 中出现 [initandlisten] waiting for connections on port \<port> 表示启动成功。</port></li>
 <li>端口号在/etc/mongod.conf中配置，默认为27017。</li>
 </ul>
 </blockquote>
-<ol>
-<li>配置开机启动：<code>$ sudo chkconfig mongod on</code></li>
+</li>
+<li><p>配置开机启动：<code>$ sudo chkconfig mongod on</code></p>
+</li>
 <li>Stop MongoDB： <code>$ sudo service mongod stop</code></li>
 <li>Restart MongoDB： <code>$ sudo service mongod restart</code></li>
 </ol>
