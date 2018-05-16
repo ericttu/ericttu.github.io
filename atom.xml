@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-05-06T02:19:36.453Z</updated>
+  <updated>2018-05-16T03:09:50.816Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python Socket 编程</title>
+    <link href="https://tyrotalk.com/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B.html/"/>
+    <id>https://tyrotalk.com/2018/03/16/Python-Socket-编程.html/</id>
+    <published>2018-03-16T02:00:27.000Z</published>
+    <updated>2018-05-16T03:09:50.816Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开放式系统互联（OSI）模型由下往上分为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。TCP/IP 协议为五层，其中应用层处理 OSI 的会话层、表示层和应用层。而 Socket 是对 TCP/IP 协议的封装、是一个调用接口（API）。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络编程" scheme="https://tyrotalk.com/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+    
+      <category term="Socket" scheme="https://tyrotalk.com/tags/Socket/"/>
+    
+      <category term="TCP" scheme="https://tyrotalk.com/tags/TCP/"/>
+    
+  </entry>
   
   <entry>
     <title>Django 内置模型字段类型</title>
@@ -442,30 +466,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;堆排序（Heapsort）&lt;/a&gt;：利用堆这种数据结构的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：高级排序算法</title>
-    <link href="https://tyrotalk.com/2017/07/10/%E7%AE%97%E6%B3%95%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/07/10/算法：高级排序算法.html/</id>
-    <published>2017-07-10T02:53:22.000Z</published>
-    <updated>2018-04-18T09:17:57.276Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本篇包括归并排序和快速排序，它们都是采用了分治法的 O(NlogN) 算法。&lt;br&gt;
     
     </summary>
     
