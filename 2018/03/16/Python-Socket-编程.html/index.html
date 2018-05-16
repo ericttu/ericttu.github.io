@@ -90,12 +90,12 @@
 <meta property="og:site_name" content="TyroTalk">
 <meta property="og:description" content="开放式系统互联（OSI）模型由下往上分为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。TCP/IP 协议为五层，其中应用层处理 OSI 的会话层、表示层和应用层。而 Socket 是对 TCP/IP 协议的封装、是一个调用接口（API）。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程：socket编程.png">
-<meta property="og:updated_time" content="2018-05-16T03:09:50.816Z">
+<meta property="og:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程/socket编程.png">
+<meta property="og:updated_time" content="2018-05-16T03:53:20.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Socket 编程">
 <meta name="twitter:description" content="开放式系统互联（OSI）模型由下往上分为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。TCP/IP 协议为五层，其中应用层处理 OSI 的会话层、表示层和应用层。而 Socket 是对 TCP/IP 协议的封装、是一个调用接口（API）。">
-<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程：socket编程.png">
+<meta name="twitter:image" content="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程/socket编程.png">
 
 
 
@@ -440,7 +440,7 @@
 </tbody>
 </table>
 <h1 id="Socket-编程"><a href="#Socket-编程" class="headerlink" title="Socket 编程"></a>Socket 编程</h1><p>使用 socket 模块可以实现服务端与客户端的通信，通信过程如图（基于 TCP 的通信）：</p>
-<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程：socket编程.png">
+<img alt="图片说明" class="class1 class2" src="http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-Socket-编程/socket编程.png">
 <p>服务端端一直处于监听状态和服务状态，等待客户端的请求；当客户端与服务端通过三次握手成功连接后就可以进行通信了，在通信结束后将连接关闭。如果一次请求后便关闭连接即为一次 HTTP 请求（Keep-Alive 关闭状态）。 </p>
 <h2 id="TCP-通信"><a href="#TCP-通信" class="headerlink" title="TCP 通信"></a>TCP 通信</h2><h3 id="创建-Socket-服务器"><a href="#创建-Socket-服务器" class="headerlink" title="创建 Socket 服务器"></a>创建 Socket 服务器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">server.bind((<span class="string">'0.0.0.0'</span>, <span class="number">8000</span>))</span><br><span class="line">server.listen()</span><br><span class="line">sock, addr = server.accept()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="comment"># 获取从客户端发送的数据、一次获取 1k 的数据</span></span><br><span class="line">    data = sock.recv(<span class="number">1024</span>).decode(<span class="string">'utf8'</span>)</span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">if</span> data == <span class="string">'exit'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    re_data = input()</span><br><span class="line">    sock.send(re_data.encode(<span class="string">'utf8'</span>))</span><br><span class="line"></span><br><span class="line">sock.close()</span><br><span class="line">server.close()</span><br></pre></td></tr></table></figure>
 <ol>
