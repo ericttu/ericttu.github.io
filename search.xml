@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>MySQL 数据库分库分表</title>
+      <link href="/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%8C%BA%E4%B8%8E%E5%88%86%E8%A1%A8.html/"/>
+      <url>/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%8C%BA%E4%B8%8E%E5%88%86%E8%A1%A8.html/</url>
+      <content type="html"><![CDATA[<blockquote><p>学习了分库分表，记一下笔记。</p></blockquote><p>当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。</p><p>拆分的方式有两种：分库分表和分片。</p><a id="more"></a><h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1><p>分库分表方式有两种：</p><ol><li>把一个实例（节点、集群）中的多个数据库拆分到不同的实例。<ul><li>优点：实现数据库拆分比较简单；</li><li>缺点：如果写压力集中在一个数据库节点，拆分后可能出现大部分压力出现在某个节点上。</li></ul></li><li>把一个库中的表分离到不同的数据库中。<ul><li>优点：每个数据库节点承担了原来数据库节点的一部分节点；</li><li>随着数据的数据越来越多，某个或几个表所在的数据库节点出现压力过大，此时需要进行表的水平拆分（分片）。</li></ul></li></ol><h1 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h1><p>数据库分片操作即对一个库中的相关表进行水平拆分到不同实例的数据库中。但是分片操作需要解决许多问题，如果可以不建议分片操作。</p><h2 id="分区键的选择"><a href="#分区键的选择" class="headerlink" title="分区键的选择"></a>分区键的选择</h2><p>分区键决定了如何对数据库进行分片以及分片后如何查询数据。需要考虑两个方面：</p><ol><li>尽量避免跨分片查询的发生；</li><li>尽量使各个分片中的数据平均。</li></ol><h2 id="无需分片的表的存储"><a href="#无需分片的表的存储" class="headerlink" title="无需分片的表的存储"></a>无需分片的表的存储</h2><p>一些表的写压力很小，实际使用中并不需要进行分片操作，但需要考虑它们的存储，存储方式有两种：</p><ol><li><p>每个分片中存储一份相同的数据。</p><p>这种方法通常用于表数据量不大、不会经常被更新，同时经常需要和分区表在一起关联查询的字典类表。这种情况下，对于维护每个分片中的相同表的一致性就很重要，一般使用多写的方式维护表的数据，并且定期检查。</p></li><li><p>使用额外的节点统一存储。</p><p>这种把所有不同分片的数据存储在一个公共位置的方法的优点是整个集群中不存在数据的冗余问题，但是查询效率低。</p></li></ol><h2 id="分片在节点上的布置"><a href="#分片在节点上的布置" class="headerlink" title="分片在节点上的布置"></a>分片在节点上的布置</h2><p>分片在节点上部署有许多方法，如：</p><ol><li>每个分片使用单一数据库，并且数据库名也相同。</li><li>将多个分片表存储在一个数据库中，并在表名上加入分片号后缀。</li><li>在一个节点中部署多个数据库，每个数据库包含一个分片，对数据库名编号，并且在每个数据库中包含一套或多套分片表（需要对分片表编号）。</li></ol><h2 id="分片中数据的分配"><a href="#分片中数据的分配" class="headerlink" title="分片中数据的分配"></a>分片中数据的分配</h2><ol><li>按分区键的 Hash 值和计划分片的数量取模来分配分片数据。</li><li>按分区键的范围来分配分片数据（常用于分区键为预期类型或数值类型的数据）。<ul><li>优点：知道数据被分配到哪个分区片中；</li><li>缺点：容易产生数据分配不均匀以及数据访问量不平衡。</li></ul></li><li>利用分区键和分片的映射表来分配分片数据。<ul><li>优点：方便对数据库在分片中的存储位置进行控制；</li><li>缺点：分区键和分片的对映关系可能存在较大的存储压力，此时可以使用缓存的方式。</li></ul></li></ol><h2 id="全局-ID-的生成"><a href="#全局-ID-的生成" class="headerlink" title="全局 ID 的生成"></a>全局 ID 的生成</h2><p>在单节点中可以使用 <code>auto_increment</code> 属性来生成 ID，但在多节点分片数据库中仅仅这样是不行的。</p><ol><li>仍然使用 <code>auto_increment</code> 属性，但是要修改 <code>auto_increment_increment</code> 和 <code>auto_increment_offset</code> 两个参数，<code>auto_increment_increment</code> 参数取值与分片节点数量相同，决定了每次自增 ID 增长的步长。但是这种方式有个缺点，只使用于一个节点中只保存一套分区表的情况。</li><li>使用全局节点来生成 ID，并在这个节点中建立相应的表来使用这个 <code>auto_increment</code> 属性生成自增 ID。应用程序先通过这个全局表获得唯一 ID 后，在通过分区函数把数据插入到不同分片中。其缺点是，全局 ID 可能成为系统的瓶颈。</li><li>在 Redis 等缓存服务器中创建全局 ID。</li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://coding.imooc.com/class/49.html" target="_blank" rel="noopener">课程学习 | MySQL性能管理及架构设计</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Python Socket 编程</title>
       <link href="/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B.html/"/>
       <url>/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B.html/</url>
@@ -92,7 +113,7 @@
             
             <tag> Python </tag>
             
-            <tag> Mysql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -157,7 +178,7 @@
             
             <tag> Python </tag>
             
-            <tag> Mysql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       

@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -82,16 +82,18 @@
 
 
 
-<meta name="description" content="while(true){study}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TyroTalk">
-<meta property="og:url" content="https://tyrotalk.com/archives/2017/page/3/index.html">
+<meta name="description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 数据库分库分表">
+<meta property="og:url" content="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="while(true){study}">
+<meta property="og:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-23T06:26:25.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TyroTalk">
-<meta name="twitter:description" content="while(true){study}">
+<meta name="twitter:title" content="MySQL 数据库分库分表">
+<meta name="twitter:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/archives/2017/page/3/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/"/>
 
 
 
 
 
-  <title>Archive | TyroTalk</title>
+  <title>MySQL 数据库分库分表 | TyroTalk</title>
   
 
 
@@ -155,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,410 +285,292 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 37 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TuTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TyroTalk">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">MySQL 数据库分库分表</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T10:21:06+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/15/Google-Study-Jams-面向对象中的小东西.html/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">Google Study Jams 面向对象中的小东西</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-15T19:25:42+08:00"
-              content="2017-05-15" >
-          05-15
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/03/MySQL-数据库分区与分表.html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/03/MySQL-数据库分区与分表.html/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/07/创建新的Activity.html/" itemprop="url">
-              
-                <span itemprop="name">创建新的Activity</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-07T08:52:21+08:00"
-              content="2017-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/01/Android-Studio-导入项目慢解决方法.html/" itemprop="url">
-              
-                <span itemprop="name">Android Studio 导入项目慢解决方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-01T22:32:10+08:00"
-              content="2017-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <blockquote>
+<p>学习了分库分表，记一下笔记。</p>
+</blockquote>
+<p>当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。</p>
+<p>拆分的方式有两种：分库分表和分片。</p>
+<a id="more"></a>
+<h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1><p>分库分表方式有两种：</p>
+<ol>
+<li>把一个实例（节点、集群）中的多个数据库拆分到不同的实例。<ul>
+<li>优点：实现数据库拆分比较简单；</li>
+<li>缺点：如果写压力集中在一个数据库节点，拆分后可能出现大部分压力出现在某个节点上。</li>
+</ul>
+</li>
+<li>把一个库中的表分离到不同的数据库中。<ul>
+<li>优点：每个数据库节点承担了原来数据库节点的一部分节点；</li>
+<li>随着数据的数据越来越多，某个或几个表所在的数据库节点出现压力过大，此时需要进行表的水平拆分（分片）。</li>
+</ul>
+</li>
+</ol>
+<h1 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h1><p>数据库分片操作即对一个库中的相关表进行水平拆分到不同实例的数据库中。但是分片操作需要解决许多问题，如果可以不建议分片操作。</p>
+<h2 id="分区键的选择"><a href="#分区键的选择" class="headerlink" title="分区键的选择"></a>分区键的选择</h2><p>分区键决定了如何对数据库进行分片以及分片后如何查询数据。需要考虑两个方面：</p>
+<ol>
+<li>尽量避免跨分片查询的发生；</li>
+<li>尽量使各个分片中的数据平均。</li>
+</ol>
+<h2 id="无需分片的表的存储"><a href="#无需分片的表的存储" class="headerlink" title="无需分片的表的存储"></a>无需分片的表的存储</h2><p>一些表的写压力很小，实际使用中并不需要进行分片操作，但需要考虑它们的存储，存储方式有两种：</p>
+<ol>
+<li><p>每个分片中存储一份相同的数据。</p>
+<p>这种方法通常用于表数据量不大、不会经常被更新，同时经常需要和分区表在一起关联查询的字典类表。这种情况下，对于维护每个分片中的相同表的一致性就很重要，一般使用多写的方式维护表的数据，并且定期检查。</p>
+</li>
+<li><p>使用额外的节点统一存储。</p>
+<p>这种把所有不同分片的数据存储在一个公共位置的方法的优点是整个集群中不存在数据的冗余问题，但是查询效率低。</p>
+</li>
+</ol>
+<h2 id="分片在节点上的布置"><a href="#分片在节点上的布置" class="headerlink" title="分片在节点上的布置"></a>分片在节点上的布置</h2><p>分片在节点上部署有许多方法，如：</p>
+<ol>
+<li>每个分片使用单一数据库，并且数据库名也相同。</li>
+<li>将多个分片表存储在一个数据库中，并在表名上加入分片号后缀。</li>
+<li>在一个节点中部署多个数据库，每个数据库包含一个分片，对数据库名编号，并且在每个数据库中包含一套或多套分片表（需要对分片表编号）。</li>
+</ol>
+<h2 id="分片中数据的分配"><a href="#分片中数据的分配" class="headerlink" title="分片中数据的分配"></a>分片中数据的分配</h2><ol>
+<li>按分区键的 Hash 值和计划分片的数量取模来分配分片数据。</li>
+<li>按分区键的范围来分配分片数据（常用于分区键为预期类型或数值类型的数据）。<ul>
+<li>优点：知道数据被分配到哪个分区片中；</li>
+<li>缺点：容易产生数据分配不均匀以及数据访问量不平衡。</li>
+</ul>
+</li>
+<li>利用分区键和分片的映射表来分配分片数据。<ul>
+<li>优点：方便对数据库在分片中的存储位置进行控制；</li>
+<li>缺点：分区键和分片的对映关系可能存在较大的存储压力，此时可以使用缓存的方式。</li>
+</ul>
+</li>
+</ol>
+<h2 id="全局-ID-的生成"><a href="#全局-ID-的生成" class="headerlink" title="全局 ID 的生成"></a>全局 ID 的生成</h2><p>在单节点中可以使用 <code>auto_increment</code> 属性来生成 ID，但在多节点分片数据库中仅仅这样是不行的。</p>
+<ol>
+<li>仍然使用 <code>auto_increment</code> 属性，但是要修改 <code>auto_increment_increment</code> 和 <code>auto_increment_offset</code> 两个参数，<code>auto_increment_increment</code> 参数取值与分片节点数量相同，决定了每次自增 ID 增长的步长。但是这种方式有个缺点，只使用于一个节点中只保存一套分区表的情况。</li>
+<li>使用全局节点来生成 ID，并在这个节点中建立相应的表来使用这个 <code>auto_increment</code> 属性生成自增 ID。应用程序先通过这个全局表获得唯一 ID 后，在通过分区函数把数据插入到不同分片中。其缺点是，全局 ID 可能成为系统的瓶颈。</li>
+<li>在 Redis 等缓存服务器中创建全局 ID。</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://coding.imooc.com/class/49.html" target="_blank" rel="noopener">课程学习 | MySQL性能管理及架构设计</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/26/Python-基础：函数.html/" itemprop="url">
-              
-                <span itemprop="name">Python 基础：函数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-26T21:41:49+08:00"
-              content="2017-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/21/篮球计分器实践.html/" itemprop="url">
-              
-                <span itemprop="name">篮球计分器实践</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-21T20:51:23+08:00"
-              content="2017-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/17/认识ViewGroup.html/" itemprop="url">
-              
-                <span itemprop="name">认识ViewGroup</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-17T20:05:24+08:00"
-              content="2017-04-17" >
-          04-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/11/Python-基础：字典.html/" itemprop="url">
-              
-                <span itemprop="name">Python 基础：字典</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-11T10:00:03+08:00"
-              content="2017-04-11" >
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/08/初识View.html/" itemprop="url">
-              
-                <span itemprop="name">初识View</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-08T09:33:05+08:00"
-              content="2017-04-08" >
-          04-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/02/Python-基础：元组和切片.html/" itemprop="url">
-              
-                <span itemprop="name">Python 基础：元组和切片</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-02T09:37:46+08:00"
-              content="2017-04-02" >
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/25/Python-基础：列表.html/" itemprop="url">
-              
-                <span itemprop="name">Python 基础：列表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-25T17:04:30+08:00"
-              content="2017-03-25" >
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    TuTeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/" title="MySQL 数据库分库分表">https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/Python-Socket-编程.html/" rel="next" title="Python Socket 编程">
+                <i class="fa fa-chevron-left"></i> Python Socket 编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2017/page/4/">4</a><a class="extend next" rel="next" href="/archives/2017/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +578,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -714,8 +612,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -814,6 +721,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分库分表"><span class="nav-number">1.</span> <span class="nav-text">分库分表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分片"><span class="nav-number">2.</span> <span class="nav-text">分片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分区键的选择"><span class="nav-number">2.1.</span> <span class="nav-text">分区键的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无需分片的表的存储"><span class="nav-number">2.2.</span> <span class="nav-text">无需分片的表的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分片在节点上的布置"><span class="nav-number">2.3.</span> <span class="nav-text">分片在节点上的布置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分片中数据的分配"><span class="nav-number">2.4.</span> <span class="nav-text">分片中数据的分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局-ID-的生成"><span class="nav-number">2.5.</span> <span class="nav-text">全局 ID 的生成</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -941,6 +864,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -958,6 +885,18 @@
       <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/';
+          this.page.identifier = '2018/04/03/MySQL-数据库分区与分表.html/';
+          this.page.title = 'MySQL 数据库分库分表';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
