@@ -82,18 +82,18 @@
 
 
 
-<meta name="description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
+<meta name="description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有三种：分库、分表和分片。">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 数据库分库分表">
-<meta property="og:url" content="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/index.html">
+<meta property="og:url" content="https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
+<meta property="og:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有三种：分库、分表和分片。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-23T06:26:25.405Z">
+<meta property="og:updated_time" content="2018-05-24T12:58:31.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 数据库分库分表">
-<meta name="twitter:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有两种：分库分表和分片。">
+<meta name="twitter:description" content="学习了分库分表，记一下笔记。  当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。 拆分的方式有三种：分库、分表和分片。">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/"/>
 
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="TuTeng">
@@ -369,9 +369,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/03/MySQL-数据库分区与分表.html/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/03/MySQL-数据库分库分表.html/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/03/MySQL-数据库分区与分表.html/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/03/MySQL-数据库分库分表.html/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,16 +403,15 @@
 <p>学习了分库分表，记一下笔记。</p>
 </blockquote>
 <p>当数据库中的数据越来越多、数据库压力越来越大、数据库性能下降的时候，需要对单一主数据库服务器进行拆分来分担数据库压力。</p>
-<p>拆分的方式有两种：分库分表和分片。</p>
+<p>拆分的方式有三种：分库、分表和分片。</p>
 <a id="more"></a>
-<h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1><p>分库分表方式有两种：</p>
-<ol>
-<li>把一个实例（节点、集群）中的多个数据库拆分到不同的实例。<ul>
+<h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1><ol>
+<li>分库：把一个实例（节点、集群）中的多个数据库拆分到不同的实例。<ul>
 <li>优点：实现数据库拆分比较简单；</li>
 <li>缺点：如果写压力集中在一个数据库节点，拆分后可能出现大部分压力出现在某个节点上。</li>
 </ul>
 </li>
-<li>把一个库中的表分离到不同的数据库中。<ul>
+<li>分表：把一个库中的表分离到不同的数据库中。<ul>
 <li>优点：每个数据库节点承担了原来数据库节点的一部分节点；</li>
 <li>随着数据的数据越来越多，某个或几个表所在的数据库节点出现压力过大，此时需要进行表的水平拆分（分片）。</li>
 </ul>
@@ -508,7 +507,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/" title="MySQL 数据库分库分表">https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/</a>
+    <a href="https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/" title="MySQL 数据库分库分表">https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -888,8 +887,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://tyrotalk.com/2018/04/03/MySQL-数据库分区与分表.html/';
-          this.page.identifier = '2018/04/03/MySQL-数据库分区与分表.html/';
+          this.page.url = 'https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/';
+          this.page.identifier = '2018/04/03/MySQL-数据库分库分表.html/';
           this.page.title = 'MySQL 数据库分库分表';
         };
         var d = document, s = d.createElement('script');
