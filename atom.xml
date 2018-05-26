@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tyrotalk.com/"/>
-  <updated>2018-05-24T12:58:31.987Z</updated>
+  <updated>2018-05-26T02:46:03.334Z</updated>
   <id>https://tyrotalk.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
+    <link href="https://tyrotalk.com/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95.html/"/>
+    <id>https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/</id>
+    <published>2018-04-26T02:07:24.000Z</published>
+    <updated>2018-05-26T02:46:03.334Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;数据库学习笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;索引告诉了存储引擎如何快速找到需要存储的数据。&lt;/p&gt;
+&lt;p&gt;MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://tyrotalk.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL 数据库分库分表</title>
@@ -264,9 +288,9 @@
     
       <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
     
-      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
+    
+      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -442,30 +466,6 @@
     <summary type="html">
     
       &lt;p&gt;图是由一组顶点和一组能够将两个顶点相连的边组成的。边有方向的图称为有向图，没有方向的图称为无向图。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：二分查找法</title>
-    <link href="https://tyrotalk.com/2017/07/23/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95.html/"/>
-    <id>https://tyrotalk.com/2017/07/23/算法：二分查找法.html/</id>
-    <published>2017-07-23T02:49:06.000Z</published>
-    <updated>2018-04-18T09:19:00.182Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;二分查找法。&lt;/p&gt;
     
     </summary>
     

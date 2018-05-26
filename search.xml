@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
+      <link href="/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95.html/"/>
+      <url>/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95.html/</url>
+      <content type="html"><![CDATA[<blockquote><p>数据库学习笔记</p></blockquote><p>索引告诉了存储引擎如何快速找到需要存储的数据。</p><p>MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。</p><a id="more"></a><h1 id="B-Tree-索引"><a href="#B-Tree-索引" class="headerlink" title="B-Tree 索引"></a>B-Tree 索引</h1><p>B-Tree 索引使用 B+ 树结构存储数据，每个叶子节点都包含指向下一个叶子节点的指针，可以方便叶子节点的遍历。</p><p>B-Tree 索引能够加快数据的查询速度，同时 B-Tree 索引采用了顺序存储，更适合范围查找。</p><p>并不是所有情况都适合使用 B-Tree 索引，有时对使用 B-Tree 索引还有限制：</p><ol><li>可以使用 B-Tree 索引 的情况：<ul><li>全值匹配的查询，</li><li>匹配最左前缀的查询，</li><li>匹配列前缀的查询，</li><li>匹配范围值的查询，</li><li>精确匹配左前列并范围匹配另一列，</li><li>只访问索引的查询。</li></ul></li><li>使用限制：<ul><li>如果不是按照索引最左列开始查找，则无法使用索引，</li><li>使用索引时不能跳过索引中的列，</li><li>在 <code>not in</code> 和 <code>&lt;&gt;</code> 操作中无法使用索引，</li><li>如果查询中有某个列的范围查询，则右边所有列都无法使用索引。</li></ul></li></ol><h1 id="Hash-索引"><a href="#Hash-索引" class="headerlink" title="Hash 索引"></a>Hash 索引</h1><p>Hash 索引基于 Hash 表实现，只有查询条件精确匹配 Hash 索引中的所有列时才能够使用到 Hash 索引。</p><p>对于 Hash 索引中的所有列，存储引擎都会为每一行计算一个 Hash 码，Hash 索引中存储的就是 Hash 码。</p><p>同样的，使用 Hash 索引也有限制：</p><ol><li>必须进行二次查找，</li><li>无法用于排序，</li><li>不支持部分索引查找，也不支持范围查找，</li><li>Hash 索引中 Hash 码的计算可能存在 Hash 冲突。</li></ol><h1 id="索引的优缺点"><a href="#索引的优缺点" class="headerlink" title="索引的优缺点"></a>索引的优缺点</h1><p>索引对数据的访问带来了便利，但也有它的副作用。</p><ol><li>优点：<ul><li>大大减小了存储引擎需要扫描的数据量，</li><li>可以帮助我们进行排序以避免使用临时表，</li><li>可以把随机 I/O 变为顺序 I/O。</li></ul></li><li>缺点：<ul><li>增加了数据库写操作的成本，</li><li>太多的索引会增加查询优化器的选择时间。</li></ul></li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://coding.imooc.com/class/49.html" target="_blank" rel="noopener">课程学习 | MySQL性能管理及架构设计</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>MySQL 数据库分库分表</title>
       <link href="/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8.html/"/>
       <url>/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8.html/</url>
@@ -249,9 +270,9 @@
             
             <tag> python 库 </tag>
             
-            <tag> 爬虫 </tag>
-            
             <tag> Requests </tag>
+            
+            <tag> 爬虫 </tag>
             
         </tags>
       

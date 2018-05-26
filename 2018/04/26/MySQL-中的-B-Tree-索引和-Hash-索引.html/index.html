@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -82,16 +82,18 @@
 
 
 
-<meta name="description" content="while(true){study}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TyroTalk">
-<meta property="og:url" content="https://tyrotalk.com/archives/2017/index.html">
+<meta name="description" content="数据库学习笔记  索引告诉了存储引擎如何快速找到需要存储的数据。 MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 中的 B-Tree 索引和 Hash 索引">
+<meta property="og:url" content="https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/index.html">
 <meta property="og:site_name" content="TyroTalk">
-<meta property="og:description" content="while(true){study}">
+<meta property="og:description" content="数据库学习笔记  索引告诉了存储引擎如何快速找到需要存储的数据。 MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-26T02:46:03.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TyroTalk">
-<meta name="twitter:description" content="while(true){study}">
+<meta name="twitter:title" content="MySQL 中的 B-Tree 索引和 Hash 索引">
+<meta name="twitter:description" content="数据库学习笔记  索引告诉了存储引擎如何快速找到需要存储的数据。 MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://tyrotalk.com/archives/2017/"/>
+  <link rel="canonical" href="https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/"/>
 
 
 
 
 
-  <title>Archive | TyroTalk</title>
+  <title>MySQL 中的 B-Tree 索引和 Hash 索引 | TyroTalk</title>
   
 
 
@@ -155,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,410 +285,283 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 38 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TuTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TyroTalk">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">MySQL 中的 B-Tree 索引和 Hash 索引</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T10:07:24+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/20/使用-reuqests-爬取豆瓣数据书籍-URL.html/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">使用 reuqests 爬取豆瓣数据书籍 URL</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-20T13:23:01+08:00"
-              content="2017-11-20" >
-          11-20
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/04/Mongdb-简介及-Python-连接.html/" itemprop="url">
-              
-                <span itemprop="name">Mongdb 简介及 Python 连接</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-04T09:19:56+08:00"
-              content="2017-11-04" >
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/20/Mysql-简介及-Python-连接数据库.html/" itemprop="url">
-              
-                <span itemprop="name">Mysql 简介及 Python 连接数据库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-20T09:36:34+08:00"
-              content="2017-10-20" >
-          10-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <blockquote>
+<p>数据库学习笔记</p>
+</blockquote>
+<p>索引告诉了存储引擎如何快速找到需要存储的数据。</p>
+<p>MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。</p>
+<a id="more"></a>
+<h1 id="B-Tree-索引"><a href="#B-Tree-索引" class="headerlink" title="B-Tree 索引"></a>B-Tree 索引</h1><p>B-Tree 索引使用 B+ 树结构存储数据，每个叶子节点都包含指向下一个叶子节点的指针，可以方便叶子节点的遍历。</p>
+<p>B-Tree 索引能够加快数据的查询速度，同时 B-Tree 索引采用了顺序存储，更适合范围查找。</p>
+<p>并不是所有情况都适合使用 B-Tree 索引，有时对使用 B-Tree 索引还有限制：</p>
+<ol>
+<li>可以使用 B-Tree 索引 的情况：<ul>
+<li>全值匹配的查询，</li>
+<li>匹配最左前缀的查询，</li>
+<li>匹配列前缀的查询，</li>
+<li>匹配范围值的查询，</li>
+<li>精确匹配左前列并范围匹配另一列，</li>
+<li>只访问索引的查询。</li>
+</ul>
+</li>
+<li>使用限制：<ul>
+<li>如果不是按照索引最左列开始查找，则无法使用索引，</li>
+<li>使用索引时不能跳过索引中的列，</li>
+<li>在 <code>not in</code> 和 <code>&lt;&gt;</code> 操作中无法使用索引，</li>
+<li>如果查询中有某个列的范围查询，则右边所有列都无法使用索引。</li>
+</ul>
+</li>
+</ol>
+<h1 id="Hash-索引"><a href="#Hash-索引" class="headerlink" title="Hash 索引"></a>Hash 索引</h1><p>Hash 索引基于 Hash 表实现，只有查询条件精确匹配 Hash 索引中的所有列时才能够使用到 Hash 索引。</p>
+<p>对于 Hash 索引中的所有列，存储引擎都会为每一行计算一个 Hash 码，Hash 索引中存储的就是 Hash 码。</p>
+<p>同样的，使用 Hash 索引也有限制：</p>
+<ol>
+<li>必须进行二次查找，</li>
+<li>无法用于排序，</li>
+<li>不支持部分索引查找，也不支持范围查找，</li>
+<li>Hash 索引中 Hash 码的计算可能存在 Hash 冲突。</li>
+</ol>
+<h1 id="索引的优缺点"><a href="#索引的优缺点" class="headerlink" title="索引的优缺点"></a>索引的优缺点</h1><p>索引对数据的访问带来了便利，但也有它的副作用。</p>
+<ol>
+<li>优点：<ul>
+<li>大大减小了存储引擎需要扫描的数据量，</li>
+<li>可以帮助我们进行排序以避免使用临时表，</li>
+<li>可以把随机 I/O 变为顺序 I/O。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>增加了数据库写操作的成本，</li>
+<li>太多的索引会增加查询优化器的选择时间。</li>
+</ul>
+</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://coding.imooc.com/class/49.html" target="_blank" rel="noopener">课程学习 | MySQL性能管理及架构设计</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/02/Python-数据结构：树.html/" itemprop="url">
-              
-                <span itemprop="name">Python 数据结构：二叉搜索树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-02T08:17:28+08:00"
-              content="2017-10-02" >
-          10-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/23/SQL-学习笔记.html/" itemprop="url">
-              
-                <span itemprop="name">SQL 学习笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-23T13:18:58+08:00"
-              content="2017-09-23" >
-          09-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/16/初识-Requests-库.html/" itemprop="url">
-              
-                <span itemprop="name">初识 Requests 库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-16T15:06:21+08:00"
-              content="2017-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/10/Python-数据结构：列表.html/" itemprop="url">
-              
-                <span itemprop="name">Python 数据结构：列表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-10T09:15:15+08:00"
-              content="2017-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/07/BeautifulSoup-使用.html/" itemprop="url">
-              
-                <span itemprop="name">BeautifulSoup 使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-07T09:32:19+08:00"
-              content="2017-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/26/Python-数据结构：优先队列.html/" itemprop="url">
-              
-                <span itemprop="name">Python 数据结构：优先队列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-26T08:58:08+08:00"
-              content="2017-08-26" >
-          08-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/23/Python-数据结构：队列.html/" itemprop="url">
-              
-                <span itemprop="name">Python 数据结构：队列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T08:46:52+08:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    TuTeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/" title="MySQL 中的 B-Tree 索引和 Hash 索引">https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/MySQL-数据库分库分表.html/" rel="next" title="MySQL 数据库分库分表">
+                <i class="fa fa-chevron-left"></i> MySQL 数据库分库分表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/4/">4</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +569,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -714,8 +603,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -814,6 +712,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Tree-索引"><span class="nav-number">1.</span> <span class="nav-text">B-Tree 索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hash-索引"><span class="nav-number">2.</span> <span class="nav-text">Hash 索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的优缺点"><span class="nav-number">3.</span> <span class="nav-text">索引的优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -941,6 +855,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -958,6 +876,18 @@
       <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/';
+          this.page.identifier = '2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/';
+          this.page.title = 'MySQL 中的 B-Tree 索引和 Hash 索引';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
