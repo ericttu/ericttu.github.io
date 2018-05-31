@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>TyroTalk</title>
+  <title>I&#39;M TWU</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://tyrotalk.com/"/>
+  <link href="https://tech.imtt.me/"/>
   <updated>2018-05-26T02:46:03.334Z</updated>
-  <id>https://tyrotalk.com/</id>
+  <id>https://tech.imtt.me/</id>
   
   <author>
     <name>TuTeng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
-    <link href="https://tyrotalk.com/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95.html/"/>
-    <id>https://tyrotalk.com/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/</id>
+    <link href="https://tech.imtt.me/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95.html/"/>
+    <id>https://tech.imtt.me/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引.html/</id>
     <published>2018-04-26T02:07:24.000Z</published>
     <updated>2018-05-26T02:46:03.334Z</updated>
     
@@ -33,17 +33,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tyrotalk.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>MySQL 数据库分库分表</title>
-    <link href="https://tyrotalk.com/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8.html/"/>
-    <id>https://tyrotalk.com/2018/04/03/MySQL-数据库分库分表.html/</id>
+    <link href="https://tech.imtt.me/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8.html/"/>
+    <id>https://tech.imtt.me/2018/04/03/MySQL-数据库分库分表.html/</id>
     <published>2018-04-03T02:21:06.000Z</published>
     <updated>2018-05-24T12:58:31.987Z</updated>
     
@@ -57,17 +57,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tyrotalk.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Python Socket 编程</title>
-    <link href="https://tyrotalk.com/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B.html/"/>
-    <id>https://tyrotalk.com/2018/03/16/Python-Socket-编程.html/</id>
+    <link href="https://tech.imtt.me/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B.html/"/>
+    <id>https://tech.imtt.me/2018/03/16/Python-Socket-编程.html/</id>
     <published>2018-03-16T02:00:27.000Z</published>
     <updated>2018-05-16T03:54:38.221Z</updated>
     
@@ -77,21 +77,21 @@
     
     </summary>
     
-      <category term="网络编程" scheme="https://tyrotalk.com/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://tech.imtt.me/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="Socket" scheme="https://tyrotalk.com/tags/Socket/"/>
+      <category term="Socket" scheme="https://tech.imtt.me/tags/Socket/"/>
     
-      <category term="TCP" scheme="https://tyrotalk.com/tags/TCP/"/>
+      <category term="TCP" scheme="https://tech.imtt.me/tags/TCP/"/>
     
   </entry>
   
   <entry>
     <title>Django 内置模型字段类型</title>
-    <link href="https://tyrotalk.com/2018/02/20/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B.html/"/>
-    <id>https://tyrotalk.com/2018/02/20/Django-内置模型字段类型.html/</id>
+    <link href="https://tech.imtt.me/2018/02/20/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B.html/"/>
+    <id>https://tech.imtt.me/2018/02/20/Django-内置模型字段类型.html/</id>
     <published>2018-02-20T11:42:35.000Z</published>
     <updated>2018-05-06T02:19:36.453Z</updated>
     
@@ -102,19 +102,19 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Django 注册和登陆功能实现</title>
-    <link href="https://tyrotalk.com/2018/02/05/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
-    <id>https://tyrotalk.com/2018/02/05/Django-注册和登陆功能实现.html/</id>
+    <link href="https://tech.imtt.me/2018/02/05/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0.html/"/>
+    <id>https://tech.imtt.me/2018/02/05/Django-注册和登陆功能实现.html/</id>
     <published>2018-02-05T06:05:51.000Z</published>
     <updated>2018-05-06T02:19:52.341Z</updated>
     
@@ -124,19 +124,19 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Django 配置 Mysql 数据库</title>
-    <link href="https://tyrotalk.com/2018/01/26/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-    <id>https://tyrotalk.com/2018/01/26/Django-配置-Mysql-数据库.html/</id>
+    <link href="https://tech.imtt.me/2018/01/26/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tech.imtt.me/2018/01/26/Django-配置-Mysql-数据库.html/</id>
     <published>2018-01-26T08:48:41.000Z</published>
     <updated>2018-05-23T02:22:33.143Z</updated>
     
@@ -146,21 +146,21 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tyrotalk.com/categories/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tyrotalk.com/tags/Django/"/>
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="MySQL" scheme="https://tyrotalk.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>使用 reuqests 爬取豆瓣数据书籍 URL</title>
-    <link href="https://tyrotalk.com/2017/11/20/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
-    <id>https://tyrotalk.com/2017/11/20/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
+    <link href="https://tech.imtt.me/2017/11/20/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
+    <id>https://tech.imtt.me/2017/11/20/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
     <published>2017-11-20T05:23:01.000Z</published>
     <updated>2018-05-06T02:22:06.577Z</updated>
     
@@ -171,18 +171,18 @@
     </summary>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="requests" scheme="https://tyrotalk.com/tags/requests/"/>
+      <category term="requests" scheme="https://tech.imtt.me/tags/requests/"/>
     
   </entry>
   
   <entry>
     <title>Mongdb 简介及 Python 连接</title>
-    <link href="https://tyrotalk.com/2017/11/04/Mongdb-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5.html/"/>
-    <id>https://tyrotalk.com/2017/11/04/Mongdb-简介及-Python-连接.html/</id>
+    <link href="https://tech.imtt.me/2017/11/04/Mongdb-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5.html/"/>
+    <id>https://tech.imtt.me/2017/11/04/Mongdb-简介及-Python-连接.html/</id>
     <published>2017-11-04T01:19:56.000Z</published>
     <updated>2018-05-06T02:48:00.109Z</updated>
     
@@ -192,19 +192,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="Mongodb" scheme="https://tyrotalk.com/tags/Mongodb/"/>
+      <category term="Mongodb" scheme="https://tech.imtt.me/tags/Mongodb/"/>
     
   </entry>
   
   <entry>
     <title>Mysql 简介及 Python 连接数据库</title>
-    <link href="https://tyrotalk.com/2017/10/20/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-    <id>https://tyrotalk.com/2017/10/20/Mysql-简介及-Python-连接数据库.html/</id>
+    <link href="https://tech.imtt.me/2017/10/20/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tech.imtt.me/2017/10/20/Mysql-简介及-Python-连接数据库.html/</id>
     <published>2017-10-20T01:36:34.000Z</published>
     <updated>2018-05-23T02:22:46.408Z</updated>
     
@@ -214,19 +214,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="MySQL" scheme="https://tyrotalk.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：二叉搜索树</title>
-    <link href="https://tyrotalk.com/2017/10/02/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91.html/"/>
-    <id>https://tyrotalk.com/2017/10/02/Python-数据结构：树.html/</id>
+    <link href="https://tech.imtt.me/2017/10/02/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91.html/"/>
+    <id>https://tech.imtt.me/2017/10/02/Python-数据结构：树.html/</id>
     <published>2017-10-02T00:17:28.000Z</published>
     <updated>2018-05-03T11:43:06.468Z</updated>
     
@@ -237,21 +237,21 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="树" scheme="https://tyrotalk.com/tags/%E6%A0%91/"/>
+      <category term="树" scheme="https://tech.imtt.me/tags/%E6%A0%91/"/>
     
   </entry>
   
   <entry>
     <title>SQL 学习笔记</title>
-    <link href="https://tyrotalk.com/2017/09/23/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html/"/>
-    <id>https://tyrotalk.com/2017/09/23/SQL-学习笔记.html/</id>
+    <link href="https://tech.imtt.me/2017/09/23/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html/"/>
+    <id>https://tech.imtt.me/2017/09/23/SQL-学习笔记.html/</id>
     <published>2017-09-23T05:18:58.000Z</published>
     <updated>2018-04-22T03:00:00.672Z</updated>
     
@@ -261,19 +261,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="SQL" scheme="https://tyrotalk.com/tags/SQL/"/>
+      <category term="SQL" scheme="https://tech.imtt.me/tags/SQL/"/>
     
-      <category term="数据库" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>初识 Requests 库</title>
-    <link href="https://tyrotalk.com/2017/09/16/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
-    <id>https://tyrotalk.com/2017/09/16/初识-Requests-库.html/</id>
+    <link href="https://tech.imtt.me/2017/09/16/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
+    <id>https://tech.imtt.me/2017/09/16/初识-Requests-库.html/</id>
     <published>2017-09-16T07:06:21.000Z</published>
     <updated>2018-04-18T10:19:29.992Z</updated>
     
@@ -283,21 +283,21 @@
     
     </summary>
     
-      <category term="Python 库" scheme="https://tyrotalk.com/categories/Python-%E5%BA%93/"/>
+      <category term="Python 库" scheme="https://tech.imtt.me/categories/Python-%E5%BA%93/"/>
     
     
-      <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
+      <category term="python 库" scheme="https://tech.imtt.me/tags/python-%E5%BA%93/"/>
     
-      <category term="Requests" scheme="https://tyrotalk.com/tags/Requests/"/>
+      <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="爬虫" scheme="https://tyrotalk.com/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="Requests" scheme="https://tech.imtt.me/tags/Requests/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：列表</title>
-    <link href="https://tyrotalk.com/2017/09/10/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%88%97%E8%A1%A8.html/"/>
-    <id>https://tyrotalk.com/2017/09/10/Python-数据结构：列表.html/</id>
+    <link href="https://tech.imtt.me/2017/09/10/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%88%97%E8%A1%A8.html/"/>
+    <id>https://tech.imtt.me/2017/09/10/Python-数据结构：列表.html/</id>
     <published>2017-09-10T01:15:15.000Z</published>
     <updated>2018-04-18T09:25:55.643Z</updated>
     
@@ -307,21 +307,21 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="列表" scheme="https://tyrotalk.com/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="列表" scheme="https://tech.imtt.me/tags/%E5%88%97%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>BeautifulSoup 使用</title>
-    <link href="https://tyrotalk.com/2017/09/07/BeautifulSoup-%E4%BD%BF%E7%94%A8.html/"/>
-    <id>https://tyrotalk.com/2017/09/07/BeautifulSoup-使用.html/</id>
+    <link href="https://tech.imtt.me/2017/09/07/BeautifulSoup-%E4%BD%BF%E7%94%A8.html/"/>
+    <id>https://tech.imtt.me/2017/09/07/BeautifulSoup-使用.html/</id>
     <published>2017-09-07T01:32:19.000Z</published>
     <updated>2018-04-18T10:19:12.445Z</updated>
     
@@ -331,19 +331,19 @@
     
     </summary>
     
-      <category term="Python 库" scheme="https://tyrotalk.com/categories/Python-%E5%BA%93/"/>
+      <category term="Python 库" scheme="https://tech.imtt.me/categories/Python-%E5%BA%93/"/>
     
     
-      <category term="BeautifulSoup" scheme="https://tyrotalk.com/tags/BeautifulSoup/"/>
+      <category term="BeautifulSoup" scheme="https://tech.imtt.me/tags/BeautifulSoup/"/>
     
-      <category term="python 库" scheme="https://tyrotalk.com/tags/python-%E5%BA%93/"/>
+      <category term="python 库" scheme="https://tech.imtt.me/tags/python-%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：优先队列</title>
-    <link href="https://tyrotalk.com/2017/08/26/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97.html/"/>
-    <id>https://tyrotalk.com/2017/08/26/Python-数据结构：优先队列.html/</id>
+    <link href="https://tech.imtt.me/2017/08/26/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97.html/"/>
+    <id>https://tech.imtt.me/2017/08/26/Python-数据结构：优先队列.html/</id>
     <published>2017-08-26T00:58:08.000Z</published>
     <updated>2018-04-26T02:57:58.919Z</updated>
     
@@ -353,21 +353,21 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="优先队列" scheme="https://tyrotalk.com/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
+      <category term="优先队列" scheme="https://tech.imtt.me/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：队列</title>
-    <link href="https://tyrotalk.com/2017/08/23/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E9%98%9F%E5%88%97.html/"/>
-    <id>https://tyrotalk.com/2017/08/23/Python-数据结构：队列.html/</id>
+    <link href="https://tech.imtt.me/2017/08/23/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E9%98%9F%E5%88%97.html/"/>
+    <id>https://tech.imtt.me/2017/08/23/Python-数据结构：队列.html/</id>
     <published>2017-08-23T00:46:52.000Z</published>
     <updated>2018-04-18T09:24:01.972Z</updated>
     
@@ -377,21 +377,21 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="队列" scheme="https://tyrotalk.com/tags/%E9%98%9F%E5%88%97/"/>
+      <category term="队列" scheme="https://tech.imtt.me/tags/%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：栈</title>
-    <link href="https://tyrotalk.com/2017/08/19/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88.html/"/>
-    <id>https://tyrotalk.com/2017/08/19/Python-数据结构：栈.html/</id>
+    <link href="https://tech.imtt.me/2017/08/19/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88.html/"/>
+    <id>https://tech.imtt.me/2017/08/19/Python-数据结构：栈.html/</id>
     <published>2017-08-19T02:02:54.000Z</published>
     <updated>2018-04-18T09:23:49.969Z</updated>
     
@@ -401,21 +401,21 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="栈" scheme="https://tyrotalk.com/tags/%E6%A0%88/"/>
+      <category term="栈" scheme="https://tech.imtt.me/tags/%E6%A0%88/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：双链表</title>
-    <link href="https://tyrotalk.com/2017/08/13/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8F%8C%E9%93%BE%E8%A1%A8.html/"/>
-    <id>https://tyrotalk.com/2017/08/13/Python-数据结构：双链表.html/</id>
+    <link href="https://tech.imtt.me/2017/08/13/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8F%8C%E9%93%BE%E8%A1%A8.html/"/>
+    <id>https://tech.imtt.me/2017/08/13/Python-数据结构：双链表.html/</id>
     <published>2017-08-13T02:48:15.000Z</published>
     <updated>2018-04-18T09:23:07.465Z</updated>
     
@@ -425,19 +425,19 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>Python 数据结构：单链表</title>
-    <link href="https://tyrotalk.com/2017/08/11/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8.html/"/>
-    <id>https://tyrotalk.com/2017/08/11/Python-数据结构：单链表.html/</id>
+    <link href="https://tech.imtt.me/2017/08/11/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8.html/"/>
+    <id>https://tech.imtt.me/2017/08/11/Python-数据结构：单链表.html/</id>
     <published>2017-08-11T01:37:41.000Z</published>
     <updated>2018-04-18T09:23:15.144Z</updated>
     
@@ -447,19 +447,19 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="数据结构" scheme="https://tyrotalk.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>算法：无向图</title>
-    <link href="https://tyrotalk.com/2017/07/30/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%97%A0%E5%90%91%E5%9B%BE.html/"/>
-    <id>https://tyrotalk.com/2017/07/30/算法：无向图.html/</id>
+    <link href="https://tech.imtt.me/2017/07/30/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%97%A0%E5%90%91%E5%9B%BE.html/"/>
+    <id>https://tech.imtt.me/2017/07/30/算法：无向图.html/</id>
     <published>2017-07-30T03:23:53.000Z</published>
     <updated>2018-04-25T01:44:37.793Z</updated>
     
@@ -469,14 +469,14 @@
     
     </summary>
     
-      <category term="数据结构与算法" scheme="https://tyrotalk.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="Python" scheme="https://tyrotalk.com/tags/Python/"/>
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
-      <category term="算法" scheme="https://tyrotalk.com/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://tech.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="Java" scheme="https://tyrotalk.com/tags/Java/"/>
+      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
     
   </entry>
   
