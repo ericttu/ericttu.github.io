@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-05-26T02:46:03.334Z</updated>
+  <updated>2018-06-01T11:49:37.037Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask 中的唯一 URL 原则</title>
+    <link href="https://tech.imtt.me/2018/05/05/flask%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80URL%E5%8E%9F%E5%88%99.html/"/>
+    <id>https://tech.imtt.me/2018/05/05/flask中的唯一URL原则.html/</id>
+    <published>2018-05-05T11:05:43.000Z</published>
+    <updated>2018-06-01T11:49:37.037Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;保证 URL 的唯一性，有助于避免搜索引擎索引同一个页面两次。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+    
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask 中的唯一 URL 原则</title>
+    <link href="https://tech.imtt.me/2018/05/05/Flask%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80URL%E5%8E%9F%E5%88%99.html/"/>
+    <id>https://tech.imtt.me/2018/05/05/Flask中的唯一URL原则.html/</id>
+    <published>2018-05-05T11:05:43.000Z</published>
+    <updated>2018-06-01T11:52:58.052Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;保证 URL 的唯一性，有助于避免搜索引擎索引同一个页面两次。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+    
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
@@ -105,9 +149,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
   </entry>
   
@@ -127,9 +171,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
   </entry>
   
@@ -149,9 +193,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
@@ -431,52 +475,6 @@
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
       <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：单链表</title>
-    <link href="https://tech.imtt.me/2017/08/11/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8.html/"/>
-    <id>https://tech.imtt.me/2017/08/11/Python-数据结构：单链表.html/</id>
-    <published>2017-08-11T01:37:41.000Z</published>
-    <updated>2018-04-18T09:23:15.144Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;单链表是链表的一种，其链接方向是单向的，对链表的访问要通过从头部开始，依序往下读取。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法：无向图</title>
-    <link href="https://tech.imtt.me/2017/07/30/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%97%A0%E5%90%91%E5%9B%BE.html/"/>
-    <id>https://tech.imtt.me/2017/07/30/算法：无向图.html/</id>
-    <published>2017-07-30T03:23:53.000Z</published>
-    <updated>2018-04-25T01:44:37.793Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;图是由一组顶点和一组能够将两个顶点相连的边组成的。边有方向的图称为有向图，没有方向的图称为无向图。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="算法" scheme="https://tech.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
     
   </entry>
   
