@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-06-01T12:51:02.496Z</updated>
+  <updated>2018-06-03T12:52:32.838Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask 使用 BluePrint 注册视图函数</title>
+    <link href="https://tech.imtt.me/2018/05/20/Flask-%E4%BD%BF%E7%94%A8-BluePrint-%E6%B3%A8%E5%86%8C%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0.html/"/>
+    <id>https://tech.imtt.me/2018/05/20/Flask-使用-BluePrint-注册视图函数.html/</id>
+    <published>2018-05-20T11:13:43.000Z</published>
+    <updated>2018-06-03T12:52:32.838Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flask 中的 Blueprint（蓝图）是什么？&lt;a href=&quot;http://flask.pocoo.org/docs/1.0/blueprints/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;的解释是「Flask uses a concept of &lt;em&gt;blueprints&lt;/em&gt; for making application components and supporting common patterns within an application or across applications. Blueprints can greatly simplify how large applications work and provide a central means for Flask extensions to register operations on applications. 」。但是，具体到代码中是怎样的呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+    
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask 中的唯一 URL 原则</title>
@@ -444,28 +466,6 @@
     <summary type="html">
     
       &lt;p&gt;单链表包含了两个方向的链接，能从给定节点移动到前一个节点且能直接移动到最后一个节点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：单链表</title>
-    <link href="https://tech.imtt.me/2017/08/11/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8D%95%E9%93%BE%E8%A1%A8.html/"/>
-    <id>https://tech.imtt.me/2017/08/11/Python-数据结构：单链表.html/</id>
-    <published>2017-08-11T01:37:41.000Z</published>
-    <updated>2018-04-18T09:23:15.144Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;单链表是链表的一种，其链接方向是单向的，对链表的访问要通过从头部开始，依序往下读取。&lt;br&gt;
     
     </summary>
     
