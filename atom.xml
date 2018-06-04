@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-06-03T12:52:32.838Z</updated>
+  <updated>2018-06-04T02:57:18.682Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Flask 使用 request 获取请求参数</title>
+    <link href="https://tech.imtt.me/2018/05/24/Flask-%E4%BD%BF%E7%94%A8-request-%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0.html/"/>
+    <id>https://tech.imtt.me/2018/05/24/Flask-使用-request-获取请求参数.html/</id>
+    <published>2018-05-24T02:14:59.000Z</published>
+    <updated>2018-06-04T02:57:18.682Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flask 从客户端收到请求时，要让视图函数能获取参数，有两种方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将其作为参数传入视图函数，&lt;/li&gt;
+&lt;li&gt;使用上下文全局变量 request。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+    
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flask 使用 BluePrint 注册视图函数</title>
-    <link href="https://tech.imtt.me/2018/05/20/Flask-%E4%BD%BF%E7%94%A8-BluePrint-%E6%B3%A8%E5%86%8C%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0.html/"/>
-    <id>https://tech.imtt.me/2018/05/20/Flask-使用-BluePrint-注册视图函数.html/</id>
-    <published>2018-05-20T11:13:43.000Z</published>
-    <updated>2018-06-03T12:52:32.838Z</updated>
+    <link href="https://tech.imtt.me/2018/05/17/Flask-%E4%BD%BF%E7%94%A8-BluePrint-%E6%B3%A8%E5%86%8C%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0.html/"/>
+    <id>https://tech.imtt.me/2018/05/17/Flask-使用-BluePrint-注册视图函数.html/</id>
+    <published>2018-05-17T11:13:43.000Z</published>
+    <updated>2018-06-04T02:57:13.687Z</updated>
     
     <summary type="html">
     
@@ -32,9 +58,9 @@
       <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -43,7 +69,7 @@
     <link href="https://tech.imtt.me/2018/05/05/Flask-%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80-URL-%E5%8E%9F%E5%88%99.html/"/>
     <id>https://tech.imtt.me/2018/05/05/Flask-中的唯一-URL-原则.html/</id>
     <published>2018-05-05T11:05:43.000Z</published>
-    <updated>2018-06-01T12:51:02.496Z</updated>
+    <updated>2018-06-04T02:57:25.947Z</updated>
     
     <summary type="html">
     
@@ -54,9 +80,9 @@
       <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -149,9 +175,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
   </entry>
   
@@ -171,9 +197,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
   </entry>
   
@@ -193,11 +219,11 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
       <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -261,9 +287,9 @@
       <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
   </entry>
   
@@ -332,9 +358,9 @@
     
       <category term="python 库" scheme="https://tech.imtt.me/tags/python-%E5%BA%93/"/>
     
-      <category term="Requests" scheme="https://tech.imtt.me/tags/Requests/"/>
-    
       <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Requests" scheme="https://tech.imtt.me/tags/Requests/"/>
     
   </entry>
   
@@ -453,28 +479,6 @@
       <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="栈" scheme="https://tech.imtt.me/tags/%E6%A0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：双链表</title>
-    <link href="https://tech.imtt.me/2017/08/13/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%8F%8C%E9%93%BE%E8%A1%A8.html/"/>
-    <id>https://tech.imtt.me/2017/08/13/Python-数据结构：双链表.html/</id>
-    <published>2017-08-13T02:48:15.000Z</published>
-    <updated>2018-04-18T09:23:07.465Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;单链表包含了两个方向的链接，能从给定节点移动到前一个节点且能直接移动到最后一个节点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
