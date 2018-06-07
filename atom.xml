@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-06-04T02:57:18.682Z</updated>
+  <updated>2018-06-07T04:16:06.829Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask 中使用 WTForms 进行表单验证</title>
+    <link href="https://tech.imtt.me/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html/"/>
+    <id>https://tech.imtt.me/2018/05/27/Flask-中使用-WTForms-进行表单验证.html/</id>
+    <published>2018-05-27T02:43:58.000Z</published>
+    <updated>2018-06-07T04:16:06.829Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多时候需要对浏览器提交的表单数据进行限制或验证，在 Flask 中使用 &lt;a href=&quot;https://wtforms.readthedocs.io/en/stable/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;WTForms&lt;/a&gt; 拓展模块是一个很好的选择。&lt;/p&gt;
+&lt;p&gt;只需通过 pip 安装：&lt;code&gt;pip install WTForms&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+    
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask 使用 request 获取请求参数</title>
@@ -36,9 +59,9 @@
       <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
     
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
     
   </entry>
   
@@ -58,9 +81,9 @@
       <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
     
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
     
   </entry>
   
@@ -80,9 +103,9 @@
       <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
     
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
-    
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+    
+      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
     
   </entry>
   
@@ -175,9 +198,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -197,9 +220,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -219,9 +242,9 @@
       <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
     
@@ -455,30 +478,6 @@
       <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="队列" scheme="https://tech.imtt.me/tags/%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：栈</title>
-    <link href="https://tech.imtt.me/2017/08/19/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88.html/"/>
-    <id>https://tech.imtt.me/2017/08/19/Python-数据结构：栈.html/</id>
-    <published>2017-08-19T02:02:54.000Z</published>
-    <updated>2018-04-18T09:23:49.969Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;栈是线性的集合，遵从后进先出（LIFO）的协议。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="栈" scheme="https://tech.imtt.me/tags/%E6%A0%88/"/>
     
   </entry>
   

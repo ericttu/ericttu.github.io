@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Flask 中使用 WTForms 进行表单验证</title>
+      <link href="/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html/"/>
+      <url>/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html/</url>
+      <content type="html"><![CDATA[<p>很多时候需要对浏览器提交的表单数据进行限制或验证，在 Flask 中使用 <a href="https://wtforms.readthedocs.io/en/stable/" target="_blank" rel="noopener">WTForms</a> 拓展模块是一个很好的选择。</p><p>只需通过 pip 安装：<code>pip install WTForms</code>。</p><a id="more"></a><h1 id="表单类"><a href="#表单类" class="headerlink" title="表单类"></a>表单类</h1><p>定义一个简单的表单类：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> Form, StringField, IntegerField</span><br><span class="line"><span class="keyword">from</span> wtforms.validators <span class="keyword">import</span> Length, NumberRange, DataRequired</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchForm</span><span class="params">(Form)</span>:</span></span><br><span class="line">    q = StringField(validators=[DataRequired(), Length(min=<span class="number">1</span>, max=<span class="number">30</span>)])</span><br><span class="line">    <span class="comment"># q = StringField(validators=[Length(min=1, max=30, message='')])</span></span><br><span class="line">    page = IntegerField(validators=[NumberRange(min=<span class="number">1</span>, max=<span class="number">99</span>)], default=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>字段对象中的 <code>validators</code> 参数可以传入多个验证函数，验证函数中有个参数 <code>message</code> 用于自定义验证失败的错误提示。</p><h1 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> jsonify, request</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> SearchForm</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/book/search')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""搜索书籍"""</span></span><br><span class="line">    form = SearchForm(request.args)</span><br><span class="line">    <span class="keyword">if</span> form.validate():</span><br><span class="line">        q = form.q.data.strip()</span><br><span class="line">        page = form.page.data</span><br><span class="line">        <span class="comment"># do something, result = ...</span></span><br><span class="line">        <span class="keyword">return</span> jsonify(result)</span><br><span class="line">    <span class="keyword">return</span> jsonify(form.errors)</span><br></pre></td></tr></table></figure><ol><li>视图函数中通过 request 获取参数传入到表单类中，表单类会对传入的表单数据，<code>form.validate()</code> 函数返回是否通过验证。</li><li>通过 <code>form.&lt;NAME&gt;.data</code> 可以获得表单中的单个值。</li><li>如果验证不通过，可以通过 <code>form.errors</code> 获取验证不通过的错误提示。</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> Flask </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Flask 使用 request 获取请求参数</title>
       <link href="/2018/05/24/Flask-%E4%BD%BF%E7%94%A8-request-%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0.html/"/>
       <url>/2018/05/24/Flask-%E4%BD%BF%E7%94%A8-request-%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0.html/</url>
@@ -17,9 +40,9 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
         </tags>
       
@@ -40,9 +63,9 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
         </tags>
       
@@ -63,9 +86,9 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
         </tags>
       
@@ -153,9 +176,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -176,9 +199,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -199,9 +222,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
             <tag> MySQL </tag>
             
