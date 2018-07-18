@@ -88,6 +88,28 @@
   </entry>
   
   <entry>
+    <title>JSP 内置对象</title>
+    <link href="https://tech.imtt.me/2018/05/10/JSP-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1.html/"/>
+    <id>https://tech.imtt.me/2018/05/10/JSP-内置对象.html/</id>
+    <published>2018-05-10T01:14:00.000Z</published>
+    <updated>2018-07-18T11:15:11.270Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JSP 内置对象（又称隐含对象）共有9个，不需要预先声明就可以在脚本代码和表达式中使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java Web" scheme="https://tech.imtt.me/categories/Java-Web/"/>
+    
+    
+      <category term="JSP" scheme="https://tech.imtt.me/tags/JSP/"/>
+    
+      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flask 中的唯一 URL 原则</title>
     <link href="https://tech.imtt.me/2018/05/05/Flask-%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80-URL-%E5%8E%9F%E5%88%99.html/"/>
     <id>https://tech.imtt.me/2018/05/05/Flask-中的唯一-URL-原则.html/</id>
@@ -454,30 +476,6 @@
       <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="优先队列" scheme="https://tech.imtt.me/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：队列</title>
-    <link href="https://tech.imtt.me/2017/08/23/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E9%98%9F%E5%88%97.html/"/>
-    <id>https://tech.imtt.me/2017/08/23/Python-数据结构：队列.html/</id>
-    <published>2017-08-23T00:46:52.000Z</published>
-    <updated>2018-04-18T09:24:01.972Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;队列是线性的集合，遵从先进先出（FIFO）的协议。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="队列" scheme="https://tech.imtt.me/tags/%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
