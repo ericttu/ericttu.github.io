@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>MySQL 事务处理</title>
+      <link href="/2018/06/05/MySQL-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/"/>
+      <url>/2018/06/05/MySQL-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/</url>
+      <content type="html"><![CDATA[<p> 事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。 </p><a id="more"></a><h1 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h1><p>事务的四个特性也称为 ASCI 特性。  </p><ol><li>原子性（atomicity）：一个事务是为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败。 </li><li>一致性（consistent）：事务将数据库从一种一致性状态转换到另外一种一致性状态，在事务开始之前和事务结束后数据库中数据的完整性没有被破坏。） </li><li>隔离性（isolation）：一个事务的执行，在未提交完成前对于其它事务是不可见的。 </li><li>持久性（durability ）：一旦事务提交，则其所做的修改就会永久保存到数据库中。 </li></ol><h1 id="MySQL-事务处理"><a href="#MySQL-事务处理" class="headerlink" title="MySQL 事务处理"></a>MySQL 事务处理</h1><h2 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h2><ol><li><p>MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。 </p><ul><li><code>show engines;</code> –查看服务器支持的引擎</li><li>在配置文件 my.cnf 中添加 <code>default-storage-engine = Innodb</code> 来修改默认引擎。</li></ul></li><li><p>MySQL 默认以自动提交（autocommit）模式运行。</p></li></ol><h2 id="事务处理语句"><a href="#事务处理语句" class="headerlink" title="事务处理语句"></a>事务处理语句</h2><ol><li><code>BEGIN</code> 或 <code>START TRANSACTION</code>：显式地开启一个事务。</li><li><code>COMMIT</code>：提交事务，并使已对数据库进行的所有修改变为永久性的。</li><li><code>ROLLBACK</code>：回滚事务，并撤销正在进行的所有未提交的修改。</li></ol><h1 id="事务并发问题"><a href="#事务并发问题" class="headerlink" title="事务并发问题"></a>事务并发问题</h1><p>两个事务或多个事务同时进行可能出现并发问题，典型三种问题：</p><ol><li>脏读；比如事务 A 对数据做了修改，接着事务 B 读取了修改后的数据，但是接着 A 执行了回滚，撤销了修改。</li><li>不可重复读；比如事务 A 对某个数据进行读取，接着事务 B 对该数据做了修改并进行了提交，但是事务 A 又进行了读取，此时事务 A 读取的两次结果就不一样了。</li><li>幻读；比如事务 A 对全部数据进行相同的修改，事务 B 接着插入了一条数据并进行了提交，但是此时事物 A 查询修改的结果，发现有一条数据不是预期的结果。</li></ol><p>可以对事物进行隔离来解决上面的问题。隔离有四个级别（由低到高、并发性由高到低）：</p><table><thead><tr><th style="text-align:left">事务隔离级别</th><th>含义</th><th>脏读</th><th>不可重复读</th><th>幻读</th></tr></thead><tbody><tr><td style="text-align:left">读未提交(read uncommitted)</td><td>两个事务之间互相可见</td><td>是</td><td>是</td><td>是</td></tr><tr><td style="text-align:left">读已提交(read committed)</td><td>一个事务进行时，其它已提交的事物对于该事务是可见的，即可以获取其它事务提交的数据</td><td>否</td><td>是</td><td>是</td></tr><tr><td style="text-align:left">可重复读(repeatable read)</td><td>事务进行时，其它所有事务对其不可见，即多次执行读，得到的结果是一样的</td><td>否</td><td>否</td><td>是</td></tr><tr><td style="text-align:left">串行化(serializable)</td><td>在读取的每一行数据上都加锁，会造成大量的锁超时和锁征用，严格数据一致性且没有并发时可使用</td><td>否</td><td>否</td><td>否</td></tr></tbody></table><p>可重复读（REPEATABLE READ）是 InnoDB 的默认隔离等级。可通过命令进行查询和修改：</p><ul><li><code>select @@tx_isolation</code>：查询默认隔离级别</li><li><code>set session transaction isolation level XXX</code>：设置当前会话隔离级别</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Flask 中使用 WTForms 进行表单验证</title>
       <link href="/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html/"/>
       <url>/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html/</url>
@@ -247,9 +268,9 @@
             
             <tag> Django </tag>
             
-            <tag> Python </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -298,9 +319,9 @@
     </entry>
     
     <entry>
-      <title>Mysql 简介及 Python 连接数据库</title>
-      <link href="/2017/10/20/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-      <url>/2017/10/20/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/</url>
+      <title>MySQL 简介及 Python 连接数据库</title>
+      <link href="/2017/10/20/MySQL-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+      <url>/2017/10/20/MySQL-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/</url>
       <content type="html"><![CDATA[<p>MySQL 是一种 DBMS，即它是一种数据库软件。<br><a id="more"></a></p><h1 id="Centos-安装-Mysql"><a href="#Centos-安装-Mysql" class="headerlink" title="Centos 安装 Mysql"></a>Centos 安装 Mysql</h1><ol><li><p>下载 Mysql 源安装包</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -LO http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure></li><li><p>安装 Mysql 源</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum localinstall mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure></li><li><p>检查 yum 源是否安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum repolist enabled | grep &quot;mysql.*-community.*&quot;</span><br><span class="line">mysql-connectors-community           MySQL Connectors Community              21</span><br><span class="line">mysql-tools-community                MySQL Tools Community                   38</span><br><span class="line">mysql57-community                    MySQL 5.7 Community Server             130</span><br></pre></td></tr></table></figure><p>此时可以看到源已经安装好了。</p></li><li><p>安装 Mysql</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install mysql-community-server</span><br></pre></td></tr></table></figure></li><li><p>查看默认密码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/log/mysqld.log | grep &quot;password&quot;</span><br></pre></td></tr></table></figure></li><li><p>登录 Mysql 并修改默认密码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br><span class="line">Enter password: </span><br><span class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;new_password&apos;;</span><br></pre></td></tr></table></figure></li></ol><h1 id="Python-使用-MySQLdb-连接数据库"><a href="#Python-使用-MySQLdb-连接数据库" class="headerlink" title="Python 使用 MySQLdb 连接数据库"></a>Python 使用 MySQLdb 连接数据库</h1><p>库安装：<code>pip install mysqlclient</code></p><p>程序实例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 准备SQL</span></span><br><span class="line">sql = <span class="string">'SELECT * FROM `news` ORDER BY `created_at` DESC;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取连接</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    conn = MySQLdb.connect(</span><br><span class="line">        host=<span class="string">'127.0.0.1'</span>,</span><br><span class="line">        <span class="comment"># host='localhost'</span></span><br><span class="line">        user=<span class="string">'root'</span>,</span><br><span class="line">        passwd=<span class="string">'960645'</span>,</span><br><span class="line">        db=<span class="string">'dbname'</span>,</span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">        charset=<span class="string">'utf8'</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># 找到cursor</span></span><br><span class="line">    cursor = conn.cursor()</span><br><span class="line">    <span class="comment"># 准备SQL</span></span><br><span class="line">    sql = <span class="string">''</span></span><br><span class="line">    <span class="comment"># 执行SQL</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="comment"># 拿到结果</span></span><br><span class="line">    rest = cursor.fetchone()</span><br><span class="line">    <span class="comment"># 处理结果</span></span><br><span class="line">    print(rest)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    cursor.close()</span><br><span class="line"><span class="keyword">except</span> MySQLdb.Error <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">'Error: %s'</span> % e)</span><br></pre></td></tr></table></figure><blockquote><ol><li>连接本地数据库时，<code>host</code> 可以是 <code>127.0.0.1</code> 或 <code>localhost</code>；</li><li>插入/更新数据库时，在 <code>execute(sql)</code> 后需要提交事务：<code>conn.commit()</code>；</li><li>最后一定要关闭连接。</li></ol></blockquote>]]></content>
       
       <categories>
@@ -312,9 +333,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       

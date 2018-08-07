@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-06-07T04:16:06.829Z</updated>
+  <updated>2018-08-07T11:26:48.689Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL 事务处理</title>
+    <link href="https://tech.imtt.me/2018/06/05/MySQL-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/"/>
+    <id>https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/</id>
+    <published>2018-06-05T10:16:00.000Z</published>
+    <updated>2018-08-07T11:26:48.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt; 事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。 &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Flask 中使用 WTForms 进行表单验证</title>
@@ -266,9 +286,9 @@
     
       <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -317,11 +337,11 @@
   </entry>
   
   <entry>
-    <title>Mysql 简介及 Python 连接数据库</title>
-    <link href="https://tech.imtt.me/2017/10/20/Mysql-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
-    <id>https://tech.imtt.me/2017/10/20/Mysql-简介及-Python-连接数据库.html/</id>
+    <title>MySQL 简介及 Python 连接数据库</title>
+    <link href="https://tech.imtt.me/2017/10/20/MySQL-%E7%AE%80%E4%BB%8B%E5%8F%8A-Python-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93.html/"/>
+    <id>https://tech.imtt.me/2017/10/20/MySQL-简介及-Python-连接数据库.html/</id>
     <published>2017-10-20T01:36:34.000Z</published>
-    <updated>2018-05-23T02:22:46.408Z</updated>
+    <updated>2018-08-07T11:27:02.955Z</updated>
     
     <summary type="html">
     
@@ -332,9 +352,9 @@
       <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+    
+      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
   </entry>
   
@@ -452,30 +472,6 @@
       <category term="BeautifulSoup" scheme="https://tech.imtt.me/tags/BeautifulSoup/"/>
     
       <category term="python 库" scheme="https://tech.imtt.me/tags/python-%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：优先队列</title>
-    <link href="https://tech.imtt.me/2017/08/26/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97.html/"/>
-    <id>https://tech.imtt.me/2017/08/26/Python-数据结构：优先队列.html/</id>
-    <published>2017-08-26T00:58:08.000Z</published>
-    <updated>2018-04-26T02:57:58.919Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;优先队列是一种特殊的队列类型，其中具有最高优先级的项会最先弹出，相同优先级的项按照 FIFO 的顺序弹出。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="优先队列" scheme="https://tech.imtt.me/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
     
   </entry>
   

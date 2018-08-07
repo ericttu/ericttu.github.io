@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -82,16 +82,18 @@
 
 
 
-<meta name="description" content="while(true){study}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="I&#39;M TWU">
-<meta property="og:url" content="https://tech.imtt.me/archives/2017/page/4/index.html">
+<meta name="description" content="事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 事务处理">
+<meta property="og:url" content="https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/index.html">
 <meta property="og:site_name" content="I&#39;M TWU">
-<meta property="og:description" content="while(true){study}">
+<meta property="og:description" content="事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-07T11:26:48.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I&#39;M TWU">
-<meta name="twitter:description" content="while(true){study}">
+<meta name="twitter:title" content="MySQL 事务处理">
+<meta name="twitter:description" content="事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://tech.imtt.me/archives/2017/page/4/"/>
+  <link rel="canonical" href="https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/"/>
 
 
 
 
 
-  <title>Archive | I'M TWU</title>
+  <title>MySQL 事务处理 | I'M TWU</title>
   
 
 
@@ -155,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,114 +285,309 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 44 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TuTeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I'M TWU">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">MySQL 事务处理</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-05T18:16:00+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/17/Python-基础：基本运算符.html/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">Python 基础：基本运算符</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-17T17:25:36+08:00"
-              content="2017-03-17" >
-          03-17
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/05/MySQL-事务处理.html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/05/MySQL-事务处理.html/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/13/Python-基础：字符串.html/" itemprop="url">
-              
-                <span itemprop="name">Python 基础: 字符串</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-13T16:41:29+08:00"
-              content="2017-03-13" >
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p> 事务一般特指数据库事务（Database Transaction），是指作为一个程序执行单元执行的一系列操作，要么完全执行，要么完全不执行。 </p>
+<a id="more"></a>
+<h1 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h1><p>事务的四个特性也称为 ASCI 特性。  </p>
+<ol>
+<li>原子性（atomicity）：一个事务是为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败。 </li>
+<li>一致性（consistent）：事务将数据库从一种一致性状态转换到另外一种一致性状态，在事务开始之前和事务结束后数据库中数据的完整性没有被破坏。） </li>
+<li>隔离性（isolation）：一个事务的执行，在未提交完成前对于其它事务是不可见的。 </li>
+<li>持久性（durability ）：一旦事务提交，则其所做的修改就会永久保存到数据库中。 </li>
+</ol>
+<h1 id="MySQL-事务处理"><a href="#MySQL-事务处理" class="headerlink" title="MySQL 事务处理"></a>MySQL 事务处理</h1><h2 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h2><ol>
+<li><p>MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。 </p>
+<ul>
+<li><code>show engines;</code> –查看服务器支持的引擎</li>
+<li>在配置文件 my.cnf 中添加 <code>default-storage-engine = Innodb</code> 来修改默认引擎。</li>
+</ul>
+</li>
+<li><p>MySQL 默认以自动提交（autocommit）模式运行。</p>
+</li>
+</ol>
+<h2 id="事务处理语句"><a href="#事务处理语句" class="headerlink" title="事务处理语句"></a>事务处理语句</h2><ol>
+<li><code>BEGIN</code> 或 <code>START TRANSACTION</code>：显式地开启一个事务。</li>
+<li><code>COMMIT</code>：提交事务，并使已对数据库进行的所有修改变为永久性的。</li>
+<li><code>ROLLBACK</code>：回滚事务，并撤销正在进行的所有未提交的修改。</li>
+</ol>
+<h1 id="事务并发问题"><a href="#事务并发问题" class="headerlink" title="事务并发问题"></a>事务并发问题</h1><p>两个事务或多个事务同时进行可能出现并发问题，典型三种问题：</p>
+<ol>
+<li>脏读；比如事务 A 对数据做了修改，接着事务 B 读取了修改后的数据，但是接着 A 执行了回滚，撤销了修改。</li>
+<li>不可重复读；比如事务 A 对某个数据进行读取，接着事务 B 对该数据做了修改并进行了提交，但是事务 A 又进行了读取，此时事务 A 读取的两次结果就不一样了。</li>
+<li>幻读；比如事务 A 对全部数据进行相同的修改，事务 B 接着插入了一条数据并进行了提交，但是此时事物 A 查询修改的结果，发现有一条数据不是预期的结果。</li>
+</ol>
+<p>可以对事物进行隔离来解决上面的问题。隔离有四个级别（由低到高、并发性由高到低）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事务隔离级别</th>
+<th>含义</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">读未提交(read uncommitted)</td>
+<td>两个事务之间互相可见</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">读已提交(read committed)</td>
+<td>一个事务进行时，其它已提交的事物对于该事务是可见的，即可以获取其它事务提交的数据</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">可重复读(repeatable read)</td>
+<td>事务进行时，其它所有事务对其不可见，即多次执行读，得到的结果是一样的</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">串行化(serializable)</td>
+<td>在读取的每一行数据上都加锁，会造成大量的锁超时和锁征用，严格数据一致性且没有并发时可使用</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<p>可重复读（REPEATABLE READ）是 InnoDB 的默认隔离等级。可通过命令进行查询和修改：</p>
+<ul>
+<li><code>select @@tx_isolation</code>：查询默认隔离级别</li>
+<li><code>set session transaction isolation level XXX</code>：设置当前会话隔离级别</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="TuTeng WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="TuTeng Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    TuTeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/" title="MySQL 事务处理">https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/Flask-中使用-WTForms-进行表单验证.html/" rel="next" title="Flask 中使用 WTForms 进行表单验证">
+                <i class="fa fa-chevron-left"></i> Flask 中使用 WTForms 进行表单验证
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -398,6 +595,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -418,8 +629,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -518,6 +738,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事务的特性"><span class="nav-number">1.</span> <span class="nav-text">事务的特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-事务处理"><span class="nav-number">2.</span> <span class="nav-text">MySQL 事务处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本规则"><span class="nav-number">2.1.</span> <span class="nav-text">基本规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务处理语句"><span class="nav-number">2.2.</span> <span class="nav-text">事务处理语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务并发问题"><span class="nav-number">3.</span> <span class="nav-text">事务并发问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -645,6 +881,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -662,6 +902,18 @@
       <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://tech.imtt.me/2018/06/05/MySQL-事务处理.html/';
+          this.page.identifier = '2018/06/05/MySQL-事务处理.html/';
+          this.page.title = 'MySQL 事务处理';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
