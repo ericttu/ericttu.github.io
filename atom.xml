@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-08-09T06:30:51.542Z</updated>
+  <updated>2018-08-09T08:14:24.089Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Spring Bean 在应用上下文中的生命周期</title>
+    <link href="https://tech.imtt.me/2018/06/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html/"/>
+    <id>https://tech.imtt.me/2018/06/12/Spring-Bean-在应用上下文中的生命周期.html/</id>
+    <published>2018-06-12T07:05:48.000Z</published>
+    <updated>2018-08-09T08:14:24.089Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Spring 中 Bean 的生命周期由多个特定的生命阶段组成，每个阶段都能对 Bean 进行控制。本文中的生命周期为 &lt;strong&gt;ApplicationContext 中 Bean 的生命周期&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring Bean 管理</title>
     <link href="https://tech.imtt.me/2018/06/08/Spring-Bean-%E7%AE%A1%E7%90%86.html/"/>
     <id>https://tech.imtt.me/2018/06/08/Spring-Bean-管理.html/</id>
     <published>2018-06-08T08:12:29.000Z</published>
-    <updated>2018-08-09T06:30:51.542Z</updated>
+    <updated>2018-08-09T07:18:48.588Z</updated>
     
     <summary type="html">
     
@@ -446,30 +466,6 @@
       <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="Requests" scheme="https://tech.imtt.me/tags/Requests/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：列表</title>
-    <link href="https://tech.imtt.me/2017/09/10/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E5%88%97%E8%A1%A8.html/"/>
-    <id>https://tech.imtt.me/2017/09/10/Python-数据结构：列表.html/</id>
-    <published>2017-09-10T01:15:15.000Z</published>
-    <updated>2018-04-18T09:25:55.643Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;列表支持对线性集合的任何位置的项进行操作。对列表的操作主要有三类：基于索引的操作、基于内容的操作、基于位置的操作。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="列表" scheme="https://tech.imtt.me/tags/%E5%88%97%E8%A1%A8/"/>
     
   </entry>
   
