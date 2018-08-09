@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-08-09T08:23:42.541Z</updated>
+  <updated>2018-08-09T11:15:01.345Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,13 +17,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spring 传统AOP</title>
-    <link href="https://tech.imtt.me/2018/06/15/Spring-%E4%BC%A0%E7%BB%9FAOP.html/"/>
-    <id>https://tech.imtt.me/2018/06/15/Spring-传统AOP.html/</id>
-    <published>2018-06-15T08:18:42.000Z</published>
-    <updated>2018-08-09T08:23:42.541Z</updated>
+    <title>Spring 传统 AOP</title>
+    <link href="https://tech.imtt.me/2018/06/17/Spring-%E4%BC%A0%E7%BB%9FAOP.html/"/>
+    <id>https://tech.imtt.me/2018/06/17/Spring-传统AOP.html/</id>
+    <published>2018-06-17T08:18:42.000Z</published>
+    <updated>2018-08-09T11:15:01.345Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;Spring AOP 使用 纯 Java 实现，不需要专门的编译过程和类加载器，在运行期通过代理方式向目标类织入增强代码 。&lt;/p&gt;
     
     </summary>
     
@@ -35,6 +37,30 @@
       <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
     
       <category term="AOP" scheme="https://tech.imtt.me/tags/AOP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDK 动态代理和 CGLIB 动态代理</title>
+    <link href="https://tech.imtt.me/2018/06/14/JDK-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8C-CGLIB-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.html/"/>
+    <id>https://tech.imtt.me/2018/06/14/JDK-动态代理和-CGLIB-动态代理.html/</id>
+    <published>2018-06-14T11:10:02.000Z</published>
+    <updated>2018-08-09T11:13:43.647Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;AOP（Aspect Oriented Programing）即面向切面编程，采取横向抽取机制，取代了传统纵向继承体系重复性代码，应用在性能监视、事务管理、安全检查、缓存。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://tech.imtt.me/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+    
+      <category term="动态代理" scheme="https://tech.imtt.me/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
+    
+      <category term="CGLIB" scheme="https://tech.imtt.me/tags/CGLIB/"/>
     
   </entry>
   
@@ -193,9 +219,9 @@
       <category term="Java Web" scheme="https://tech.imtt.me/categories/Java-Web/"/>
     
     
-      <category term="JSP" scheme="https://tech.imtt.me/tags/JSP/"/>
-    
       <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+    
+      <category term="JSP" scheme="https://tech.imtt.me/tags/JSP/"/>
     
   </entry>
   
@@ -450,28 +476,6 @@
       <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="树" scheme="https://tech.imtt.me/tags/%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL 学习笔记</title>
-    <link href="https://tech.imtt.me/2017/09/23/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html/"/>
-    <id>https://tech.imtt.me/2017/09/23/SQL-学习笔记.html/</id>
-    <published>2017-09-23T05:18:58.000Z</published>
-    <updated>2018-04-22T03:00:00.672Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.ituring.com.cn/book/1880&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SQL基础教程（第2版）&lt;/a&gt;学习笔记。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="SQL" scheme="https://tech.imtt.me/tags/SQL/"/>
-    
-      <category term="数据库" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
