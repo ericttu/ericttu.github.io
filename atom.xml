@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-08-09T08:14:24.089Z</updated>
+  <updated>2018-08-09T08:20:05.061Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Spring 传统AOP</title>
+    <link href="https://tech.imtt.me/2018/06/15/Spring-%E4%BC%A0%E7%BB%9FAOP.html/"/>
+    <id>https://tech.imtt.me/2018/06/15/Spring-传统AOP.html/</id>
+    <published>2018-06-15T08:18:42.000Z</published>
+    <updated>2018-08-09T08:20:05.061Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+    
+      <category term="AOP" scheme="https://tech.imtt.me/tags/AOP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring Bean 在应用上下文中的生命周期</title>
     <link href="https://tech.imtt.me/2018/06/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html/"/>
     <id>https://tech.imtt.me/2018/06/12/Spring-Bean-在应用上下文中的生命周期.html/</id>
     <published>2018-06-12T07:05:48.000Z</published>
-    <updated>2018-08-09T08:14:24.089Z</updated>
+    <updated>2018-08-09T08:20:23.750Z</updated>
     
     <summary type="html">
     
@@ -34,6 +54,8 @@
     
       <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
     
+      <category term="生命周期" scheme="https://tech.imtt.me/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
   </entry>
   
   <entry>
@@ -41,7 +63,7 @@
     <link href="https://tech.imtt.me/2018/06/08/Spring-Bean-%E7%AE%A1%E7%90%86.html/"/>
     <id>https://tech.imtt.me/2018/06/08/Spring-Bean-管理.html/</id>
     <published>2018-06-08T08:12:29.000Z</published>
-    <updated>2018-08-09T07:18:48.588Z</updated>
+    <updated>2018-08-09T08:21:02.012Z</updated>
     
     <summary type="html">
     
@@ -53,6 +75,8 @@
     
     
       <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+    
+      <category term="注解" scheme="https://tech.imtt.me/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
@@ -442,30 +466,6 @@
       <category term="SQL" scheme="https://tech.imtt.me/tags/SQL/"/>
     
       <category term="数据库" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初识 Requests 库</title>
-    <link href="https://tech.imtt.me/2017/09/16/%E5%88%9D%E8%AF%86-Requests-%E5%BA%93.html/"/>
-    <id>https://tech.imtt.me/2017/09/16/初识-Requests-库.html/</id>
-    <published>2017-09-16T07:06:21.000Z</published>
-    <updated>2018-04-18T10:19:29.992Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Requests 库是一个处理复杂 HTTP 请求、cookie、header 等内容的 Python 第三方库。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python 库" scheme="https://tech.imtt.me/categories/Python-%E5%BA%93/"/>
-    
-    
-      <category term="python 库" scheme="https://tech.imtt.me/tags/python-%E5%BA%93/"/>
-    
-      <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Requests" scheme="https://tech.imtt.me/tags/Requests/"/>
     
   </entry>
   

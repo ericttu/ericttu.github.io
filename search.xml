@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Spring 传统AOP</title>
+      <link href="/2018/06/15/Spring-%E4%BC%A0%E7%BB%9FAOP.html/"/>
+      <url>/2018/06/15/Spring-%E4%BC%A0%E7%BB%9FAOP.html/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+            <tag> AOP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Spring Bean 在应用上下文中的生命周期</title>
       <link href="/2018/06/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html/"/>
       <url>/2018/06/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html/</url>
@@ -18,6 +41,8 @@
         <tags>
             
             <tag> Spring </tag>
+            
+            <tag> 生命周期 </tag>
             
         </tags>
       
@@ -39,6 +64,8 @@
         <tags>
             
             <tag> Spring </tag>
+            
+            <tag> 注解 </tag>
             
         </tags>
       
