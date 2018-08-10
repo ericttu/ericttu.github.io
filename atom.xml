@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-08-10T07:53:15.323Z</updated>
+  <updated>2018-08-10T12:28:45.574Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于 AspectJ 的 AOP 开发</title>
+    <link href="https://tech.imtt.me/2018/06/20/%E5%9F%BA%E4%BA%8E-AspectJ-%E7%9A%84-AOP-%E5%BC%80%E5%8F%91.html/"/>
+    <id>https://tech.imtt.me/2018/06/20/基于-AspectJ-的-AOP-开发.html/</id>
+    <published>2018-06-20T08:00:33.000Z</published>
+    <updated>2018-08-10T12:28:45.574Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;AspectJ 是一个基于 Java 语言的 AOP 框架。Spring 2.0 以后新增了对 AspectJ 切点表达式支持，并且建议使用 AspectJ 方式来开发 AOP。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+    
+    
+      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+    
+      <category term="AOP" scheme="https://tech.imtt.me/tags/AOP/"/>
+    
+      <category term="AspectJ" scheme="https://tech.imtt.me/tags/AspectJ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring 传统 AOP</title>
-    <link href="https://tech.imtt.me/2018/06/17/Spring-%E4%BC%A0%E7%BB%9FAOP.html/"/>
-    <id>https://tech.imtt.me/2018/06/17/Spring-传统AOP.html/</id>
+    <link href="https://tech.imtt.me/2018/06/17/Spring-%E4%BC%A0%E7%BB%9F-AOP.html/"/>
+    <id>https://tech.imtt.me/2018/06/17/Spring-传统-AOP.html/</id>
     <published>2018-06-17T08:18:42.000Z</published>
     <updated>2018-08-10T07:53:15.323Z</updated>
     
@@ -451,31 +477,6 @@
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据结构：二叉搜索树</title>
-    <link href="https://tech.imtt.me/2017/10/02/Python-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%91.html/"/>
-    <id>https://tech.imtt.me/2017/10/02/Python-数据结构：树.html/</id>
-    <published>2017-10-02T00:17:28.000Z</published>
-    <updated>2018-05-03T11:43:06.468Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;树是一种抽象数据类型，用来模拟具有树状结构性质的数据集合。&lt;/p&gt;
-&lt;img alt=&quot;图片说明&quot; class=&quot;class1 class2&quot; src=&quot;http://ot2o5t4xh.bkt.clouddn.com/static/images/Python-数据结构：树/tree.png&quot;&gt;
-    
-    </summary>
-    
-      <category term="数据结构与算法" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="数据结构" scheme="https://tech.imtt.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="树" scheme="https://tech.imtt.me/tags/%E6%A0%91/"/>
     
   </entry>
   
