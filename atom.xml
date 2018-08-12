@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tech.imtt.me/"/>
-  <updated>2018-08-12T01:37:12.099Z</updated>
+  <updated>2018-08-12T07:45:16.340Z</updated>
   <id>https://tech.imtt.me/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Spring 事务处理</title>
+    <link href="https://tech.imtt.me/2018/07/01/Spring-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/"/>
+    <id>https://tech.imtt.me/2018/07/01/Spring-事务处理.html/</id>
+    <published>2018-07-01T02:51:37.000Z</published>
+    <updated>2018-08-12T07:45:16.340Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Spring 支持编程式事务处理和声明式事务处理。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+    
+    
+      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+    
+      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+    
+      <category term="事务处理" scheme="https://tech.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JDBC 事务处理</title>
     <link href="https://tech.imtt.me/2018/06/26/JDBC-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/"/>
     <id>https://tech.imtt.me/2018/06/26/JDBC-事务处理.html/</id>
     <published>2018-06-26T01:02:18.000Z</published>
-    <updated>2018-08-12T01:37:12.099Z</updated>
+    <updated>2018-08-12T02:33:37.682Z</updated>
     
     <summary type="html">
     
@@ -459,28 +483,6 @@
       <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
     
       <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 reuqests 爬取豆瓣数据书籍 URL</title>
-    <link href="https://tech.imtt.me/2017/11/20/%E4%BD%BF%E7%94%A8-reuqests-%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E4%B9%A6%E7%B1%8D-URL.html/"/>
-    <id>https://tech.imtt.me/2017/11/20/使用-reuqests-爬取豆瓣数据书籍-URL.html/</id>
-    <published>2017-11-20T05:23:01.000Z</published>
-    <updated>2018-05-06T02:22:06.577Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 requests 库爬取豆瓣读书中所有书籍的 URL，并将其存储到 Mysql 中。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
-    
-      <category term="爬虫" scheme="https://tech.imtt.me/tags/%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="requests" scheme="https://tech.imtt.me/tags/requests/"/>
     
   </entry>
   
