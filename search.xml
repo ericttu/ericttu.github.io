@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>JDBC 事务处理</title>
+      <link href="/2018/06/26/JDBC-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/"/>
+      <url>/2018/06/26/JDBC-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86.html/</url>
+      <content type="html"><![CDATA[<p>JDBC 的事务处理是基于 <code>Connection</code> 接口的，通过 <code>Connection</code> 对象进行事务管理。</p><a id="more"></a><p>JDBC 默认事务处理行为是自动提交。有三个相关方法：</p><ul><li><code>setAutoCommit</code>：设置自动提交；</li><li><code>commit</code>：提交事务；</li><li><code>rollback</code>：回滚事务。</li></ul><h1 id="示例准备"><a href="#示例准备" class="headerlink" title="示例准备"></a>示例准备</h1><p>在 maven 中引入相关依赖：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.46<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><p>测试代码，包含了使用 JDBC 进行连接数据库：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="keyword">private</span> String url = <span class="string">"jdbc:mysql://localhost:3306/shiwu?useUnicode=true&amp;characterEncoding=utf8"</span>;</span><br><span class="line">    <span class="keyword">private</span> String user = <span class="string">"root"</span>;</span><br><span class="line">    <span class="keyword">private</span> String password = <span class="string">"root"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Connection conn = <span class="keyword">null</span>;</span><br><span class="line">        Statement stmt = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">            <span class="comment">//内容</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="comment">//内容</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                stmt.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    conn.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="事务处理实现"><a href="#事务处理实现" class="headerlink" title="事务处理实现"></a>事务处理实现</h1><p>因为 JDBC 默认事务处理行为是自动提交，所以先要使用 <code>setAutoCommit(false)</code> 方法将其关闭。</p><ol><li><p>接着进行一系列逻辑处理，如果没有异常产生，使用 <code>commit()</code> 方法提交事务。代码如下，位于 <code>try</code> 代码块中：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conn.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">stmt = conn.createStatement();</span><br><span class="line">stmt.execute(<span class="string">"&lt;SQL 语句&gt;"</span>);</span><br><span class="line">stmt.execute(<span class="string">"&lt;SQL 语句&gt;"</span>);</span><br><span class="line">conn.commit();</span><br></pre></td></tr></table></figure></li><li><p>如果产生了异常，使用 <code>rollback()</code> 方法回滚事务，代码如下，位于 <code>catch</code> 代码块中：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    conn.rollback();</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e1) &#123;</span><br><span class="line">    e1.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h1 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h1><p>JDBC 提供了对事物隔离级别的设置，其表示的隔离级别如下：</p><ul><li><p><code>TRANSACTION_NONE</code>：不支持事务；</p></li><li><p><code>TRANSACTION_READ_UNCOMMITTED</code> ：读未提交；</p></li><li><p><code>TRANSACTION_READ_COMMITTED</code>：读已提交；</p></li><li><p><code>TRANSACTION_REPEATABLE_READ</code>：可重复读；</p></li><li><p><code>TRANSACTION_SERIALIZABLE</code>：串行化。</p><blockquote><p>当开启 JDBC 的事务处理后，默认的隔离级别为 <code>TRANSACTION_REPEATABLE_READ</code>。</p></blockquote></li></ul><p>查询与设置隔离级别的方法：</p><ul><li><code>getTransactionIsolation</code>：查询当前隔离级别；</li><li><code>setTransactionIsolation</code>：设置隔离级别。</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> JDBC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JDBC </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> 事务处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>JDBC Template</title>
       <link href="/2018/06/24/JDBC-Template.html/"/>
       <url>/2018/06/24/JDBC-Template.html/</url>
@@ -10,18 +35,18 @@
       
       <categories>
           
-          <category> Spring </category>
+          <category> JDBC </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Spring </tag>
+            <tag> JDBC </tag>
             
             <tag> Java </tag>
             
-            <tag> JDBC </tag>
+            <tag> Spring </tag>
             
         </tags>
       
@@ -42,9 +67,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Java </tag>
+            
+            <tag> Spring </tag>
             
             <tag> AOP </tag>
             
@@ -69,9 +94,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Java </tag>
+            
+            <tag> Spring </tag>
             
             <tag> AOP </tag>
             
@@ -119,9 +144,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Java </tag>
+            
+            <tag> Spring </tag>
             
             <tag> 生命周期 </tag>
             
@@ -144,9 +169,9 @@
       
         <tags>
             
-            <tag> Spring </tag>
-            
             <tag> Java </tag>
+            
+            <tag> Spring </tag>
             
             <tag> 注解 </tag>
             
