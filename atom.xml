@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>I&#39;M TWU</title>
+  <title>OVTenng</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://tech.imtt.me/"/>
+  <link href="https://blog.imtt.me/"/>
   <updated>2018-09-10T13:36:48.742Z</updated>
-  <id>https://tech.imtt.me/</id>
+  <id>https://blog.imtt.me/</id>
   
   <author>
-    <name>Twu</name>
+    <name>ovtenng</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Spring 事务处理</title>
-    <link href="https://tech.imtt.me/2018/08/01/Spring-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
-    <id>https://tech.imtt.me/2018/08/01/Spring-事务处理/</id>
+    <link href="https://blog.imtt.me/2018/08/01/Spring-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://blog.imtt.me/2018/08/01/Spring-事务处理/</id>
     <published>2018-08-01T02:51:37.000Z</published>
     <updated>2018-09-10T13:36:48.742Z</updated>
     
@@ -29,21 +29,21 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/categories/Spring/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="事务处理" scheme="https://tech.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+      <category term="事务处理" scheme="https://blog.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>JDBC 事务处理</title>
-    <link href="https://tech.imtt.me/2018/07/26/JDBC-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
-    <id>https://tech.imtt.me/2018/07/26/JDBC-事务处理/</id>
+    <link href="https://blog.imtt.me/2018/07/26/JDBC-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://blog.imtt.me/2018/07/26/JDBC-事务处理/</id>
     <published>2018-07-26T01:02:18.000Z</published>
     <updated>2018-09-10T14:02:04.881Z</updated>
     
@@ -53,21 +53,21 @@
     
     </summary>
     
-      <category term="JDBC" scheme="https://tech.imtt.me/categories/JDBC/"/>
+      <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="JDBC" scheme="https://tech.imtt.me/tags/JDBC/"/>
+      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="事务处理" scheme="https://tech.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+      <category term="事务处理" scheme="https://blog.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>JDBC Template</title>
-    <link href="https://tech.imtt.me/2018/07/24/JDBC-Template/"/>
-    <id>https://tech.imtt.me/2018/07/24/JDBC-Template/</id>
+    <link href="https://blog.imtt.me/2018/07/24/JDBC-Template/"/>
+    <id>https://blog.imtt.me/2018/07/24/JDBC-Template/</id>
     <published>2018-07-24T08:36:34.000Z</published>
     <updated>2018-09-10T13:34:59.834Z</updated>
     
@@ -77,21 +77,21 @@
     
     </summary>
     
-      <category term="JDBC" scheme="https://tech.imtt.me/categories/JDBC/"/>
+      <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="JDBC" scheme="https://tech.imtt.me/tags/JDBC/"/>
+      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>基于 AspectJ 的 AOP 开发</title>
-    <link href="https://tech.imtt.me/2018/07/20/%E5%9F%BA%E4%BA%8E-AspectJ-%E7%9A%84-AOP-%E5%BC%80%E5%8F%91/"/>
-    <id>https://tech.imtt.me/2018/07/20/基于-AspectJ-的-AOP-开发/</id>
+    <link href="https://blog.imtt.me/2018/07/20/%E5%9F%BA%E4%BA%8E-AspectJ-%E7%9A%84-AOP-%E5%BC%80%E5%8F%91/"/>
+    <id>https://blog.imtt.me/2018/07/20/基于-AspectJ-的-AOP-开发/</id>
     <published>2018-07-20T08:00:33.000Z</published>
     <updated>2018-09-10T13:38:08.520Z</updated>
     
@@ -101,23 +101,23 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/categories/Spring/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="AOP" scheme="https://tech.imtt.me/tags/AOP/"/>
+      <category term="AOP" scheme="https://blog.imtt.me/tags/AOP/"/>
     
-      <category term="AspectJ" scheme="https://tech.imtt.me/tags/AspectJ/"/>
+      <category term="AspectJ" scheme="https://blog.imtt.me/tags/AspectJ/"/>
     
   </entry>
   
   <entry>
     <title>Spring 传统 AOP</title>
-    <link href="https://tech.imtt.me/2018/07/17/Spring-%E4%BC%A0%E7%BB%9F-AOP/"/>
-    <id>https://tech.imtt.me/2018/07/17/Spring-传统-AOP/</id>
+    <link href="https://blog.imtt.me/2018/07/17/Spring-%E4%BC%A0%E7%BB%9F-AOP/"/>
+    <id>https://blog.imtt.me/2018/07/17/Spring-传统-AOP/</id>
     <published>2018-07-17T08:18:42.000Z</published>
     <updated>2018-09-10T13:36:52.036Z</updated>
     
@@ -127,21 +127,21 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/categories/Spring/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="AOP" scheme="https://tech.imtt.me/tags/AOP/"/>
+      <category term="AOP" scheme="https://blog.imtt.me/tags/AOP/"/>
     
   </entry>
   
   <entry>
     <title>JDK 动态代理和 CGLIB 动态代理</title>
-    <link href="https://tech.imtt.me/2018/07/14/JDK-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8C-CGLIB-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
-    <id>https://tech.imtt.me/2018/07/14/JDK-动态代理和-CGLIB-动态代理/</id>
+    <link href="https://blog.imtt.me/2018/07/14/JDK-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8C-CGLIB-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
+    <id>https://blog.imtt.me/2018/07/14/JDK-动态代理和-CGLIB-动态代理/</id>
     <published>2018-07-14T11:10:02.000Z</published>
     <updated>2018-09-10T13:34:47.510Z</updated>
     
@@ -151,21 +151,21 @@
     
     </summary>
     
-      <category term="Java" scheme="https://tech.imtt.me/categories/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="动态代理" scheme="https://tech.imtt.me/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
+      <category term="动态代理" scheme="https://blog.imtt.me/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
     
-      <category term="CGLIB" scheme="https://tech.imtt.me/tags/CGLIB/"/>
+      <category term="CGLIB" scheme="https://blog.imtt.me/tags/CGLIB/"/>
     
   </entry>
   
   <entry>
     <title>Spring Bean 在应用上下文中的生命周期</title>
-    <link href="https://tech.imtt.me/2018/07/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>https://tech.imtt.me/2018/07/12/Spring-Bean-在应用上下文中的生命周期/</id>
+    <link href="https://blog.imtt.me/2018/07/12/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://blog.imtt.me/2018/07/12/Spring-Bean-在应用上下文中的生命周期/</id>
     <published>2018-07-12T07:05:48.000Z</published>
     <updated>2018-09-10T13:36:37.281Z</updated>
     
@@ -175,21 +175,21 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/categories/Spring/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="生命周期" scheme="https://tech.imtt.me/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+      <category term="生命周期" scheme="https://blog.imtt.me/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
   </entry>
   
   <entry>
     <title>Spring Bean 管理</title>
-    <link href="https://tech.imtt.me/2018/07/08/Spring-Bean-%E7%AE%A1%E7%90%86/"/>
-    <id>https://tech.imtt.me/2018/07/08/Spring-Bean-管理/</id>
+    <link href="https://blog.imtt.me/2018/07/08/Spring-Bean-%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.imtt.me/2018/07/08/Spring-Bean-管理/</id>
     <published>2018-07-08T08:12:29.000Z</published>
     <updated>2018-09-10T13:36:40.239Z</updated>
     
@@ -199,21 +199,21 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://tech.imtt.me/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/categories/Spring/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://tech.imtt.me/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="注解" scheme="https://tech.imtt.me/tags/%E6%B3%A8%E8%A7%A3/"/>
+      <category term="注解" scheme="https://blog.imtt.me/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>MySQL 事务处理</title>
-    <link href="https://tech.imtt.me/2018/07/05/MySQL-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
-    <id>https://tech.imtt.me/2018/07/05/MySQL-事务处理/</id>
+    <link href="https://blog.imtt.me/2018/07/05/MySQL-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://blog.imtt.me/2018/07/05/MySQL-事务处理/</id>
     <published>2018-07-05T10:16:00.000Z</published>
     <updated>2018-09-10T13:36:06.768Z</updated>
     
@@ -223,17 +223,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://blog.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>JSP 内置对象</title>
-    <link href="https://tech.imtt.me/2018/06/30/JSP-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://tech.imtt.me/2018/06/30/JSP-内置对象/</id>
+    <link href="https://blog.imtt.me/2018/06/30/JSP-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://blog.imtt.me/2018/06/30/JSP-内置对象/</id>
     <published>2018-06-30T01:14:00.000Z</published>
     <updated>2018-09-10T13:35:28.315Z</updated>
     
@@ -243,19 +243,19 @@
     
     </summary>
     
-      <category term="Java Web" scheme="https://tech.imtt.me/categories/Java-Web/"/>
+      <category term="Java Web" scheme="https://blog.imtt.me/categories/Java-Web/"/>
     
     
-      <category term="Java" scheme="https://tech.imtt.me/tags/Java/"/>
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="JSP" scheme="https://tech.imtt.me/tags/JSP/"/>
+      <category term="JSP" scheme="https://blog.imtt.me/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>Flask 中使用 WTForms 进行表单验证</title>
-    <link href="https://tech.imtt.me/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
-    <id>https://tech.imtt.me/2018/05/27/Flask-中使用-WTForms-进行表单验证/</id>
+    <link href="https://blog.imtt.me/2018/05/27/Flask-%E4%B8%AD%E4%BD%BF%E7%94%A8-WTForms-%E8%BF%9B%E8%A1%8C%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+    <id>https://blog.imtt.me/2018/05/27/Flask-中使用-WTForms-进行表单验证/</id>
     <published>2018-05-27T02:43:58.000Z</published>
     <updated>2018-06-07T04:16:06.829Z</updated>
     
@@ -266,19 +266,19 @@
     
     </summary>
     
-      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>Flask 使用 request 获取请求参数</title>
-    <link href="https://tech.imtt.me/2018/05/24/Flask-%E4%BD%BF%E7%94%A8-request-%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/"/>
-    <id>https://tech.imtt.me/2018/05/24/Flask-使用-request-获取请求参数/</id>
+    <link href="https://blog.imtt.me/2018/05/24/Flask-%E4%BD%BF%E7%94%A8-request-%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/"/>
+    <id>https://blog.imtt.me/2018/05/24/Flask-使用-request-获取请求参数/</id>
     <published>2018-05-24T02:14:59.000Z</published>
     <updated>2018-06-04T02:57:18.682Z</updated>
     
@@ -292,19 +292,19 @@
     
     </summary>
     
-      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>Flask 使用 BluePrint 注册视图函数</title>
-    <link href="https://tech.imtt.me/2018/05/17/Flask-%E4%BD%BF%E7%94%A8-BluePrint-%E6%B3%A8%E5%86%8C%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0/"/>
-    <id>https://tech.imtt.me/2018/05/17/Flask-使用-BluePrint-注册视图函数/</id>
+    <link href="https://blog.imtt.me/2018/05/17/Flask-%E4%BD%BF%E7%94%A8-BluePrint-%E6%B3%A8%E5%86%8C%E8%A7%86%E5%9B%BE%E5%87%BD%E6%95%B0/"/>
+    <id>https://blog.imtt.me/2018/05/17/Flask-使用-BluePrint-注册视图函数/</id>
     <published>2018-05-17T11:13:43.000Z</published>
     <updated>2018-06-04T02:57:13.687Z</updated>
     
@@ -314,19 +314,19 @@
     
     </summary>
     
-      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>Flask 中的唯一 URL 原则</title>
-    <link href="https://tech.imtt.me/2018/05/05/Flask-%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80-URL-%E5%8E%9F%E5%88%99/"/>
-    <id>https://tech.imtt.me/2018/05/05/Flask-中的唯一-URL-原则/</id>
+    <link href="https://blog.imtt.me/2018/05/05/Flask-%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80-URL-%E5%8E%9F%E5%88%99/"/>
+    <id>https://blog.imtt.me/2018/05/05/Flask-中的唯一-URL-原则/</id>
     <published>2018-05-05T11:05:43.000Z</published>
     <updated>2018-06-04T02:57:25.947Z</updated>
     
@@ -336,19 +336,19 @@
     
     </summary>
     
-      <category term="Flask" scheme="https://tech.imtt.me/categories/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/categories/Flask/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="Flask" scheme="https://tech.imtt.me/tags/Flask/"/>
+      <category term="Flask" scheme="https://blog.imtt.me/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
-    <link href="https://tech.imtt.me/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95/"/>
-    <id>https://tech.imtt.me/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引/</id>
+    <link href="https://blog.imtt.me/2018/04/26/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95/"/>
+    <id>https://blog.imtt.me/2018/04/26/MySQL-中的-B-Tree-索引和-Hash-索引/</id>
     <published>2018-04-26T02:07:24.000Z</published>
     <updated>2018-05-26T02:46:03.334Z</updated>
     
@@ -362,17 +362,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://blog.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>MySQL 数据库分库分表</title>
-    <link href="https://tech.imtt.me/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8/"/>
-    <id>https://tech.imtt.me/2018/04/03/MySQL-数据库分库分表/</id>
+    <link href="https://blog.imtt.me/2018/04/03/MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8/"/>
+    <id>https://blog.imtt.me/2018/04/03/MySQL-数据库分库分表/</id>
     <published>2018-04-03T02:21:06.000Z</published>
     <updated>2018-05-24T12:58:31.987Z</updated>
     
@@ -386,17 +386,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="https://tech.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://blog.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Python Socket 编程</title>
-    <link href="https://tech.imtt.me/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B/"/>
-    <id>https://tech.imtt.me/2018/03/16/Python-Socket-编程/</id>
+    <link href="https://blog.imtt.me/2018/03/16/Python-Socket-%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.imtt.me/2018/03/16/Python-Socket-编程/</id>
     <published>2018-03-16T02:00:27.000Z</published>
     <updated>2018-05-16T03:54:38.221Z</updated>
     
@@ -406,21 +406,21 @@
     
     </summary>
     
-      <category term="网络编程" scheme="https://tech.imtt.me/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <category term="网络编程" scheme="https://blog.imtt.me/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="Socket" scheme="https://tech.imtt.me/tags/Socket/"/>
+      <category term="Socket" scheme="https://blog.imtt.me/tags/Socket/"/>
     
-      <category term="TCP" scheme="https://tech.imtt.me/tags/TCP/"/>
+      <category term="TCP" scheme="https://blog.imtt.me/tags/TCP/"/>
     
   </entry>
   
   <entry>
     <title>Django 内置模型字段类型</title>
-    <link href="https://tech.imtt.me/2018/02/20/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://tech.imtt.me/2018/02/20/Django-内置模型字段类型/</id>
+    <link href="https://blog.imtt.me/2018/02/20/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://blog.imtt.me/2018/02/20/Django-内置模型字段类型/</id>
     <published>2018-02-20T11:42:35.000Z</published>
     <updated>2018-05-06T02:19:36.453Z</updated>
     
@@ -431,19 +431,19 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Django 注册和登陆功能实现</title>
-    <link href="https://tech.imtt.me/2018/02/05/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://tech.imtt.me/2018/02/05/Django-注册和登陆功能实现/</id>
+    <link href="https://blog.imtt.me/2018/02/05/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://blog.imtt.me/2018/02/05/Django-注册和登陆功能实现/</id>
     <published>2018-02-05T06:05:51.000Z</published>
     <updated>2018-05-06T02:19:52.341Z</updated>
     
@@ -453,19 +453,19 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/tags/Django/"/>
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Django 配置 Mysql 数据库</title>
-    <link href="https://tech.imtt.me/2018/01/26/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>https://tech.imtt.me/2018/01/26/Django-配置-Mysql-数据库/</id>
+    <link href="https://blog.imtt.me/2018/01/26/Django-%E9%85%8D%E7%BD%AE-Mysql-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://blog.imtt.me/2018/01/26/Django-配置-Mysql-数据库/</id>
     <published>2018-01-26T08:48:41.000Z</published>
     <updated>2018-05-23T02:22:33.143Z</updated>
     
@@ -475,14 +475,14 @@
     
     </summary>
     
-      <category term="Django" scheme="https://tech.imtt.me/categories/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/categories/Django/"/>
     
     
-      <category term="Django" scheme="https://tech.imtt.me/tags/Django/"/>
+      <category term="Django" scheme="https://blog.imtt.me/tags/Django/"/>
     
-      <category term="MySQL" scheme="https://tech.imtt.me/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
     
-      <category term="Python" scheme="https://tech.imtt.me/tags/Python/"/>
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
   </entry>
   
