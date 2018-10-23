@@ -34,9 +34,9 @@
     
       <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
-      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
-    
       <category term="事务处理" scheme="https://blog.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+      <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
   </entry>
   
@@ -108,9 +108,9 @@
     
       <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="AOP" scheme="https://blog.imtt.me/tags/AOP/"/>
-    
       <category term="AspectJ" scheme="https://blog.imtt.me/tags/AspectJ/"/>
+    
+      <category term="AOP" scheme="https://blog.imtt.me/tags/AOP/"/>
     
   </entry>
   
