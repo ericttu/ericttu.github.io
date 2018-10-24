@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Osot-0un7MRM2p2kZp8LoqqHCGXTyJnBsaUQyvcPMAA">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Django,Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OVTenng" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
+<meta name="keywords" content="Django,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 内置模型字段类型">
+<meta property="og:url" content="https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/index.html">
+<meta property="og:site_name" content="OVTenng">
+<meta property="og:description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-06T02:19:36.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 内置模型字段类型">
+<meta name="twitter:description" content="Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。 定义模型时，使用一个 Python 类（django.db.models.Model 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 CharField ）对应数据库列的类型（如 varchar）。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/">
+
+
+
+
+
+  <title>Django 内置模型字段类型 | OVTenng</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98076220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OVTenng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ovtenng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OVTenng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django 内置模型字段类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-20T19:42:35+08:00">
+                2018-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/20/Django/Django-内置模型字段类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/20/Django/Django-内置模型字段类型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。</p>
+<p>定义模型时，使用一个 Python 类（<code>django.db.models.Model</code> 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 <code>CharField</code> ）对应数据库列的类型（如 <code>varchar</code>）。</p>
+<a id="more"></a>
+<h1 id="模型字段类"><a href="#模型字段类" class="headerlink" title="模型字段类"></a>模型字段类</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'category_name'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        verbose_name_plural = <span class="string">'Categories'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=<span class="string">'category'</span>)</span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'node_name'</span>)</span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'slug_url'</span>)</span><br><span class="line">    created_time = models.DateTimeField(auto_now_add=<span class="keyword">True</span>, verbose_name=<span class="string">'created_time'</span>)</span><br><span class="line">    updated_time = models.DateTimeField(auto_now=<span class="keyword">True</span>, null=<span class="keyword">True</span>, blank=<span class="keyword">True</span>, verbose_name=<span class="string">'updated_time'</span>)</span><br><span class="line">    topic_nums = models.IntegerField(default=<span class="number">0</span>, verbose_name=<span class="string">'topic_nums'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<p>上面代码中定义了两个模型，在这两个模型中，使用了许多字段类型（如 <code>CharField</code>、 <code>DateTimeField</code> 等)，Django 内置了许多<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/fields/" target="_blank" rel="noopener">字段类型</a>，常见的字段类和说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoField</td>
+<td>一个 IntegerField，根据 ID 自动递增。</td>
+</tr>
+<tr>
+<td>IntegerField</td>
+<td>整数。在Django 支持的所有数据库中取值范围是 -2147483648 到 2147483647；当 <code>localize</code>（支持表单数据输入以及渲染输出的本地化的参数）设置为 <code>False</code> 时，默认的表单部件是 <code>NumberInput</code>，否则是 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>CharField</td>
+<td>用来存储各种长度的字符串， 默认表单部件 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>BooleanField</td>
+<td>真假值字段，默认为默认表单部件 <code>CheckboxInput</code>。</td>
+</tr>
+<tr>
+<td>DateField</td>
+<td>日期，在 Python 中使用 <code>datetime.date</code> 实例表示。</td>
+</tr>
+<tr>
+<td>DateTimeField</td>
+<td>日期和时间，在 Python 中使用 <code>datetime.datetime</code> 实例表示。</td>
+</tr>
+<tr>
+<td>EmailField</td>
+<td>一种 <code>CharField</code>，使用EmailValidator 验证邮箱格式，<code>max_length</code> 的默认值为 254。</td>
+</tr>
+<tr>
+<td>FileField</td>
+<td>文件上传字段。</td>
+</tr>
+<tr>
+<td>FilePathField</td>
+<td>一种 <code>CharField</code>，限定只能在文件系统中的特定目录里选择文件。</td>
+</tr>
+<tr>
+<td>FloatField</td>
+<td>浮点数，在 Python 中使用 <code>float</code> 实例表示。当 <code>localize</code> 设置为 <code>False</code> 时，默认的表单部件是 <code>NumberInput</code>，否则是 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>ImageField</td>
+<td>属性和方法继承自 FileField，对上传的对象进行了验证，增加了 height 和width 两个属性。需要 <code>Pillow</code> 库支持。</td>
+</tr>
+<tr>
+<td>GenericIPAddressField</td>
+<td>IPV4或IPV6地址，字符串格式（如 192.168.1.1或fe80::e41c:c9da:a324:cc50%12），默认表单部件 <code>TextInput</code>。</td>
+</tr>
+<tr>
+<td>SlugField</td>
+<td>别名，Slug 字段只能包含字母，数字，下划线或者是连字符，通常用来作为短标签，放在URL中。可以使用这个字段用来保存节点的 URL，如果没有指定默认长度 <code>max_length</code>，长度默认为50。</td>
+</tr>
+<tr>
+<td>TextField</td>
+<td>大段文本字段，默认表单组件是 <code>Texterea</code>。</td>
+</tr>
+<tr>
+<td>URLField</td>
+<td>用于输入 URL 的 <code>CharField</code>。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用字段属性"><a href="#常用字段属性" class="headerlink" title="常用字段属性"></a>常用<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/fields/#field-options" target="_blank" rel="noopener">字段属性</a></h1><p>字段属性用于字段类型中对字段类型加以限制，如 <code>CharField(max_length=127)</code> 限制了字段类型的最大长度为 127。</p>
+<h2 id="常用通用字段属性"><a href="#常用通用字段属性" class="headerlink" title="常用通用字段属性"></a>常用通用字段属性</h2><p>此类字段属性参数是全部字段类型都可以用的，而且是可以选择的。</p>
+<ol>
+<li><p><code>null</code>：默认为 False，如果为True，Django 将在数据库中把空值存储为 <code>null</code>。</p>
+<blockquote>
+<p>基于字符串的字段，如 <code>CharField</code> 和 <code>TextField</code>，不应该使用null，因为空字符串值始终存储为空字符串，而不是 null。</p>
+</blockquote>
+</li>
+<li><p><code>blank</code>：默认为 False，如果为True，则表单验证时允许输入空值，否则为必填项。</p>
+</li>
+<li><p><code>default</code>：字段的默认值，可以是一个值或可调用对象，如果是一个可调用对象，每次这个模型类被创建时，它都会被调用。这个默认值不可以是一个可变对象（如：字典，列表等）。</p>
+</li>
+<li><p><code>editable</code>：默认为 True，如果为 False，字段不在管理后台或其他 <code>ModelForm</code> 中显示，验证模型时<br>也会跳过。</p>
+</li>
+<li><p><code>error_messages</code>：用于覆盖字段抛出异常时的默认消息。值为一个字典，通过键指定想覆盖的错误消息。错误消息键包括 <code>null</code>、<code>blank</code>、<code>invalid</code>、<code>invalid_choice</code>、<code>unique</code> 和 <code>unique_for_date</code>。</p>
+</li>
+<li><p><code>help_text</code>：在表单小组件旁显示的额外帮助文本。即便不在表单中显示，也能用作文档。</p>
+</li>
+<li><p><code>primary_key</code>：设为 True 时，指定字段为模型的主键。如果模型中没有一个字段设定 <code>primary_key=True</code>，Django 会自动添加一个 <code>AutoField</code> 用于存储主键，主键字段是只读的。</p>
+</li>
+<li><p><code>unique</code>：设为 True 时，在表中字段的值必须是唯一的。除了 <code>ManyToManyField</code>、<code>OneToOneField</code> 和 <code>FileField</code> 之外其他字段都可以使用这个设置。</p>
+</li>
+<li><p><code>verbose_name</code>：一个字段的可读性更高的名称，如果未设定，Django 将使用字段的属性名称（下划线转换成空格）自动生成一个。</p>
+</li>
+<li><p><code>validators</code>：用于验证字段的验证器列表。</p>
+</li>
+</ol>
+<h2 id="常用非通用字段属性"><a href="#常用非通用字段属性" class="headerlink" title="常用非通用字段属性"></a>常用非通用字段属性</h2><ol>
+<li><code>max_length</code>：字段的最大长度（字符个数），常用于 <code>CharField</code>、<code>EmailField</code>、<code>TextField</code>、<code>SlugField</code>、<code>URLField</code>。</li>
+<li><code>auto_now</code>：每次保存对象时自动设为当前日期，常用于 <code>DateField</code>、<code>DateTimeField</code>。</li>
+<li><code>auto_now_add</code>：创建对象时自动设为当前日期，常用于 <code>DateField</code>、<code>DateTimeField</code>。</li>
+</ol>
+<h1 id="模型字段关系"><a href="#模型字段关系" class="headerlink" title="模型字段关系"></a>模型字段关系</h1><p>关于模型之间的关系，Django 提供了三个字段类型：<code>ForeignKey</code>（多对一关系）、<code>OneToOneField</code>（一对一关系）、<code>ManyToManyField</code>（多对多关系）。都需要一个位置参数：与该模型关联的类。</p>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, unique=<span class="keyword">True</span>, verbose_name=<span class="string">'category_name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=<span class="string">'category'</span>)</span><br></pre></td></tr></table></figure>
+<p>模型类 <code>Node</code> 中就使用了 <code>ForeignKey</code> ，使 <code>Node</code> 指向了 <code>Category</code>。</p>
+<blockquote>
+<ol>
+<li>一个对象与自身有多对一关系，使用 models.ForeignKey(‘self’)。</li>
+<li>与尚未定义的模型建立关系，不能使用模型对象，应该使用模型的名称：<code>models.ForeignKey(&#39;Undefined&#39;)</code></li>
+</ol>
+</blockquote>
+<ol>
+<li>Django 会在该字段名称添加 “_id” 后缀，作为数据库列的名称。<code>Node</code> 模型中 <code>category</code> 的字段名称实际为 <code>category_id</code>。</li>
+<li><p>三个字段类型可以接收一些参数，常用两个参数如下：</p>
+<ul>
+<li><code>related_name</code>：用于获取所关联对象的名称。<strong>当一个模型中有两个及以上属性同时引用另一个模型时，需要使用此参数，否则会出现重名问题。</strong>如果不想让 Django 创建逆向关系，把 <code>related_name</code> 设为 ‘+’，或者以 ‘+’ 结尾。</li>
+<li><p><code>on_delete</code>：外键引用的对象被删除时，设置包含外键的对象是否也被删除，<code>on_delete</code> 可取的值在 <code>django.db.models</code> 中定义:</p>
+<ol>
+<li><code>CASCADE</code>：层叠删除，默认值。</li>
+<li><code>PROTECT</code>：抛出 <code>ProtectedError</code>（<code>django.db.IntegrityError</code> 的子类），禁止删除被引用的对象。</li>
+<li><code>SET_NULL</code>：把外键设为 <code>null</code>，仅当 <code>null</code> 为 True 时才能这么做。</li>
+<li><p><code>SET_DEFAULT</code>：把外键设为默认值，必须为外键设定默认值。</p>
+<pre><code>果关联的表中没有关联的记录，访问反向关系时会抛出 `DoesNotExist` 异常。    
+</code></pre></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="模型元选项"><a href="#模型元选项" class="headerlink" title="模型元选项"></a><a href="https://docs.djangoproject.com/zh-hans/2.0/ref/models/options/" target="_blank" rel="noopener">模型元选项</a></h1><p>在上面的模型代码中，定义一个内部 Meta 类，用来对当前的模型类或模型字段进行设置约束。</p>
+<p>常用模型元数据选项如下：</p>
+<table>
+<thead>
+<tr>
+<th>模型元数据</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+<td>如果为 True，表示模型类是一个抽象基类。</td>
+</tr>
+<tr>
+<td>app_label</td>
+<td>如果定义模型的应用不在 INSTALLED_APPS 中，必须指定所属的应用。</td>
+</tr>
+<tr>
+<td>db_table</td>
+<td>模型所用的数据表的名称，默认情况下，Django 使用表名后加一个 s 作为数据表的名称。</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>对象的默认排序，获取对象列表时使用，前面带有可选的 ‘ - ‘ 表示倒叙，没有表示正序，使用 ‘ ? ‘ 表示随机排序。</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>创建对象时写入权限表的额外权限。</td>
+</tr>
+<tr>
+<td>default_permissions</td>
+<td>默认为（’add’, ‘change’, ‘delete’）。</td>
+</tr>
+<tr>
+<td>unique_together</td>
+<td>设定组合在一起时必须唯一的多个字段名称。 <code>unique_together = (&#39;字段1&#39;, &#39;字段2&#39;)</code> 是一个字段的元组，组合起来的时候代表里面的字段分别都是唯一的。</td>
+</tr>
+<tr>
+<td>verbose_name</td>
+<td>设定对象的单数名称。</td>
+</tr>
+<tr>
+<td>verbose_name_plural</td>
+<td>设定对象的复数名称。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="ovtenng WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="ovtenng Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ovtenng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/" title="Django 内置模型字段类型">https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/05/Django/Django-注册和登陆功能实现/" rel="next" title="Django 注册和登陆功能实现">
+                <i class="fa fa-chevron-left"></i> Django 注册和登陆功能实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/16/Python-Socket-编程/" rel="prev" title="Python Socket 编程">
+                Python Socket 编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/action.png" alt="ovtenng">
+            
+              <p class="site-author-name" itemprop="name">ovtenng</p>
+              <p class="site-description motion-element" itemprop="description">while(true){study}</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ovtenng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:imtt.me" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ovtenng" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/6542120416" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/ovtenng" target="_blank" title="SegmentFault">
+                      
+                        <i class="fa fa-fw fa-paperclip"></i>SegmentFault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/ovtenng" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型字段类"><span class="nav-number">1.</span> <span class="nav-text">模型字段类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用字段属性"><span class="nav-number">2.</span> <span class="nav-text">常用字段属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用通用字段属性"><span class="nav-number">2.1.</span> <span class="nav-text">常用通用字段属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用非通用字段属性"><span class="nav-number">2.2.</span> <span class="nav-text">常用非通用字段属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型字段关系"><span class="nav-number">3.</span> <span class="nav-text">模型字段关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型元选项"><span class="nav-number">4.</span> <span class="nav-text">模型元选项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="author" itemprop="copyrightHolder">ovtenng</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://OVTenng.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://blog.imtt.me/2018/02/20/Django/Django-内置模型字段类型/';
+          this.page.identifier = '2018/02/20/Django/Django-内置模型字段类型/';
+          this.page.title = 'Django 内置模型字段类型';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://OVTenng.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
