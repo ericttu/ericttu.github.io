@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>机器学习之 K-近邻算法</title>
+      <link href="/2018/10/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
+      <url>/2018/10/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>k-近邻算法通过测量不同特征值之间的距离方法进行分类。</p><a id="more"></a><h1 id="k-近邻算法原理"><a href="#k-近邻算法原理" class="headerlink" title="k-近邻算法原理"></a>k-近邻算法原理</h1><p>对于一个存在标签的训练样本集，输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，根据算法选择样本数据集中前k个最相似的数据，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。</p><h1 id="k-近邻算法实现"><a href="#k-近邻算法实现" class="headerlink" title="k-近邻算法实现"></a>k-近邻算法实现</h1><blockquote><p>这里只是对单个新数据的预测，对同时多个新数据的预测放在后文中。</p></blockquote><p>假定存在训练样本集 X_train（<code>X_train.shape=(10, 2)</code>），对应的标记 y_train（<code>y_train.shape=(10,)</code>，包含0、1)，使用 <code>matplotlib.pyplot</code> 作图表示如下（绿色的点表示标记0，红色的点表示标记1）：</p><p><img src="https://i.imgur.com/4RDcw95.png"></p><p>现有一个新的数据：x（<code>x = np.array([3.18557125, 6.03119673])</code>），作图表示如下（蓝色的点）：</p><p><img src="https://i.imgur.com/riT5oyv.png"></p><p>首先，使用欧拉距离公式计算 x 到 X_train 中每个样本的距离：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">distances = [math.sqrt(np.sum((x_train - x) ** <span class="number">2</span>)) <span class="keyword">for</span> x_train <span class="keyword">in</span> X_train]</span><br></pre></td></tr></table></figure><p>第二，对 distances 进行升序操作，使用 <code>np.argsort()</code> 方法返回排序后的索引，而不会对原数据的顺序有任何影响：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">nearest = np.argsort(distances)</span><br></pre></td></tr></table></figure><p>第三，取 k 个距离最近的样本对应的标记：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">topK_y = [y_train[i] <span class="keyword">for</span> i <span class="keyword">in</span> nearest[:k]]</span><br></pre></td></tr></table></figure><p>最后，对这 k 个距离最近的样本对应的标记进行统计，找出占比最多标记即为 x 的预测分类，此例的预测分类为0：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">votes = Counter(topK_y)</span><br><span class="line">votes.most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure><p>将上面的方法封装到一个方法中：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kNN</span><span class="params">(k, X_train, y_train, x)</span>:</span></span><br><span class="line">    distances = [math.sqrt(np.sum((x_train - x) ** <span class="number">2</span>)) <span class="keyword">for</span> x_train <span class="keyword">in</span> X_train]</span><br><span class="line">    nearest = np.argsort(distances)</span><br><span class="line"></span><br><span class="line">    topK_y = [y_train[i] <span class="keyword">for</span> i <span class="keyword">in</span> nearest[:k]]</span><br><span class="line">    votes = Counter(topK_y)</span><br><span class="line">    <span class="keyword">return</span> votes.most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure><h1 id="Scikit-Learn-中的-k-邻近算法"><a href="#Scikit-Learn-中的-k-邻近算法" class="headerlink" title="Scikit Learn 中的 k-邻近算法"></a>Scikit Learn 中的 k-邻近算法</h1>]]></content>
+      
+      <categories>
+          
+          <category> 机器学习算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Spring 事务处理</title>
       <link href="/2018/08/01/Spring-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
       <url>/2018/08/01/Spring-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
@@ -96,9 +121,9 @@
             
             <tag> Spring </tag>
             
-            <tag> AspectJ </tag>
-            
             <tag> AOP </tag>
+            
+            <tag> AspectJ </tag>
             
         </tags>
       
