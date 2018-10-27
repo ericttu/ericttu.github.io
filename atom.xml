@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.imtt.me/"/>
-  <updated>2018-10-26T08:13:13.250Z</updated>
+  <updated>2018-10-27T08:59:04.022Z</updated>
   <id>https://blog.imtt.me/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习之数据归一化</title>
+    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80%E5%8C%96/"/>
+    <id>https://blog.imtt.me/机器学习/机器学习之数据归一化/</id>
+    <published>2018-10-27T05:21:48.000Z</published>
+    <updated>2018-10-27T08:59:04.022Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;机器学习中，数据归一化是非常重要，如果不进行数据归一化，可能会导致模型坏掉或者训练出一个奇怪的模型。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习算法" scheme="https://blog.imtt.me/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
+    
+      <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习之 K-近邻算法</title>
-    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
-    <id>https://blog.imtt.me/机器学习之K近邻算法/</id>
+    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
+    <id>https://blog.imtt.me/机器学习/机器学习之K近邻算法/</id>
     <published>2018-10-24T05:44:07.000Z</published>
     <updated>2018-10-26T08:13:13.250Z</updated>
     
@@ -34,9 +60,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -82,9 +108,9 @@
       <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
-    
       <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
+    
+      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
     
       <category term="事务处理" scheme="https://blog.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
     
@@ -106,9 +132,9 @@
       <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
-    
       <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
+    
+      <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
     
       <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
@@ -454,28 +480,6 @@
     
       &lt;p&gt;Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。&lt;/p&gt;
 &lt;p&gt;定义模型时，使用一个 Python 类（&lt;code&gt;django.db.models.Model&lt;/code&gt; 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 &lt;code&gt;CharField&lt;/code&gt; ）对应数据库列的类型（如 &lt;code&gt;varchar&lt;/code&gt;）。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Django" scheme="https://blog.imtt.me/categories/Django/"/>
-    
-    
-      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
-    
-      <category term="Django" scheme="https://blog.imtt.me/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django 注册和登陆功能实现</title>
-    <link href="https://blog.imtt.me/Django/Django-%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://blog.imtt.me/Django/Django-注册和登陆功能实现/</id>
-    <published>2018-02-05T06:05:51.000Z</published>
-    <updated>2018-05-06T02:19:52.341Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Django 提供了用户身份验证机制，可实现注册和登录功能。&lt;/p&gt;
     
     </summary>
     
