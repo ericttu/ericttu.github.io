@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.imtt.me/"/>
-  <updated>2018-10-27T08:59:04.022Z</updated>
+  <updated>2018-11-02T08:26:02.899Z</updated>
   <id>https://blog.imtt.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习之线性回归法</title>
+    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%B3%95/"/>
+    <id>https://blog.imtt.me/机器学习/机器学习之线性回归法/</id>
+    <published>2018-10-31T05:46:35.000Z</published>
+    <updated>2018-11-02T08:26:02.899Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在统计学中，线性回归（Linear regression）是利用称为线性回归方程的最小二乘函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析&lt;sup&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Linear_regression&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;[维基百科]&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习算法" scheme="https://blog.imtt.me/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
+    
+      <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习之数据归一化</title>
@@ -47,7 +73,7 @@
     <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
     <id>https://blog.imtt.me/机器学习/机器学习之K近邻算法/</id>
     <published>2018-10-24T05:44:07.000Z</published>
-    <updated>2018-10-26T08:13:13.250Z</updated>
+    <updated>2018-10-31T05:49:31.218Z</updated>
     
     <summary type="html">
     
@@ -108,9 +134,9 @@
       <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
-    
       <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
+    
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
       <category term="事务处理" scheme="https://blog.imtt.me/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
     
@@ -132,9 +158,9 @@
       <category term="JDBC" scheme="https://blog.imtt.me/categories/JDBC/"/>
     
     
-      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
-    
       <category term="JDBC" scheme="https://blog.imtt.me/tags/JDBC/"/>
+    
+      <category term="Java" scheme="https://blog.imtt.me/tags/Java/"/>
     
       <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
@@ -466,29 +492,6 @@
       <category term="Socket" scheme="https://blog.imtt.me/tags/Socket/"/>
     
       <category term="TCP" scheme="https://blog.imtt.me/tags/TCP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django 内置模型字段类型</title>
-    <link href="https://blog.imtt.me/Django/Django-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9E%8B%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://blog.imtt.me/Django/Django-内置模型字段类型/</id>
-    <published>2018-02-20T11:42:35.000Z</published>
-    <updated>2018-05-06T02:19:36.453Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Django 模型是使用 Python 代码对数据库中数据的描述，是数据的结构，等效于 SQL 中的 CREATE TABLE 语句。&lt;/p&gt;
-&lt;p&gt;定义模型时，使用一个 Python 类（&lt;code&gt;django.db.models.Model&lt;/code&gt; 的子类）表示一个模型，模型中的一个属性对应数据库中表的列，属性名对应列的名称，字段类型（如 &lt;code&gt;CharField&lt;/code&gt; ）对应数据库列的类型（如 &lt;code&gt;varchar&lt;/code&gt;）。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Django" scheme="https://blog.imtt.me/categories/Django/"/>
-    
-    
-      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
-    
-      <category term="Django" scheme="https://blog.imtt.me/tags/Django/"/>
     
   </entry>
   
