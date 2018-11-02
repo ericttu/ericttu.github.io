@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://i.imgur.com/N43Qfs6.png">
 <meta property="og:image" content="https://i.imgur.com/GXlU4Nn.png">
 <meta property="og:image" content="https://i.imgur.com/xcsn89c.png">
-<meta property="og:updated_time" content="2018-11-02T08:26:02.899Z">
+<meta property="og:updated_time" content="2018-11-02T09:49:09.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习之线性回归法">
 <meta name="twitter:description" content="在统计学中，线性回归（Linear regression）是利用称为线性回归方程的最小二乘函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析[维基百科]。">
@@ -448,7 +448,7 @@
 <p>$SS_{residual} = \sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2$，表示使用模型产生的错误；$SS_{total} = \sum_{i=1}^{m}(\overline{y} - y^{(i)})^2$，表示使用 $y = \overline{y}$ 预测产生的错误。</p>
 <p>更深入的讲，对于每一个预测样本的 x 的预测值都为样本的均值 $\overline{y}$ ，这样的模型称为基准模型；当我们的模型等于基准模型时，$R^2$ 的值为0，当我们的模型不犯任何错误时 $R^2$ 得到最大值1。</p>
 <p>$R^2$ 还可以进行转换，转换结果为：</p>
-<p>$$R^2 = 1 - \frac{MSE(\hat{y}, y)}{Var{y}}$$</p>
+<p>$$R^2 = 1 - \frac{MSE(\hat{y}, y)}{Var(y)}$$</p>
 <p>实现也很简单：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> - np.sum((y_predict - y_true) ** <span class="number">2</span>) / len(y_true) / np.var(y_true)</span><br></pre></td></tr></table></figure>
 <p>注：Scikit Learn 的 metrics 模块中的 <code>r2_score()</code> 方法表示 R Squared。</p>
