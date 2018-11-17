@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Osot-0un7MRM2p2kZp8LoqqHCGXTyJnBsaUQyvcPMAA">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Python,算法,机器学习,Scikit Learn,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OVTenng" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="梯度下降法不是一个机器学习算法，而是一种基于搜索的最优化方法，用于最小化一个效用函数。">
+<meta name="keywords" content="Python,算法,机器学习,Scikit Learn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习之梯度下降法与线性回归">
+<meta property="og:url" content="https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/index.html">
+<meta property="og:site_name" content="OVTenng">
+<meta property="og:description" content="梯度下降法不是一个机器学习算法，而是一种基于搜索的最优化方法，用于最小化一个效用函数。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/Pq3UVaz.png?1">
+<meta property="og:image" content="https://i.imgur.com/LkiCXJY.png">
+<meta property="og:image" content="https://i.imgur.com/ImJb9SD.png">
+<meta property="og:image" content="https://i.imgur.com/BKm6Hf6.png">
+<meta property="og:image" content="https://i.imgur.com/sJqTY7Q.png">
+<meta property="og:updated_time" content="2018-11-17T07:29:10.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习之梯度下降法与线性回归">
+<meta name="twitter:description" content="梯度下降法不是一个机器学习算法，而是一种基于搜索的最优化方法，用于最小化一个效用函数。">
+<meta name="twitter:image" content="https://i.imgur.com/Pq3UVaz.png?1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/">
+
+
+
+
+
+  <title>机器学习之梯度下降法与线性回归 | OVTenng</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98076220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OVTenng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ovtenng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OVTenng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习之梯度下降法与线性回归</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-13T15:24:55+08:00">
+                2018-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习算法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/机器学习/机器学习之梯度下降法与线性回归/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="机器学习/机器学习之梯度下降法与线性回归/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>梯度下降法不是一个机器学习算法，而是一种基于搜索的最优化方法，用于最小化一个效用函数。</p>
+<a id="more"></a>
+<h1 id="简单理解梯度下降法"><a href="#简单理解梯度下降法" class="headerlink" title="简单理解梯度下降法"></a>简单理解梯度下降法</h1><p>假设存在一个只有一个参数 $\theta$ 的损失函数 $J$，想找到最小极值处的 $\theta$，如图所示：</p>
+<p><img src="https://i.imgur.com/Pq3UVaz.png?1"></p>
+<p>借助于损失函数 $J$ 在 $\theta$ 处的切线，可以直观的反映出损失函数 $J$ 在 $\theta$ 处的导数大小；导数的大小代表着 $\theta$ 变化时 $J$ 相应的变化。</p>
+<p>同时导数也可以代表 $J$ 增大的方向，如果将导数与 $-\eta$ 相乘，即 $-\eta\frac{dJ}{d\theta}$ 代表了 $J$ 减小的方向。</p>
+<blockquote>
+<p>$\eta$ 表示学习率，是梯度下降法的一个超参数，其取值影响最优解的速度。太小会减慢收敛学习速度，太大可能导致不收敛。</p>
+</blockquote>
+<p>如果 $J$ 中存在多处导数为零的情况，即存在一个全局最优解和多个局部最优解，此时可以多次使用梯度下降法，每次随机化一个初始点。</p>
+<p>对于有多个 $\theta$ 的 $J$ 类似，即找出全局最优解处的这些 $\theta$ 的值。</p>
+<h1 id="模拟梯度下降法"><a href="#模拟梯度下降法" class="headerlink" title="模拟梯度下降法"></a>模拟梯度下降法</h1><p>首先，模拟一个损失曲线 $J$：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">plot_x = np.linspace(<span class="number">-1</span>, <span class="number">6</span>, <span class="number">141</span>)</span><br><span class="line">plot_y = (plot_x - <span class="number">2.5</span>) ** <span class="number">2</span> - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>作图表示如下：</p>
+<p><img src="https://i.imgur.com/LkiCXJY.png"></p>
+<p>定义函数 <code>dJ()</code> 用于求 $J$ 在 $\theta$ 处的导数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dJ</span><span class="params">(theta)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * (theta - <span class="number">2.5</span>)</span><br></pre></td></tr></table></figure>
+<p>函数 <code>J()</code> 用于求 $J$ 在 $\theta$ 处的大小：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">J</span><span class="params">(theta)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (theta - <span class="number">2.5</span>) ** <span class="number">2</span> - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>接着使用梯度下降法，首先给 $\theta$ 赋一个初值 0 及学习率 $\eta$ 为 0.1，接着在循环里进行多次梯度下降。每次循环都要求得 $J$ 在 $\theta$ 处的导数值 $gradient$，并且 $\theta$ 向导数的负方向移动，即：$\theta=\theta-\eta*gradient$。 </p>
+<p>由于计算机计算浮点数存在误差，对于求得的 $\theta$ 可能不能刚好等于 0，因此设定一个精度值（<code>epsilon = 1e-8</code>），如果新的 $\theta$ 对应的损失函数的值与上一次 $\theta$ 对应的损失函数的值的差值满足精度要求，就表示找到了要找的 $\theta$。程序如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">theta = <span class="number">0.0</span></span><br><span class="line">eta = <span class="number">0.1</span></span><br><span class="line">epsilon = <span class="number">1e-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    gradient = dJ(theta)</span><br><span class="line">    last_theta = theta</span><br><span class="line">    </span><br><span class="line">    theta = theta - eta * gradient</span><br><span class="line">    <span class="keyword">if</span> (abs(J(theta) - J(last_theta)) &lt; epsilon):</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>运行程序求得的 $\theta$ 为：2.499891109642585。</p>
+<p>对于 $\theta$ 的取值变化，可以用图片表示，如下（红色的点）：</p>
+<p><img src="https://i.imgur.com/ImJb9SD.png"></p>
+<p>对于学习率 $\eta$，这里取值 0.1 是没有问题的，但如果取值 1.1 程序运行就会报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">OverflowError                             Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input<span class="number">-6</span><span class="number">-5</span>bd2217401d5&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">      <span class="number">8</span> </span><br><span class="line">      <span class="number">9</span>     theta = theta - eta * gradient</span><br><span class="line">---&gt; 10     if (abs(J(theta) - J(last_theta)) &lt; epsilon):</span><br><span class="line">     <span class="number">11</span>         <span class="keyword">break</span></span><br><span class="line">     <span class="number">12</span> </span><br><span class="line"></span><br><span class="line">&lt;ipython-input<span class="number">-5</span>-bd41aa589cfc&gt; <span class="keyword">in</span> J(theta)</span><br><span class="line">      <span class="number">1</span> <span class="function"><span class="keyword">def</span> <span class="title">J</span><span class="params">(theta)</span>:</span></span><br><span class="line">----&gt; 2     return (theta - 2.5) ** 2 - 1</span><br><span class="line"></span><br><span class="line">OverflowError: (<span class="number">34</span>, <span class="string">'Result too large'</span>)</span><br></pre></td></tr></table></figure>
+<p>这时因为学习率过大会导致 <code>J(theta)</code> 会越来越大。为了使程序不会报错，修改 <code>J()</code> 方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">J</span><span class="params">(theta)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> (theta - <span class="number">2.5</span>) ** <span class="number">2</span> - <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> float(<span class="string">'inf'</span>)</span><br></pre></td></tr></table></figure>
+<p>注意，当无穷减无穷时，结果时 nan 而不是 0，此时 <code>if (abs(J(theta) - J(last_theta)) &lt; epsilon)</code> 将永远无法触发而使得程序进入死循环。为了解决这个问题，增加一个新的超参数 n_iters，表示能够执行循环的最大次数。</p>
+<p>比如使  <code>n_iters=10</code>，$\theta$ 取值变化如图：</p>
+<p><img src="https://i.imgur.com/BKm6Hf6.png"></p>
+<p>最后，把梯度下降法封装到方法中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(initial_theta, eta, n_iters=<span class="number">1e4</span>, epsilon=<span class="number">1e-8</span>)</span>:</span></span><br><span class="line">    theta = initial_theta</span><br><span class="line">    i_ters = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> i_ters &lt; n_iters:</span><br><span class="line">        gradient = dJ(theta)</span><br><span class="line">        last_theta = theta</span><br><span class="line"></span><br><span class="line">        theta = theta - eta * gradient</span><br><span class="line">        <span class="keyword">if</span> (abs(J(theta) - J(last_theta)) &lt; epsilon):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        i_ters += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> theta</span><br></pre></td></tr></table></figure>
+<h1 id="多元线性回归中的梯度下降法"><a href="#多元线性回归中的梯度下降法" class="headerlink" title="多元线性回归中的梯度下降法"></a>多元线性回归中的梯度下降法</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>多元线性回归的损失函数为：</p>
+<p>$$J=\sum_{i=1}^{m}(y^{(i)} - \hat{y}^{(i)})^2$$</p>
+<p>其中：$\hat{y}^{(i)} = \theta_{0} + \theta_{1}X_{1}^{(i)} + \theta_{2}X_{2}^{(i)} + … + \theta_{n}X_{n}^{(i)}$ 。</p>
+<p>对 $J$ 求导为：</p>
+<p>$$\nabla J=(\frac{\partial J}{\partial \theta_0},\frac{\partial J}{\partial \theta_1},…,\frac{\partial J}{\partial \theta_n})$$</p>
+<p>其中：$\frac{\partial J}{\partial \theta_i}$ 为偏导数，与导数的求法一样。</p>
+<p>对 $\nabla J$ 进一步计算：</p>
+<p>$$\nabla J(\theta) =  \begin{pmatrix} \frac{\partial J}{\partial \theta_0} \\ \frac{\partial J}{\partial \theta_1} \\ \frac{\partial J}{\partial \theta_2} \\ \cdots \\ \frac{\partial J}{\partial \theta_n} \end{pmatrix} =   \begin{pmatrix} \sum_{i=1}^{m}2(y^{(i)} - X_b^{(i)}\theta)·(-1) \\ \sum_{i=1}^{m}2(y^{(i)} - X_b^{(i)}\theta)·(-X_1^{(i)}) \\ \sum_{i=1}^{m}2(y^{(i)} - X_b^{(i)}\theta)·(-X_2^{(i)}) \\ \cdots \\ \sum_{i=1}^{m}2(y^{(i)} - X_b^{(i)}\theta)·(-X_n^{(i)}) \end{pmatrix} = 2·\begin{pmatrix} \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)}) \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_1^{(i)} \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_2^{(i)} \\ \cdots \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_n^{(i)} \end{pmatrix}$$</p>
+<p>其中：$X_b = \begin{pmatrix} 1 &amp; X_1^{(1)} &amp; X_2^{(1)} &amp; \cdots &amp; X_n^{(1)} \\ 1 &amp; X_1^{(2)} &amp; X_2^{(2)} &amp; \cdots &amp; X_n^{(2)} \\ \cdots &amp; &amp; &amp; &amp; \cdots \\ 1 &amp; X_1^{(m)} &amp; X_2^{(m)} &amp; \cdots &amp; X_n^{(m)} \end{pmatrix}$</p>
+<p>这个结果是与样本数量 m 相关的，为了使结果与 m 无关，对这个梯度除以2，即：</p>
+<p>$$\nabla J(\theta)  = \frac{2}{m}·\begin{pmatrix} \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)}) \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_1^{(i)} \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_2^{(i)} \\ \cdots \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_n^{(i)} \end{pmatrix}$$</p>
+<p>此时，目标函数就成了使 $\frac{1}{m}\sum_{i=1}^{m}(y^{(i)} - \hat{y}^{(i)})^2$ 尽可能小，即均方误差尽可能小：</p>
+<p>$$J(\theta) = MSE(y, \hat{y})$$</p>
+<h2 id="使用梯度下降法训练模型"><a href="#使用梯度下降法训练模型" class="headerlink" title="使用梯度下降法训练模型"></a>使用梯度下降法训练模型</h2><p>首先模拟训练数据集：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.random.random(size=<span class="number">100</span>)</span><br><span class="line">y = x * <span class="number">3.0</span> + <span class="number">4.0</span> + np.random.normal(size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">X = x.reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>定义函数 <code>J()</code> 计算损失函数的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">J</span><span class="params">(theta, X_b, y)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> np.sum((y - X_b.dot(theta)) ** <span class="number">2</span>) / len(X_b)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> float(<span class="string">'inf'</span>)</span><br></pre></td></tr></table></figure>
+<p>函数 <code>dJ()</code> 对 $\theta$ 求导数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dJ</span><span class="params">(theta, X_b, y)</span>:</span></span><br><span class="line">    res = np.empty(len(theta))</span><br><span class="line">    res[<span class="number">0</span>] = np.sum(X_b.dot(theta) - y)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(theta)):</span><br><span class="line">        res[i] = (X_b.dot(theta) - y).dot(X_b[:, i])</span><br><span class="line">    <span class="keyword">return</span> res * <span class="number">2</span> / len(X_b)</span><br></pre></td></tr></table></figure>
+<p>注意：对 $J$ 求导更好的方式是进行向量化处理，即 $\nabla J(\theta)  = \frac{2}{m}·X_b^T·(X_b\theta-y)$，<code>dJ()</code> 改写为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dJ</span><span class="params">(theta, X_b, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> X_b.T.dot(X_b.dot(theta) - y) * <span class="number">2</span> / len(X_b)</span><br></pre></td></tr></table></figure>
+<p>梯度下降的过程为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(X_b, y, initial_theta, eta, n_iters=<span class="number">1e4</span>, epsilon=<span class="number">1e-8</span>)</span>:</span></span><br><span class="line">    theta = initial_theta</span><br><span class="line">    i_ters = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> i_ters &lt; n_iters:</span><br><span class="line">        gradient = dJ(theta, X_b, y)</span><br><span class="line">        last_theta = theta</span><br><span class="line"></span><br><span class="line">        theta = theta - eta * gradient</span><br><span class="line">        <span class="keyword">if</span> (abs(J(theta, X_b, y) - J(last_theta, X_b, y)) &lt; epsilon):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        i_ters += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> theta</span><br></pre></td></tr></table></figure>
+<p>执行程序找出最优的 $\theta$ 如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X_b = np.hstack([np.ones((len(X), <span class="number">1</span>)), X])</span><br><span class="line">initial_theta = np.zeros(X_b.shape[<span class="number">1</span>])</span><br><span class="line">eta = <span class="number">0.01</span></span><br><span class="line"></span><br><span class="line">theta = gradient_descent(X_b, y, initial_theta, eta)</span><br></pre></td></tr></table></figure>
+<p>$\theta$ 结果为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([<span class="number">4.0269033</span>, <span class="number">3.0043078</span>])</span><br></pre></td></tr></table></figure>
+<p>将梯度下降法封装到线性回归算法的模型训练方法 <code>fit_gd()</code> 中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinearRegression</span>:</span></span><br><span class="line">    <span class="comment"># other codes here</span></span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">fit_gd</span><span class="params">(self, X_train, y_train, eta=<span class="number">0.01</span>, n_iters=<span class="number">1e4</span>)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">J</span><span class="params">(theta, X_b, y)</span>:</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">return</span> np.sum((y - X_b.dot(theta)) ** <span class="number">2</span>) / len(X_b)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">return</span> float(<span class="string">'inf'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dJ</span><span class="params">(theta, X_b, y)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> X_b.T.dot(X_b.dot(theta) - y) * <span class="number">2</span> /len(X_b)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(X_b, y, initial_theta, eta, n_iters=n_iters, epsilon=<span class="number">1e-8</span>)</span>:</span></span><br><span class="line">            theta = initial_theta</span><br><span class="line">            i_ters = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> i_ters &lt; n_iters:</span><br><span class="line">                gradient = dJ(theta, X_b, y)</span><br><span class="line">                last_theta = theta</span><br><span class="line"></span><br><span class="line">                theta = theta - eta * gradient</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (abs(J(theta, X_b, y) - J(last_theta, X_b, y)) &lt; epsilon):</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                </span><br><span class="line">                i_ters += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">            <span class="keyword">return</span> theta</span><br><span class="line"></span><br><span class="line">        X_b = np.hstack([np.ones((len(X_train), <span class="number">1</span>)), X_train])</span><br><span class="line">        initial_theta = np.zeros(X_b.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        self._theta = gradient_descent(X_b, y_train, initial_theta, eta)</span><br><span class="line">        self.interception_ = self._theta[<span class="number">0</span>]</span><br><span class="line">        self.coef_ = self._theta[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<p>在真实的数据集 <code>(X, y)</code> 中，X 整体不在一个规模上会影响梯度的结果，而梯度的结果再乘以 $\eta$ 得到步长就太大或太小，从而导致训练出的模型可能很差。因此在使用梯度下降法之前，最好进行数据归一化。</p>
+</blockquote>
+<h1 id="随机梯度下降法"><a href="#随机梯度下降法" class="headerlink" title="随机梯度下降法"></a>随机梯度下降法</h1><p>$\nabla J(\theta)  = \frac{2}{m}·\begin{pmatrix} \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)}) \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_1^{(i)} \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_2^{(i)} \\ \cdots \\ \sum_{i=1}^{m}(X_b^{(i)}\theta - y^{(i)})·X_n^{(i)} \end{pmatrix}$ 中每一项都要对所有样本进行计算，因此这种梯度下降法称为批量梯度下降法（Batch Gradient Descent）。如果 m 非常大，使用批量梯度下降法计算梯度的计算量就会非常大。</p>
+<p>改进的方法是对每一项计算时不再计算所有的样本而是选取其中一个样本进行计算，即：</p>
+<p>$$2·\begin{pmatrix} (X_b^{(i)}\theta - y^{(i)})·X_0^{(i)} \\ (X_b^{(i)}\theta - y^{(i)})·X_1^{(i)} \\ (X_b^{(i)}\theta - y^{(i)})·X_2^{(i)} \\ \cdots \\ (X_b^{(i)}\theta - y^{(i)})·X_n^{(i)} \end{pmatrix} = 2·(X_b^{(i)})^T·(X_b^{(i)}\theta-y^{(i)})$$</p>
+<p>这样的方式就是随机梯度下降法（Stochastic Gradient Descent），此时搜索路径如图所示：</p>
+<p><img src="https://i.imgur.com/sJqTY7Q.png" title="source: imooc.com"></p>
+<p>随机梯度下降法不能保证梯度下降的方向就是损失函数减小最快的方向（有时会是增大的方向），但整体上是会到达最小值附近的（满足一定的精度）。</p>
+<p>同时在随机梯度下降法中学习率 $\eta$ 的取值是逐渐递减的，为了防止固定取值的学习率使得梯度下降到达最优解附近时继续跳出这个范围。一个合理的取值方式为：</p>
+<p>$$\eta = \frac{t0}{i_iter + t1}$$</p>
+<p>其中：$t0、t1$ 为超参数。</p>
+<p>定义函数 <code>dJ_sgd()</code> 对应批量梯度下降法中对损失函数求导的过程，此时传入函数的就不再是所有样本 $(X_b, y)$ 了，而是其中一个样本 $(X_b^{(i)}, y^{(i)})$：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dJ_sgd</span><span class="params">(theta, X_b_i, y_i)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> X_b_i.T.dot(X_b_i.dot(theta) - y_i) * <span class="number">2.</span></span><br></pre></td></tr></table></figure>
+<p>函数 <code>sgd()</code> 中定义了一个 <code>learning_rate()</code> 方法用来计算学习率，传入参数为当前迭代次数。</p>
+<p>因为要随机的选取样本中的一个，但又要将所有样本看一遍，所以我们将这个样本集打乱行程一个新的样本集 $(X_{b,new}^{(i)}, y_{new}^{(i)})$，同时指定参数 <code>n_iters</code> 表示将这个样本集看几遍：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sgd</span><span class="params">(X_b, y, initial_theta, n_iters, t0, t1)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">learning_rate</span><span class="params">(t)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> t0 / (t + t1)</span><br><span class="line"></span><br><span class="line">    theta = initial_theta</span><br><span class="line">    m = len(X_b)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> cur_iter <span class="keyword">in</span> range(n_iters):</span><br><span class="line">        indexes = np.random.permutation(m)</span><br><span class="line">        X_b_new = X_b[indexes]</span><br><span class="line">        y_new = y[indexes]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            grandient = dJ_sgd(theta, X_b_new[i], y_new[i])</span><br><span class="line">            theta = theta - learning_rate(cur_iter * m + i) * grandient</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> theta</span><br></pre></td></tr></table></figure>
+<p>将随机梯度下降法封装到线性回归算法的模型训练方法 <code>fit_sgd()</code> 中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinearRegression</span>:</span></span><br><span class="line">    <span class="comment"># other codes here</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit_sgd</span><span class="params">(self, X_train, y_train, n_iters=<span class="number">5</span>, t0=<span class="number">5</span>, t1=<span class="number">50</span>)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dJ_sgd</span><span class="params">(theta, X_b_i, y_i)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> X_b_i.T.dot(X_b_i.dot(theta) - y_i) * <span class="number">2.</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">sgd</span><span class="params">(X_b, y, initial_theta, n_iters, t0, t1)</span>:</span></span><br><span class="line">            </span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">learning_rate</span><span class="params">(t)</span>:</span></span><br><span class="line">                <span class="keyword">return</span> t0 / (t + t1)</span><br><span class="line">            </span><br><span class="line">            theta = initial_theta</span><br><span class="line">            m = len(X_b)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> cur_iter <span class="keyword">in</span> range(n_iters):</span><br><span class="line">                indexes = np.random.permutation(m)</span><br><span class="line">                X_b_new = X_b[indexes]</span><br><span class="line">                y_new = y[indexes]</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">                    grandient = dJ_sgd(theta, X_b_new[i], y_new[i])</span><br><span class="line">                    theta = theta - learning_rate(cur_iter * m + i) * grandient</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">return</span> theta</span><br><span class="line"></span><br><span class="line">        X_b = np.hstack([np.ones((len(X_train), <span class="number">1</span>)), X_train])</span><br><span class="line">        initial_theta = np.zeros(X_b.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        self._theta = sgd(X_b, y_train, initial_theta, n_iters, t0, t1)</span><br><span class="line">        self.interception_ = self._theta[<span class="number">0</span>]</span><br><span class="line">        self.coef_ = self._theta[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self</span><br></pre></td></tr></table></figure>
+<p>在 Scikit Learn 的 linear_model 模块中提供了一个使用随机梯度下降法的回归算法 SGDRegressor：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDRegressor</span><br></pre></td></tr></table></figure>
+<h1 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h1><p><a href="https://github.com/ovtenng/ML-Algorithms-Action/tree/master/04Gradient-Descent-and-Linear-Regressiion" target="_blank" rel="noopener">Github | ML-Algorithms-Action</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="ovtenng WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="ovtenng Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ovtenng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/" title="机器学习之梯度下降法与线性回归">https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/Scikit-Learn/" rel="tag"><i class="fa fa-tag"></i> Scikit Learn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/机器学习/机器学习之线性回归法/" rel="next" title="机器学习之线性回归法">
+                <i class="fa fa-chevron-left"></i> 机器学习之线性回归法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/action.png" alt="ovtenng">
+            
+              <p class="site-author-name" itemprop="name">ovtenng</p>
+              <p class="site-description motion-element" itemprop="description">while(true){study}</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ovtenng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:imtt.me" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ovtenng" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/6542120416" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/ovtenng" target="_blank" title="SegmentFault">
+                      
+                        <i class="fa fa-fw fa-paperclip"></i>SegmentFault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/ovtenng" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单理解梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">简单理解梯度下降法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模拟梯度下降法"><span class="nav-number">2.</span> <span class="nav-text">模拟梯度下降法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多元线性回归中的梯度下降法"><span class="nav-number">3.</span> <span class="nav-text">多元线性回归中的梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">3.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用梯度下降法训练模型"><span class="nav-number">3.2.</span> <span class="nav-text">使用梯度下降法训练模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机梯度下降法"><span class="nav-number">4.</span> <span class="nav-text">随机梯度下降法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码地址"><span class="nav-number">5.</span> <span class="nav-text">源码地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="author" itemprop="copyrightHolder">ovtenng</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/';
+          this.page.identifier = '机器学习/机器学习之梯度下降法与线性回归/';
+          this.page.title = '机器学习之梯度下降法与线性回归';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

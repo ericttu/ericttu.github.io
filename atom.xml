@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.imtt.me/"/>
-  <updated>2018-11-02T09:49:09.274Z</updated>
+  <updated>2018-11-17T07:29:10.956Z</updated>
   <id>https://blog.imtt.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习之梯度下降法与线性回归</title>
+    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"/>
+    <id>https://blog.imtt.me/机器学习/机器学习之梯度下降法与线性回归/</id>
+    <published>2018-11-13T07:24:55.000Z</published>
+    <updated>2018-11-17T07:29:10.956Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;梯度下降法不是一个机器学习算法，而是一种基于搜索的最优化方法，用于最小化一个效用函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习算法" scheme="https://blog.imtt.me/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
+    
+      <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习之线性回归法</title>
@@ -468,30 +494,6 @@
     
     
       <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python Socket 编程</title>
-    <link href="https://blog.imtt.me/Python-Socket-%E7%BC%96%E7%A8%8B/"/>
-    <id>https://blog.imtt.me/Python-Socket-编程/</id>
-    <published>2018-03-16T02:00:27.000Z</published>
-    <updated>2018-10-24T14:20:22.277Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;开放式系统互联（OSI）模型由下往上分为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。TCP/IP 协议为五层，其中应用层处理 OSI 的会话层、表示层和应用层。而 Socket 是对 TCP/IP 协议的封装、是一个调用接口（API）。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络编程" scheme="https://blog.imtt.me/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
-    
-      <category term="Socket" scheme="https://blog.imtt.me/tags/Socket/"/>
-    
-      <category term="TCP" scheme="https://blog.imtt.me/tags/TCP/"/>
     
   </entry>
   
