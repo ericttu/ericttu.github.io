@@ -85,14 +85,14 @@
 <meta name="description" content="Spring AOP 使用纯 Java 实现，不需要专门的编译过程和类加载器，在运行期通过代理方式向目标类织入增强代码 。">
 <meta name="keywords" content="Java,Spring,AOP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring 传统 AOP">
-<meta property="og:url" content="https://blog.imtt.me/Spring/Spring-传统-AOP/index.html">
+<meta property="og:title" content="Spring 面向切面编程 AOP">
+<meta property="og:url" content="https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/index.html">
 <meta property="og:site_name" content="OVTenng">
 <meta property="og:description" content="Spring AOP 使用纯 Java 实现，不需要专门的编译过程和类加载器，在运行期通过代理方式向目标类织入增强代码 。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-10T13:36:52.036Z">
+<meta property="og:updated_time" content="2018-11-27T08:59:22.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring 传统 AOP">
+<meta name="twitter:title" content="Spring 面向切面编程 AOP">
 <meta name="twitter:description" content="Spring AOP 使用纯 Java 实现，不需要专门的编译过程和类加载器，在运行期通过代理方式向目标类织入增强代码 。">
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.imtt.me/Spring/Spring-传统-AOP/">
+  <link rel="canonical" href="https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/">
 
 
 
 
 
-  <title>Spring 传统 AOP | OVTenng</title>
+  <title>Spring 面向切面编程 AOP | OVTenng</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.imtt.me/Spring/Spring-传统-AOP/">
+    <link itemprop="mainEntityOfPage" href="https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring 传统 AOP</h1>
+          <h1 class="post-title" itemprop="name headline">Spring 面向切面编程 AOP</h1>
         
 
         <div class="post-meta">
@@ -367,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Spring/Spring-传统-AOP/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Spring/Spring-传统-AOP/" itemprop="commentCount"></span>
+                <a href="/Spring/Spring-面向切面编程-AOP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Spring/Spring-面向切面编程-AOP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,6 +398,9 @@
       
         <p>Spring AOP 使用纯 Java 实现，不需要专门的编译过程和类加载器，在运行期通过代理方式向目标类织入增强代码 。</p>
 <a id="more"></a>
+<p>#Spring AOP 底层实现原理</p>
+<p>Spring AOP 底层是通过 JDK 动态代理或者 CGLIB 动态代理技术，为目标 Bean 执行横向织入。</p>
+<p>如果目标对象实现了接口，Spring 使用 JDK 动态代理；如果目标对象没有实现接口，Spring 使用 CGLIB 动态代理。</p>
 <h1 id="Spring-AOP-通知类型"><a href="#Spring-AOP-通知类型" class="headerlink" title="Spring AOP 通知类型"></a>Spring AOP 通知类型</h1><p>Spring 按照通知 Advice 在目标类方法的连接点位置，可以分为5类：</p>
 <ul>
 <li>前置通知 <code>org.springframework.aop.MethodBeforeAdvice</code> ：在目标方法执行前实施增强；</li>
@@ -524,7 +527,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://blog.imtt.me/Spring/Spring-传统-AOP/" title="Spring 传统 AOP">https://blog.imtt.me/Spring/Spring-传统-AOP/</a>
+    <a href="https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/" title="Spring 面向切面编程 AOP">https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -566,7 +569,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/基于-AspectJ-的-AOP-开发/" rel="prev" title="基于 AspectJ 的 AOP 开发">
+              <a href="/Spring/基于-AspectJ-的-AOP-开发/" rel="prev" title="基于 AspectJ 的 AOP 开发">
                 基于 AspectJ 的 AOP 开发 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -922,9 +925,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://blog.imtt.me/Spring/Spring-传统-AOP/';
-          this.page.identifier = 'Spring/Spring-传统-AOP/';
-          this.page.title = 'Spring 传统 AOP';
+          this.page.url = 'https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/';
+          this.page.identifier = 'Spring/Spring-面向切面编程-AOP/';
+          this.page.title = 'Spring 面向切面编程 AOP';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://TyroTalk.disqus.com/embed.js';

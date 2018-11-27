@@ -220,8 +220,8 @@
   
   <entry>
     <title>基于 AspectJ 的 AOP 开发</title>
-    <link href="https://blog.imtt.me/%E5%9F%BA%E4%BA%8E-AspectJ-%E7%9A%84-AOP-%E5%BC%80%E5%8F%91/"/>
-    <id>https://blog.imtt.me/基于-AspectJ-的-AOP-开发/</id>
+    <link href="https://blog.imtt.me/Spring/%E5%9F%BA%E4%BA%8E-AspectJ-%E7%9A%84-AOP-%E5%BC%80%E5%8F%91/"/>
+    <id>https://blog.imtt.me/Spring/基于-AspectJ-的-AOP-开发/</id>
     <published>2018-07-20T08:00:33.000Z</published>
     <updated>2018-09-10T13:38:08.520Z</updated>
     
@@ -245,11 +245,11 @@
   </entry>
   
   <entry>
-    <title>Spring 传统 AOP</title>
-    <link href="https://blog.imtt.me/Spring/Spring-%E4%BC%A0%E7%BB%9F-AOP/"/>
-    <id>https://blog.imtt.me/Spring/Spring-传统-AOP/</id>
+    <title>Spring 面向切面编程 AOP</title>
+    <link href="https://blog.imtt.me/Spring/Spring-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-AOP/"/>
+    <id>https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/</id>
     <published>2018-07-17T08:18:42.000Z</published>
-    <updated>2018-09-10T13:36:52.036Z</updated>
+    <updated>2018-11-27T08:59:22.071Z</updated>
     
     <summary type="html">
     
@@ -273,7 +273,7 @@
     <link href="https://blog.imtt.me/JDK-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8C-CGLIB-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
     <id>https://blog.imtt.me/JDK-动态代理和-CGLIB-动态代理/</id>
     <published>2018-07-14T11:10:02.000Z</published>
-    <updated>2018-09-10T13:34:47.510Z</updated>
+    <updated>2018-11-27T08:59:44.059Z</updated>
     
     <summary type="html">
     
@@ -297,7 +297,7 @@
     <link href="https://blog.imtt.me/Spring/Spring-Bean-%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://blog.imtt.me/Spring/Spring-Bean-在应用上下文中的生命周期/</id>
     <published>2018-07-12T07:05:48.000Z</published>
-    <updated>2018-11-26T07:46:24.830Z</updated>
+    <updated>2018-11-26T14:08:47.730Z</updated>
     
     <summary type="html">
     
