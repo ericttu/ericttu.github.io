@@ -104,7 +104,7 @@
 <meta property="og:image" content="https://i.imgur.com/vEmRTLs.png">
 <meta property="og:image" content="https://i.imgur.com/bTZLXND.png">
 <meta property="og:image" content="https://i.imgur.com/5VncOv8.png">
-<meta property="og:updated_time" content="2018-11-30T07:55:58.115Z">
+<meta property="og:updated_time" content="2018-11-30T12:52:38.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习之多项式回归与模型泛化">
 <meta name="twitter:description" content="本文介绍多项式回归并引出模型泛化相关内容。">
@@ -424,7 +424,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X2 = np.hstack([X, X**<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 <p>再使用线性回归算法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">lin_reg = LinearRegression()</span><br><span class="line">lin_reg.fit(X2, y)</span><br><span class="line">y_predict = lin_reg.predict(X2)</span><br></pre></td></tr></table></figure>
-<p>此时对 $X2$ 的预测值反映到图中就是第一章图里的曲线。</p>
+<p>此时对 $X2$ 的预测值反映到图中就是第一张图里的曲线。</p>
 <h2 id="PolynomialFeatures-和-Pipeline"><a href="#PolynomialFeatures-和-Pipeline" class="headerlink" title="PolynomialFeatures 和 Pipeline"></a>PolynomialFeatures 和 Pipeline</h2><p>对于增加新的特征（如：$x^2$），Scikit Learn 提供了 PolynomialFeatures，使用方式如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> PolynomialFeatures</span><br><span class="line"></span><br><span class="line">poly = PolynomialFeatures(degree=<span class="number">2</span>)</span><br><span class="line">poly.fit(X)</span><br><span class="line">X2 = poly.transform(X)</span><br></pre></td></tr></table></figure>
 <p>参数 <code>degree</code> 表示最高次幂；得到的新的 $X2$ 前5行数据如下：</p>
