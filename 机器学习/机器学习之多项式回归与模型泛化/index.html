@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="Osot-0un7MRM2p2kZp8LoqqHCGXTyJnBsaUQyvcPMAA">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Python,算法,机器学习,Scikit Learn,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OVTenng" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="本文介绍多项式回归并引出模型泛化相关内容。">
+<meta name="keywords" content="Python,算法,机器学习,Scikit Learn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习之多项式回归与模型泛化">
+<meta property="og:url" content="https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/index.html">
+<meta property="og:site_name" content="OVTenng">
+<meta property="og:description" content="本文介绍多项式回归并引出模型泛化相关内容。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/Uwgl8BH.png">
+<meta property="og:image" content="https://i.imgur.com/ngCtb5N.png">
+<meta property="og:image" content="https://i.imgur.com/WQOsYHJ.png">
+<meta property="og:image" content="https://i.imgur.com/oxdCCs5.png">
+<meta property="og:image" content="https://i.imgur.com/yCpOYyz.png">
+<meta property="og:image" content="https://i.imgur.com/1jCnvQo.png">
+<meta property="og:image" content="https://i.imgur.com/yTeSeQp.png">
+<meta property="og:image" content="https://i.imgur.com/e0vyoW2.png">
+<meta property="og:image" content="https://i.imgur.com/0DWf219.png">
+<meta property="og:image" content="https://i.imgur.com/nFl0anR.png">
+<meta property="og:image" content="https://i.imgur.com/z1ptPtR.png">
+<meta property="og:image" content="https://i.imgur.com/vEmRTLs.png">
+<meta property="og:image" content="https://i.imgur.com/bTZLXND.png">
+<meta property="og:image" content="https://i.imgur.com/5VncOv8.png">
+<meta property="og:updated_time" content="2018-11-30T07:55:58.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习之多项式回归与模型泛化">
+<meta name="twitter:description" content="本文介绍多项式回归并引出模型泛化相关内容。">
+<meta name="twitter:image" content="https://i.imgur.com/Uwgl8BH.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/">
+
+
+
+
+
+  <title>机器学习之多项式回归与模型泛化 | OVTenng</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98076220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OVTenng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ovtenng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/action.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OVTenng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习之多项式回归与模型泛化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T13:16:57+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习算法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/机器学习/机器学习之多项式回归与模型泛化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="机器学习/机器学习之多项式回归与模型泛化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文介绍多项式回归并引出模型泛化相关内容。</p>
+<a id="more"></a>
+<h1 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h1><h2 id="多项式回归使用线性回归的基本思路"><a href="#多项式回归使用线性回归的基本思路" class="headerlink" title="多项式回归使用线性回归的基本思路"></a>多项式回归使用线性回归的基本思路</h2><p>非线性曲线如图：</p>
+<p><img src="https://i.imgur.com/Uwgl8BH.png"></p>
+<p>假设曲线表达式为：$y=ax^2 + bx+c$，如果将 $x^2$ 看作为 $x_1$，即 $y_1=ax_1+bx+c$，此时就有了两个特征，则可以看作是线性曲线表达式。</p>
+<p>首先生成一组样本数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">x = np.random.uniform(<span class="number">-3</span>, <span class="number">3</span>, size=<span class="number">100</span>)</span><br><span class="line">X = x.reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">y = <span class="number">0.5</span> * x**<span class="number">2</span> + x + <span class="number">2</span> + np.random.normal(<span class="number">0</span>, <span class="number">1</span>, size=<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<p>(x, y) 如图所示（横轴为 x，纵轴为 y）：</p>
+<p><img src="https://i.imgur.com/ngCtb5N.png"></p>
+<p>接着在 $X$ 的基础上增加一个新的特征 $x1(x^2)$ 形成一个新的 $X2$：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X2 = np.hstack([X, X**<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<p>再使用线性回归算法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">lin_reg = LinearRegression()</span><br><span class="line">lin_reg.fit(X2, y)</span><br><span class="line">y_predict = lin_reg.predict(X2)</span><br></pre></td></tr></table></figure>
+<p>此时对 $X2$ 的预测值反映到图中就是第一章图里的曲线。</p>
+<h2 id="PolynomialFeatures-和-Pipeline"><a href="#PolynomialFeatures-和-Pipeline" class="headerlink" title="PolynomialFeatures 和 Pipeline"></a>PolynomialFeatures 和 Pipeline</h2><p>对于增加新的特征（如：$x^2$），Scikit Learn 提供了 PolynomialFeatures，使用方式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> PolynomialFeatures</span><br><span class="line"></span><br><span class="line">poly = PolynomialFeatures(degree=<span class="number">2</span>)</span><br><span class="line">poly.fit(X)</span><br><span class="line">X2 = poly.transform(X)</span><br></pre></td></tr></table></figure>
+<p>参数 <code>degree</code> 表示最高次幂；得到的新的 $X2$ 前5行数据如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># X2[:5,:]</span></span><br><span class="line">array([[ <span class="number">1.</span>        ,  <span class="number">1.16207716</span>,  <span class="number">1.35042333</span>],</span><br><span class="line">       [ <span class="number">1.</span>        , <span class="number">-2.62969804</span>,  <span class="number">6.91531181</span>],</span><br><span class="line">       [ <span class="number">1.</span>        ,  <span class="number">0.99966958</span>,  <span class="number">0.99933928</span>],</span><br><span class="line">       [ <span class="number">1.</span>        ,  <span class="number">0.35525362</span>,  <span class="number">0.12620514</span>],</span><br><span class="line">       [ <span class="number">1.</span>        , <span class="number">-2.48933626</span>,  <span class="number">6.19679503</span>]])</span><br></pre></td></tr></table></figure>
+<p>第一列为 $x^0$，第二列为 $x$，第三列为 $x^2$。</p>
+<p>Scikit Learn 还提供了 Pipeline，将多项式特征、数据归一化和线性回归组合在了一起，大大方便的编程的过程。使用方式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line">poly_regression = Pipeline([</span><br><span class="line">    (<span class="string">"poly"</span>, PolynomialFeatures(degree=<span class="number">2</span>)),</span><br><span class="line">    (<span class="string">"std_scaler"</span>, StandardScaler()),</span><br><span class="line">    (<span class="string">"lin_reg"</span>, LinearRegression())</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p><code>Pipeline()</code> 传入的是一个列表，包含了执行每一个步骤的实例，每一个步骤又是一个元组类型，其中第二个表示实例，第一个表示给实例取的名称。接着就可以进行 <code>fit()</code>、<code>predict()</code> 等内容了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">poly_regression.fit(X, y)</span><br><span class="line">y_predict = poly_regression.predict(X)</span><br></pre></td></tr></table></figure>
+<h1 id="欠拟合和过拟合"><a href="#欠拟合和过拟合" class="headerlink" title="欠拟合和过拟合"></a>欠拟合和过拟合</h1><h2 id="欠拟合和过拟合的理解"><a href="#欠拟合和过拟合的理解" class="headerlink" title="欠拟合和过拟合的理解"></a>欠拟合和过拟合的理解</h2><p>在使用多项式回归的过程中需要考虑一个问题，即欠拟合和过拟合。</p>
+<p>如果对前面的样本单单使用线性回归，得到的模型如图（这里省略的代码实现）：</p>
+<p><img src="https://i.imgur.com/WQOsYHJ.png"></p>
+<p>训练出来的模型很简单，但它并不能完整的表述数据之间的关系，这就是欠拟合（underfitting）。</p>
+<p>如果使用多项式回归，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PolynomialRegression</span><span class="params">(degree)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Pipeline([</span><br><span class="line">        (<span class="string">"poly"</span>, PolynomialFeatures(degree=degree)),</span><br><span class="line">        (<span class="string">"std_scaler"</span>, StandardScaler()),</span><br><span class="line">        (<span class="string">"lin_reg"</span>, LinearRegression())</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line">poly100_reg = PolynomialRegression(degree=<span class="number">100</span>)</span><br><span class="line">poly100_reg.fit(X, y)</span><br><span class="line"></span><br><span class="line">y_predict100 = poly100_reg.predict(X)</span><br></pre></td></tr></table></figure>
+<p>将 <code>degree</code> 设置为100，即最高次幂为 100，训练出来的模型对训练数据 X 的预测结果如图：</p>
+<p><img src="https://i.imgur.com/oxdCCs5.png"></p>
+<p>可见该模型对训练数据解释的很好，但是如果用测试数据来预测一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X_plot = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">100</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">y_plot = poly100_reg.predict(X_plot)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/yCpOYyz.png"></p>
+<p>可以看出对预测数据预测的非常糟糕，这是因为训练的模型过多的表达了训练数据中的噪音，从而造成了对预测数据的结果也含有了寻多噪音，这就是过拟合（overfitting）。</p>
+<h2 id="模型复杂度曲线"><a href="#模型复杂度曲线" class="headerlink" title="模型复杂度曲线"></a>模型复杂度曲线</h2><p>上面的过拟合出来的模型对训练数据解释的很好，但对测试数据（新的数据）解释的非常差，也就是模型的泛化能力差。</p>
+<p>所以为了防止模型过拟合，通常将数据分为训练数据和测试数据，通过测试数据来检验是否过拟合。一般模型准确率与训练数据和测试数据的关系为：</p>
+<p><img src="https://i.imgur.com/1jCnvQo.png"></p>
+<p>图形中左边属于欠拟合，右边属于过拟合，而中间对于测试数据模型准确率高的地方就是模型泛化能力好的地方。</p>
+<h2 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h2><p>除了模型复杂度曲线，还可以使用学习曲线来可视化欠拟合和过拟合。</p>
+<p>所谓学习曲线，就是随着训练样本的逐渐增多，训练出的模型的能力的变化。</p>
+<p>首先将数据分为训练数据和测试数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y)</span><br></pre></td></tr></table></figure>
+<p><code>learning_curve()</code> 函数中使用均方误差来表示模型的优劣，并且训练数据（75个）从1个慢慢增大为75个，记录对训练数据和测试数据预测值的均方误差，用于画学习曲线。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error  <span class="comment"># 均方误差</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">learning_curve</span><span class="params">(algo, X_train, X_test, y_train, y_test)</span>:</span></span><br><span class="line">    train_score = []</span><br><span class="line">    test_score = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">76</span>):</span><br><span class="line">        algo.fit(X_train[:i], y_train[:i])</span><br><span class="line"></span><br><span class="line">        y_train_predict = algo.predict(X_train[:i])</span><br><span class="line">        train_score.append(mean_squared_error(y_train[:i], y_train_predict))</span><br><span class="line"></span><br><span class="line">        y_test_predict = algo.predict(X_test)</span><br><span class="line">        test_score.append(mean_squared_error(y_test, y_test_predict))</span><br></pre></td></tr></table></figure>
+<p>先来看看使用线性回归的情况（根据前文已经知道是欠拟合）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">learning_curve(LinearRegression(), X_train, X_test, y_train, y_test)</span><br></pre></td></tr></table></figure>
+<p>作出的学习曲线如图：</p>
+<p><img src="https://i.imgur.com/yTeSeQp.png"></p>
+<p>可以看出均方误差最后趋于稳定。</p>
+<p>接着来看看使用多项式回归并且设定最高次幂为2的情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">poly2_reg = PolynomialRegression(degree=<span class="number">2</span>)</span><br><span class="line">learning_curve(poly2_reg, X_train, X_test, y_train, y_test)</span><br></pre></td></tr></table></figure>
+<p>作出的学习曲线如图：</p>
+<p><img src="https://i.imgur.com/e0vyoW2.png"></p>
+<p>可以看出均方误差最后也趋于稳定，但是比过拟合情况下均方误差的值要小，表示模型更好。</p>
+<p>接着来看看使用多项式回归并且设定最高次幂为20的情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">poly20_reg = PolynomialRegression(degree=<span class="number">20</span>)</span><br><span class="line">learning_curve(poly20_reg, X_train, X_test, y_train, y_test)</span><br></pre></td></tr></table></figure>
+<p>作出的学习曲线如图：</p>
+<p><img src="https://i.imgur.com/0DWf219.png"></p>
+<p>可以看出对训练数据的军方误差最后会趋于稳定，但对测试数据则不然，这种情况就是过拟合的表现。</p>
+<h1 id="验证数据集和交叉验证"><a href="#验证数据集和交叉验证" class="headerlink" title="验证数据集和交叉验证"></a>验证数据集和交叉验证</h1><p>虽然将数据集划分为训练数据集和测试数据集能够为判断模型是否过拟合提供参考，但这样的划分方式并不严谨，因为模型可能是针对测试数据集过拟合的。</p>
+<p>更好的方式是将数据集划分为训练数据集、验证数据集和测试数据集。验证数据集用于验证模型的效果，方便调整超参数来改善模型；测试数据集用于衡量最终的模型性能。</p>
+<p>但是这种方式也有可能对验证数据集过拟合，此时可以使用交叉验证（Cross Validation）。</p>
+<h2 id="k-folds-交叉验证"><a href="#k-folds-交叉验证" class="headerlink" title="k-folds 交叉验证"></a>k-folds 交叉验证</h2><p>交叉验证即将数据集划分为训练数据集和测试数据集，并将训练数据集分成 k 份，每次将其中一份作为验证数据集，剩下的（k-1）份作为训练数据集，如此可以得到 k 个模型，再将这 k 个模型的均值作为结果调参。以 kNN 手写数字识别算法举例说明：</p>
+<p>首先准备数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">digits = datasets.load_digits()</span><br><span class="line">X = digits.data</span><br><span class="line">y = digits.target</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.4</span>)</span><br></pre></td></tr></table></figure>
+<p>Scikit Learn 中提供了用于交叉验证的 <code>cross_val_score</code>，模型将数据分成三份用于交叉验证，返回三个模型的估算分数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score</span><br><span class="line"></span><br><span class="line">knn_clf = KNeighborsClassifier()</span><br><span class="line">cross_val_score(knn_clf, X_train, y_train)</span><br><span class="line"><span class="comment"># 返回 array([0.9640884 , 0.97506925, 0.96901408])</span></span><br></pre></td></tr></table></figure>
+<p>接着进行调参：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">best_score, best_p, best_k = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">        knn_clf = KNeighborsClassifier(weights=<span class="string">"distance"</span>, n_neighbors=k, p=p)</span><br><span class="line">        scores = cross_val_score(knn_clf, X_train, y_train)</span><br><span class="line">        score = np.mean(scores)</span><br><span class="line">        <span class="keyword">if</span> score &gt; best_score:</span><br><span class="line">            best_score, best_p, best_k = score, p, k</span><br><span class="line">            </span><br><span class="line">print(<span class="string">"best score is:"</span>, best_score)</span><br><span class="line">print(<span class="string">"best p is:"</span>, best_p)</span><br><span class="line">print(<span class="string">"best k is:"</span>, best_k)</span><br><span class="line"><span class="comment"># best score is: 0.9795997710242826</span></span><br><span class="line"><span class="comment"># best p is: 3</span></span><br><span class="line"><span class="comment"># best k is: 2</span></span><br></pre></td></tr></table></figure>
+<p>循环中每次比较 <code>cross_val_score</code> 返回数组的均值，最大的对应的 k 和 p 就是最优的超参数。</p>
+<p>拿到了想要的超参数就可以进行模型训练了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">best_knn_clf = KNeighborsClassifier(weights=<span class="string">"distance"</span>, n_neighbors=<span class="number">2</span>, p=<span class="number">3</span>)</span><br><span class="line">best_knn_clf.fit(X_train, y_train)</span><br><span class="line">best_knn_clf.score(X_test, y_test)</span><br><span class="line"><span class="comment"># 结果0.9902642559109874</span></span><br></pre></td></tr></table></figure>
+<h2 id="网格搜索"><a href="#网格搜索" class="headerlink" title="网格搜索"></a>网格搜索</h2><p>Scikit Learn 提供了网格搜索（GridSearchCV）整合了上面交叉验证和调参的全过程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line">param_grid = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">'weights'</span>: [<span class="string">'distance'</span>],</span><br><span class="line">        <span class="string">'n_neighbors'</span>: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)],</span><br><span class="line">        <span class="string">'p'</span>: [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>)]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">knn_clf = KNeighborsClassifier()</span><br><span class="line">grid_search = GridSearchCV(knn_clf, param_grid=param_grid, verbose=<span class="number">1</span>)</span><br><span class="line">grid_search.fit(X_train, y_train)</span><br></pre></td></tr></table></figure>
+<p><code>grid_search.best_params_</code> 返回得到的最优超参数；<code>best_knn_clf = grid_search.best_estimator_</code> 返回最优的模型。</p>
+<blockquote>
+<p>在 <code>cross_val_score</code> 和 <code>GridSearchCV</code> 中可以指定参数 <code>cv</code> 来设置将训练数据集分为几份（默认为3）。</p>
+</blockquote>
+<h1 id="方差处理"><a href="#方差处理" class="headerlink" title="方差处理"></a>方差处理</h1><h2 id="偏差和方差"><a href="#偏差和方差" class="headerlink" title="偏差和方差"></a>偏差和方差</h2><p>对于一个模型而言，模型误差=偏差（Bias）+方差（Variance）+不可避免的误差。偏差和方差表示如图</p>
+<p><img src="https://i.imgur.com/nFl0anR.png"></p>
+<p>导致偏差的主要原因是对问题本身的假设不正确，导致方差的主要原因是使用的模型太复杂。对于欠拟合，就属于高偏差；而过拟合，就属于高方差。</p>
+<p>在机器学习算法中，主要的挑战来自方差，解决的方法主要有：</p>
+<ol>
+<li>降低模型复杂度；</li>
+<li>降维；</li>
+<li>增加样本数；</li>
+<li>使用验证集；</li>
+<li>模型正则化。</li>
+</ol>
+<p>接下来主要看看模型正则化。</p>
+<h2 id="模型正则化"><a href="#模型正则化" class="headerlink" title="模型正则化"></a>模型正则化</h2><p>对于高方差的模型可以用模型正则化（Regularization）处理，限制参数的大小。</p>
+<p>以使用梯度下降法的线性回归为例，其目标函数为：使 $J(\theta) = MSE(y, \hat{y};\theta)$ 尽可能小；如果模型过拟合，得到的 $\theta$ 就可能非常大，因此需要对 $J(\theta)$ 加入限制是的 $\theta$ 尽可能小。</p>
+<p>有两种主要方式：岭回归和 LASSO 回归。</p>
+<h3 id="岭回归"><a href="#岭回归" class="headerlink" title="岭回归"></a>岭回归</h3><p>岭回归（Ridge Regression）就是在目标函数中加入了 $\alpha\frac{1}{2}\sum_{i=1}^n\theta_i^2$，即使 $J(\theta) = MSE(y, \hat{y};\theta)+\alpha\frac{1}{2}\sum_{i=1}^n\theta_i^2$ 尽可能小。</p>
+<p>Scikit Learn 中提供了 <code>Ridge</code> 类表示岭回归，参数为 $\alpha$。使用过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Ridge</span><br><span class="line"></span><br><span class="line">x = np.random.uniform(<span class="number">-3</span>, <span class="number">3</span>, size=<span class="number">100</span>)</span><br><span class="line">X = x.reshape(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">y = <span class="number">0.5</span> * x + <span class="number">3</span> + np.random.normal(<span class="number">0</span>, <span class="number">1</span>, size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PolynomialRegression</span><span class="params">(degree, alpha)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Pipeline([</span><br><span class="line">        (<span class="string">"poly"</span>, PolynomialFeatures(degree=degree)),</span><br><span class="line">        (<span class="string">"std_scaler"</span>, StandardScaler()),</span><br><span class="line">        (<span class="string">"ridge_reg"</span>, Ridge(alpha=alpha))</span><br><span class="line">    ])</span><br></pre></td></tr></table></figure>
+<p>设置 <code>degree</code> 为20，<code>alpha</code> 为0.0001 训练模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ridge_reg = PolynomialRegression(<span class="number">20</span>, <span class="number">0.0001</span>)</span><br><span class="line">ridge_reg.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">y_predict = ridge_reg.predict(X_test)</span><br></pre></td></tr></table></figure>
+<p>画出来的图形为：</p>
+<p><img src="https://i.imgur.com/z1ptPtR.png"></p>
+<p>设置 <code>degree</code> 为20，<code>alpha</code> 为1 训练模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ridge_reg = PolynomialRegression(<span class="number">20</span>, <span class="number">1</span>)</span><br><span class="line">ridge_reg.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">y_predict = ridge_reg.predict(X_test)</span><br></pre></td></tr></table></figure>
+<p>画出来的图形为：</p>
+<p><img src="https://i.imgur.com/vEmRTLs.png"></p>
+<p>相比之下模型好上了不少。</p>
+<h3 id="LASSO-回归"><a href="#LASSO-回归" class="headerlink" title="LASSO 回归"></a>LASSO 回归</h3><p>LASSO 回归（Least Absolute Shrinkage and Selection Operator Regression）与岭回归不同的是使用 $\alpha\sum_{i=1}^n|\theta_i|$ 对 $\theta$ 进行限制，即使 $J(\theta) = MSE(y, \hat{y};\theta)+\alpha\sum_{i=1}^n|\theta_i|$ 尽可能小。</p>
+<p>Scikit Learn 中提供了 <code>Lasso</code> 类表示岭回归，参数为 $\alpha$。使用过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> Lasso</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">LassoRegression</span><span class="params">(degree, alpha)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Pipeline([</span><br><span class="line">        (<span class="string">"poly"</span>, PolynomialFeatures(degree=degree)),</span><br><span class="line">        (<span class="string">"std_scaler"</span>, StandardScaler()),</span><br><span class="line">        (<span class="string">"lasso_reg"</span>, Lasso(alpha=alpha))</span><br><span class="line">    ])</span><br></pre></td></tr></table></figure>
+<p>设置 <code>degree</code> 为20，<code>alpha</code> 为0.01 训练模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lasso_reg = PolynomialRegression(<span class="number">20</span>, <span class="number">0.01</span>)</span><br><span class="line">lasso_reg.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">y_predict = lasso_reg.predict(X_test)</span><br></pre></td></tr></table></figure>
+<p>画出来的图形为：</p>
+<p><img src="https://i.imgur.com/bTZLXND.png"></p>
+<p>设置 <code>degree</code> 为20，<code>alpha</code> 为0.1 训练模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lasso_reg = PolynomialRegression(<span class="number">20</span>, <span class="number">0.1</span>)</span><br><span class="line">lasso_reg.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">y_predict = lasso_reg.predict(X_test)</span><br></pre></td></tr></table></figure>
+<p>画出来的图形为：</p>
+<p><img src="https://i.imgur.com/5VncOv8.png"></p>
+<p>相比之下模型也好上了不少。</p>
+<blockquote>
+<p>LASSO 回归相比岭回归趋向于使得一部分 $\theta$ 等于0，因此画出来的曲线也相对更直一些。</p>
+</blockquote>
+<h3 id="弹性网"><a href="#弹性网" class="headerlink" title="弹性网"></a>弹性网</h3><p>弹性网（Elastic Net）则同时使用了岭回归和LASSO 回归，即使用了 $\alpha\frac{1-r}{2}\sum_{i=1}^n\theta_i^2 +r \alpha\sum_{i=1}^n|\theta_i|$ 对 $\theta$ 进行限制。</p>
+<p>使用上面的例子就是使 $J(\theta) = MSE(y, \hat{y};\theta)+\alpha\frac{1-r}{2}\sum_{i=1}^n\theta_i^2 +r \alpha\sum_{i=1}^n|\theta_i|$ 尽可能小。</p>
+<h1 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h1><p><a href="https://github.com/ovtenng/ML-Algorithms-Action/tree/master/06Polynomial-Regression-and-Model-Generalization" target="_blank" rel="noopener">Github | ML-Algorithms-Action</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="ovtenng WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="ovtenng Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ovtenng
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/" title="机器学习之多项式回归与模型泛化">https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/Scikit-Learn/" rel="tag"><i class="fa fa-tag"></i> Scikit Learn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/机器学习/机器学习之PCA与梯度上升法/" rel="next" title="机器学习之PCA与梯度上升法">
+                <i class="fa fa-chevron-left"></i> 机器学习之PCA与梯度上升法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/action.png" alt="ovtenng">
+            
+              <p class="site-author-name" itemprop="name">ovtenng</p>
+              <p class="site-description motion-element" itemprop="description">while(true){study}</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ovtenng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:imtt.me" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ovtenng" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/6542120416" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/ovtenng" target="_blank" title="SegmentFault">
+                      
+                        <i class="fa fa-fw fa-paperclip"></i>SegmentFault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/ovtenng" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式回归"><span class="nav-number">1.</span> <span class="nav-text">多项式回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式回归使用线性回归的基本思路"><span class="nav-number">1.1.</span> <span class="nav-text">多项式回归使用线性回归的基本思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PolynomialFeatures-和-Pipeline"><span class="nav-number">1.2.</span> <span class="nav-text">PolynomialFeatures 和 Pipeline</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欠拟合和过拟合"><span class="nav-number">2.</span> <span class="nav-text">欠拟合和过拟合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#欠拟合和过拟合的理解"><span class="nav-number">2.1.</span> <span class="nav-text">欠拟合和过拟合的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型复杂度曲线"><span class="nav-number">2.2.</span> <span class="nav-text">模型复杂度曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习曲线"><span class="nav-number">2.3.</span> <span class="nav-text">学习曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证数据集和交叉验证"><span class="nav-number">3.</span> <span class="nav-text">验证数据集和交叉验证</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#k-folds-交叉验证"><span class="nav-number">3.1.</span> <span class="nav-text">k-folds 交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网格搜索"><span class="nav-number">3.2.</span> <span class="nav-text">网格搜索</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方差处理"><span class="nav-number">4.</span> <span class="nav-text">方差处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差和方差"><span class="nav-number">4.1.</span> <span class="nav-text">偏差和方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型正则化"><span class="nav-number">4.2.</span> <span class="nav-text">模型正则化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#岭回归"><span class="nav-number">4.2.1.</span> <span class="nav-text">岭回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LASSO-回归"><span class="nav-number">4.2.2.</span> <span class="nav-text">LASSO 回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性网"><span class="nav-number">4.2.3.</span> <span class="nav-text">弹性网</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码地址"><span class="nav-number">5.</span> <span class="nav-text">源码地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="author" itemprop="copyrightHolder">ovtenng</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/';
+          this.page.identifier = '机器学习/机器学习之多项式回归与模型泛化/';
+          this.page.title = '机器学习之多项式回归与模型泛化';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TyroTalk.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

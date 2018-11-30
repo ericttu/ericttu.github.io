@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.imtt.me/"/>
-  <updated>2018-11-25T07:53:54.648Z</updated>
+  <updated>2018-11-30T07:55:58.115Z</updated>
   <id>https://blog.imtt.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习之多项式回归与模型泛化</title>
+    <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A8%A1%E5%9E%8B%E6%B3%9B%E5%8C%96/"/>
+    <id>https://blog.imtt.me/机器学习/机器学习之多项式回归与模型泛化/</id>
+    <published>2018-11-29T05:16:57.000Z</published>
+    <updated>2018-11-30T07:55:58.115Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍多项式回归并引出模型泛化相关内容。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习算法" scheme="https://blog.imtt.me/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
+    
+      <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习之PCA与梯度上升法</title>
@@ -34,9 +60,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -60,9 +86,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -86,9 +112,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -112,9 +138,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -125,7 +151,7 @@
     <link href="https://blog.imtt.me/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8BK%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
     <id>https://blog.imtt.me/机器学习/机器学习之K近邻算法/</id>
     <published>2018-10-24T05:44:07.000Z</published>
-    <updated>2018-10-31T05:49:31.218Z</updated>
+    <updated>2018-11-25T07:01:03.280Z</updated>
     
     <summary type="html">
     
@@ -138,9 +164,9 @@
     
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
-      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="算法" scheme="https://blog.imtt.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="机器学习" scheme="https://blog.imtt.me/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Scikit Learn" scheme="https://blog.imtt.me/tags/Scikit-Learn/"/>
     
@@ -238,9 +264,9 @@
     
       <category term="Spring" scheme="https://blog.imtt.me/tags/Spring/"/>
     
-      <category term="AspectJ" scheme="https://blog.imtt.me/tags/AspectJ/"/>
-    
       <category term="AOP" scheme="https://blog.imtt.me/tags/AOP/"/>
+    
+      <category term="AspectJ" scheme="https://blog.imtt.me/tags/AspectJ/"/>
     
   </entry>
   
@@ -249,7 +275,7 @@
     <link href="https://blog.imtt.me/Spring/Spring-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-AOP/"/>
     <id>https://blog.imtt.me/Spring/Spring-面向切面编程-AOP/</id>
     <published>2018-07-17T08:18:42.000Z</published>
-    <updated>2018-11-27T08:59:22.071Z</updated>
+    <updated>2018-11-28T09:07:14.509Z</updated>
     
     <summary type="html">
     
@@ -472,30 +498,6 @@
       <category term="Python" scheme="https://blog.imtt.me/tags/Python/"/>
     
       <category term="Flask" scheme="https://blog.imtt.me/tags/Flask/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL 中的 B-Tree 索引和 Hash 索引</title>
-    <link href="https://blog.imtt.me/MySQL/MySQL-%E4%B8%AD%E7%9A%84-B-Tree-%E7%B4%A2%E5%BC%95%E5%92%8C-Hash-%E7%B4%A2%E5%BC%95/"/>
-    <id>https://blog.imtt.me/MySQL/MySQL-中的-B-Tree-索引和-Hash-索引/</id>
-    <published>2018-04-26T02:07:24.000Z</published>
-    <updated>2018-05-26T02:46:03.334Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;数据库学习笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;索引告诉了存储引擎如何快速找到需要存储的数据。&lt;/p&gt;
-&lt;p&gt;MySQL 支持的常用索引为：B-Tree 索引和 Hash 索引。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="https://blog.imtt.me/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://blog.imtt.me/tags/MySQL/"/>
     
   </entry>
   
