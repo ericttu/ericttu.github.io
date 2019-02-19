@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,26 +18,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,42 +45,60 @@
 
 
 
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
 
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="OVTenng" type="application/atom+xml">
-
-
-
-
-
-
-<meta name="description" content="while(true){study}">
+  <meta name="description" content="while(true){study}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OVTenng">
 <meta property="og:url" content="https://blog.imtt.me/page/5/index.html">
@@ -95,29 +111,8 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+  <link rel="alternate" href="/atom.xml" title="OVTenng" type="application/atom+xml">
+
 
 
 
@@ -125,7 +120,11 @@
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>OVTenng</title>
   
@@ -133,18 +132,46 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-98076220-1', 'auto');
-  ga('send', 'pageview');
-</script>
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-98076220-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-98076220-1');
+  </script>
 
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -155,13 +182,13 @@
     
   
 
-  <div class="container sidebar-position-right 
+  <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -171,13 +198,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -185,66 +211,94 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
 
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            Search
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
+  
+
   
 
   
@@ -273,12 +327,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -291,6 +356,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -300,7 +367,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -315,11 +382,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/Python-数据结构：单链表/" itemprop="url">Python 数据结构：单链表</a></h1>
+                
+                <a href="/数据结构与算法/Python-数据结构：单链表/" class="post-title-link" itemprop="url">Python 数据结构：单链表</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -327,11 +403,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T09:37:41+08:00">
-                2017-08-11
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-08-11 09:37:41" itemprop="dateCreated datePublished" datetime="2017-08-11T09:37:41+08:00">2017-08-11</time>
             
 
             
@@ -349,11 +426,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -363,11 +436,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/Python-数据结构：单链表/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/Python-数据结构：单链表/" itemprop="commentCount"></span>
                 </a>
@@ -400,21 +477,29 @@
         
           <p>单链表是链表的一种，其链接方向是单向的，对链表的访问要通过从头部开始，依序往下读取。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/Python-数据结构：单链表/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/Python-数据结构：单链表/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -447,6 +532,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -456,7 +543,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -471,11 +558,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/无向图/" itemprop="url">无向图</a></h1>
+                
+                <a href="/数据结构与算法/无向图/" class="post-title-link" itemprop="url">无向图</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -483,11 +579,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T11:23:53+08:00">
-                2017-07-30
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-07-30 11:23:53" itemprop="dateCreated datePublished" datetime="2017-07-30T11:23:53+08:00">2017-07-30</time>
             
 
             
@@ -505,11 +602,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -519,11 +612,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/无向图/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/无向图/" itemprop="commentCount"></span>
                 </a>
@@ -556,21 +653,29 @@
         
           <p>图是由一组顶点和一组能够将两个顶点相连的边组成的。边有方向的图称为有向图，没有方向的图称为无向图。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/无向图/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/无向图/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -603,6 +708,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -612,7 +719,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -627,11 +734,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/二分查找法/" itemprop="url">二分查找法</a></h1>
+                
+                <a href="/数据结构与算法/二分查找法/" class="post-title-link" itemprop="url">二分查找法</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -639,11 +755,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-23T10:49:06+08:00">
-                2017-07-23
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-07-23 10:49:06" itemprop="dateCreated datePublished" datetime="2017-07-23T10:49:06+08:00">2017-07-23</time>
             
 
             
@@ -661,11 +778,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -675,11 +788,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/二分查找法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/二分查找法/" itemprop="commentCount"></span>
                 </a>
@@ -712,21 +829,29 @@
         
           <p>二分查找法。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/二分查找法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/二分查找法/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -759,6 +884,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -768,7 +895,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -783,11 +910,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/堆排序/" itemprop="url">堆排序</a></h1>
+                
+                <a href="/数据结构与算法/堆排序/" class="post-title-link" itemprop="url">堆排序</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -795,11 +931,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T09:40:59+08:00">
-                2017-07-17
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-07-17 09:40:59" itemprop="dateCreated datePublished" datetime="2017-07-17T09:40:59+08:00">2017-07-17</time>
             
 
             
@@ -817,11 +954,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -831,11 +964,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/堆排序/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/堆排序/" itemprop="commentCount"></span>
                 </a>
@@ -868,21 +1005,29 @@
         
           <p><a href="https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">堆排序（Heapsort）</a>：利用堆这种数据结构的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/堆排序/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/堆排序/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -915,6 +1060,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -924,7 +1071,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -939,11 +1086,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/高级排序算法/" itemprop="url">高级排序算法</a></h1>
+                
+                <a href="/数据结构与算法/高级排序算法/" class="post-title-link" itemprop="url">高级排序算法</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -951,11 +1107,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T10:53:22+08:00">
-                2017-07-10
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-07-10 10:53:22" itemprop="dateCreated datePublished" datetime="2017-07-10T10:53:22+08:00">2017-07-10</time>
             
 
             
@@ -973,11 +1130,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -987,11 +1140,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/高级排序算法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/高级排序算法/" itemprop="commentCount"></span>
                 </a>
@@ -1024,21 +1181,29 @@
         
           <p>本篇包括归并排序和快速排序，它们都是采用了分治法的 O(NlogN) 算法。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/高级排序算法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/高级排序算法/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1071,6 +1236,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1080,7 +1247,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -1095,11 +1262,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/数据结构与算法/简单排序算法/" itemprop="url">简单排序算法</a></h1>
+                
+                <a href="/数据结构与算法/简单排序算法/" class="post-title-link" itemprop="url">简单排序算法</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1107,11 +1283,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-02T19:54:45+08:00">
-                2017-07-02
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-07-02 19:54:45" itemprop="dateCreated datePublished" datetime="2017-07-02T19:54:45+08:00">2017-07-02</time>
             
 
             
@@ -1129,11 +1306,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -1143,11 +1316,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/数据结构与算法/简单排序算法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="数据结构与算法/简单排序算法/" itemprop="commentCount"></span>
                 </a>
@@ -1180,21 +1357,29 @@
         
           <p>简单排序算法有三种：选择排序、插入排序和冒泡排序。都属于 O(n^2) 级别的算法。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/数据结构与算法/简单排序算法/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/数据结构与算法/简单排序算法/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1227,6 +1412,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1236,7 +1423,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -1251,11 +1438,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python 基础/Python-基础：函数/" itemprop="url">Python 基础：函数</a></h1>
+                
+                <a href="/Python 基础/Python-基础：函数/" class="post-title-link" itemprop="url">Python 基础：函数</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1263,11 +1459,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-26T21:41:49+08:00">
-                2017-04-26
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-04-26 21:41:49" itemprop="dateCreated datePublished" datetime="2017-04-26T21:41:49+08:00">2017-04-26</time>
             
 
             
@@ -1285,11 +1482,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 基础</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python-基础/" itemprop="url" rel="index"><span itemprop="name">Python 基础</span></a></span>
 
                 
                 
@@ -1299,11 +1492,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/Python 基础/Python-基础：函数/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python 基础/Python-基础：函数/" itemprop="commentCount"></span>
                 </a>
@@ -1336,21 +1533,29 @@
         
           <p>函数是带名字的代码块，用于完成具体的工作。要执行函数定义的特定任务，可调用该函数。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python 基础/Python-基础：函数/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Python 基础/Python-基础：函数/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1383,6 +1588,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1392,7 +1599,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -1407,11 +1614,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python 基础/Python-基础：字典/" itemprop="url">Python 基础：字典</a></h1>
+                
+                <a href="/Python 基础/Python-基础：字典/" class="post-title-link" itemprop="url">Python 基础：字典</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1419,11 +1635,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T10:00:03+08:00">
-                2017-04-11
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-04-11 10:00:03" itemprop="dateCreated datePublished" datetime="2017-04-11T10:00:03+08:00">2017-04-11</time>
             
 
             
@@ -1441,11 +1658,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 基础</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python-基础/" itemprop="url" rel="index"><span itemprop="name">Python 基础</span></a></span>
 
                 
                 
@@ -1455,11 +1668,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/Python 基础/Python-基础：字典/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python 基础/Python-基础：字典/" itemprop="commentCount"></span>
                 </a>
@@ -1492,21 +1709,29 @@
         
           <p>在 Python 中，字典是一系列<strong>键 — 值（key - value）</strong>对。每个键都与一个值相关联，你可以使用键来访问与之相关联的值。可将任何 Python 对象用作字典中的值。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python 基础/Python-基础：字典/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Python 基础/Python-基础：字典/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1539,6 +1764,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1548,7 +1775,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -1563,11 +1790,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python 基础/Python-基础：元组和切片/" itemprop="url">Python 基础：元组和切片</a></h1>
+                
+                <a href="/Python 基础/Python-基础：元组和切片/" class="post-title-link" itemprop="url">Python 基础：元组和切片</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1575,11 +1811,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-02T09:37:46+08:00">
-                2017-04-02
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-04-02 09:37:46" itemprop="dateCreated datePublished" datetime="2017-04-02T09:37:46+08:00">2017-04-02</time>
             
 
             
@@ -1597,11 +1834,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 基础</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python-基础/" itemprop="url" rel="index"><span itemprop="name">Python 基础</span></a></span>
 
                 
                 
@@ -1611,11 +1844,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/Python 基础/Python-基础：元组和切片/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python 基础/Python-基础：元组和切片/" itemprop="commentCount"></span>
                 </a>
@@ -1648,21 +1885,29 @@
         
           <p>元组——另一种有序、不可变的列表。<br>切片——处理列表的部分元素。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python 基础/Python-基础：元组和切片/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Python 基础/Python-基础：元组和切片/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1695,6 +1940,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1704,7 +1951,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ovtenng">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="while(true){study}">
       <meta itemprop="image" content="/uploads/action.png">
     </span>
 
@@ -1719,11 +1966,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Python 基础/Python-基础：列表/" itemprop="url">Python 基础：列表</a></h1>
+                
+                <a href="/Python 基础/Python-基础：列表/" class="post-title-link" itemprop="url">Python 基础：列表</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1731,11 +1987,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-25T17:04:30+08:00">
-                2017-03-25
-              </time>
-            
 
+              
+                
+              
+
+              <time title="Created: 2017-03-25 17:04:30" itemprop="dateCreated datePublished" datetime="2017-03-25T17:04:30+08:00">2017-03-25</time>
             
 
             
@@ -1753,11 +2010,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Python 基础</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python-基础/" itemprop="url" rel="index"><span itemprop="name">Python 基础</span></a></span>
 
                 
                 
@@ -1767,11 +2020,15 @@
 
           
             
+            
+              
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
                 <a href="/Python 基础/Python-基础：列表/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python 基础/Python-基础：列表/" itemprop="commentCount"></span>
                 </a>
@@ -1804,21 +2061,29 @@
         
           <p>列表由一系列按特定顺序排列的元素组成。在Python中，用方括号<code>[]</code>来表示列表，并用逗号来分隔其中的元素。<br><!--�123--></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Python 基础/Python-基础：列表/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Python 基础/Python-基础：列表/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1847,15 +2112,12 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1878,7 +2140,7 @@
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1888,42 +2150,134 @@
               <p class="site-description motion-element" itemprop="description">while(true){study}</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">52</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
             <div class="feed-link motion-element">
@@ -1936,56 +2290,88 @@
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/ovtenng" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:imtt.me" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/ovtenng" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/6542120416" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://segmentfault.com/u/ovtenng" target="_blank" title="SegmentFault">
-                      
-                        <i class="fa fa-fw fa-paperclip"></i>SegmentFault</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/ovtenng" target="_blank" title="Instagram">
-                      
-                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ovtenng" title="GitHub &rarr; https://github.com/ovtenng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:imtt.me" title="E-Mail &rarr; mailto:imtt.me" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/ovtenng" title="Twitter &rarr; https://twitter.com/ovtenng" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/6542120416" title="Weibo &rarr; https://weibo.com/6542120416" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://segmentfault.com/u/ovtenng" title="SegmentFault &rarr; https://segmentfault.com/u/ovtenng" rel="noopener" target="_blank"><i class="fa fa-fw fa-paperclip"></i>SegmentFault</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://instagram.com/ovtenng" title="Instagram &rarr; https://instagram.com/ovtenng" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
             </div>
           
 
           
-          
 
           
           
 
+          
+            
+          
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -2008,15 +2394,27 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
   <span class="author" itemprop="copyrightHolder">ovtenng</span>
+
+  
 
   
 </div>
 
 
 
+
+
+
+
+
+
         
+
 
 
 
@@ -2032,11 +2430,21 @@
 
     
 
+    
+
+    
+      <div>
+        <div class="addthis_inline_share_toolbox">
+  <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59005803ee7e6fed" async="async"></script>
+</div>
+
+      </div>
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2050,101 +2458,9 @@
 
 
 
-  
 
 
 
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
 
 
 
@@ -2160,8 +2476,56 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+  
+  <script id="dsq-count-scr" src="https://TyroTalk.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+  
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -2210,6 +2574,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -2243,8 +2609,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -2413,9 +2780,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -2487,33 +2854,88 @@
   
 
   
-
-  
   
 
   
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
